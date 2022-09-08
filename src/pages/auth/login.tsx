@@ -1,11 +1,20 @@
-import { ReactElement } from 'react';
+import { NextPage } from 'next';
+import { ChangeEvent, ReactElement, useState } from 'react';
+import Input from '../../components/Input';
 import Logo from '../../core/components/logo';
 
-const login = (): ReactElement => {
+const Login: NextPage = (): ReactElement => {
+  const [formState, setFormState] = useState({
+    email: '',
+    password: '',
+  });
+  const handleChange = (e: ChangeEvent<HTMLInputElement>): void => {
+    setFormState({ ...formState, [e.target.name]: e.target.value });
+  };
   return (
     <div className="bg-blend-multiply bg-no-repeat bg-center bg-cover bg-[url(/login/background.jpg)] bg-opacity-60 bg-slate-700 text-slate-50">
       <div className="h-screen flex justify-center items-center py-8 p-6">
-        <div className="max-w-md w-full justify-center items-center flex-col flex mx-auto bg-slate-50/5 backdrop-blur rounded-lg border border-slate-50/20 overflow-hidden">
+        <div className="max-w-md w-full justify-center items-center flex-col flex mx-auto bg-slate-900/30 backdrop-blur rounded-xl border border-slate-50/20 overflow-hidden shadow-lg shadow-black">
           <a
             href="/s"
             className="font-semibold text-2xl items-center flex my-6 decoration-inherit"
@@ -16,58 +25,32 @@ const login = (): ReactElement => {
             Ax Studios
           </a>
 
-          <div className="bg-slate-900 max-w-md shadow-[0px_0px_10px_10px_#ffffff30] rounded-md w-full p-8">
+          <div className="bg-slate-900 max-w-md shadow-[0px_0px_10px_10px_#ffffff30] rounded-xl w-full p-8">
             <h1 className="font-bold text-center">Sign in to your account</h1>
             <form action="#" className="my-4">
-              <div>
-                <label
-                  htmlFor="email"
-                  className="text-slate font-medium text-sm block mb-2"
-                >
-                  Your Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  className="bg-slate-50/10 text-medium p-3 border border-slate-50/10 rounded-lg w-full block focus:ring-2 outline-none  focus:ring-blue-500 "
-                  placeholder="name@company.com"
-                  required
-                />
-              </div>
-              <div>
-                <label
-                  htmlFor="password"
-                  className="text-slate font-medium text-sm block mb-2 mt-5"
-                >
-                  Password
-                </label>
-                <input
-                  type="password"
+              <Input
+                displayName="Your Email"
+                id="email"
+                name="email"
+                type="email"
+                placeholder="name@company.com"
+                value={formState.email}
+                onChange={handleChange}
+                required
+              />
+              <div className="mt-4">
+                <Input
+                  displayName="Password"
                   id="password"
                   name="password"
-                  className="bg-slate-50/10 text-medium p-3 border border-slate-50/10 rounded-lg w-full block focus:ring-2 outline-none  focus:ring-blue-500 "
+                  type="password"
                   placeholder="••••••••"
+                  value={formState.password}
+                  onChange={handleChange}
                   required
                 />
               </div>
-              <div className="my-4 justify-between items-center flex">
-                <div className="flex items-start">
-                  <div className="flex items-center h-5">
-                    <input
-                      id="remember"
-                      type="checkbox"
-                      className="w-4 h-4 rounded border  focus:ring-3 bg-gray-700 border-gray-600 focus:ring-blue-600 ring-offset-gray-800"
-                      required
-                    />
-                  </div>
-                  <label
-                    htmlFor="remember"
-                    className="ml-2 text-sm font-medium text-gray-300"
-                  >
-                    Remember me
-                  </label>
-                </div>
+              <div className="my-4 justify-end items-center flex">
                 <a
                   href="#"
                   className="hover:underline font-medium text-sm text-blue-500"
@@ -89,4 +72,4 @@ const login = (): ReactElement => {
   );
 };
 
-export default login;
+export default Login;
