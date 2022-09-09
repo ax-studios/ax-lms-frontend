@@ -1,4 +1,4 @@
-import { ChangeEvent, HTMLInputTypeAttribute, ReactElement } from 'react';
+import { ChangeEvent, FC, HTMLInputTypeAttribute, ReactElement } from 'react';
 
 interface InputProps {
   id: string;
@@ -10,9 +10,10 @@ interface InputProps {
   disabled?: boolean;
   value: string;
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  error?: null | string;
 }
 
-const Input = ({
+const Input: FC<InputProps> = ({
   id,
   name,
   type,
@@ -21,9 +22,10 @@ const Input = ({
   disabled,
   onChange,
   displayName,
-}: InputProps): ReactElement => {
+  error,
+}): ReactElement => {
   return (
-    <>
+    <div>
       <label htmlFor={id} className="text-slate font-medium text-sm block mb-2">
         {displayName}
       </label>
@@ -31,13 +33,16 @@ const Input = ({
         type={type}
         id={id}
         name={name}
-        className="bg-slate-50/10 text-medium p-3 border border-slate-50/10 rounded-lg w-full block focus:ring-2 outline-none  focus:ring-blue-500 "
+        className="bg-slate-50/10 text-medium p-3 border border-slate-50/10 rounded-lg w-full block focus:ring-2 outline-none  focus:ring-blue-500"
         placeholder={placeholder}
         required={required}
         disabled={disabled}
         onChange={onChange}
       />
-    </>
+      {error !== null && (
+        <span className="text-red-500 mt-2 text-sm">{error}</span>
+      )}
+    </div>
   );
 };
 
