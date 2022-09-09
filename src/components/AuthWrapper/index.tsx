@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { FC, ReactElement } from 'react';
-import Logo from '../../core/components/logo';
+import Logo from '../Logo';
 
 interface AuthWrapperProps {
   children: ReactElement;
@@ -8,7 +8,7 @@ interface AuthWrapperProps {
 
 const AuthWrapper: FC<AuthWrapperProps> = ({ children }) => {
   return (
-    <div className="bg-blend-multiply bg-no-repeat bg-center bg-cover bg-[url(/auth/background.jpg)] bg-opacity-60 bg-slate-700 text-slate-50">
+    <div className="bg-blend-multiply bg-no-repeat bg-center bg-cover bg-[url(/images/auth/background.jpg)] bg-opacity-60 bg-slate-700 text-slate-50 select-none">
       <div className="h-screen flex justify-center items-center py-8 p-6">
         <div className="max-w-md w-full justify-center items-center flex-col flex mx-auto bg-slate-900/30 backdrop-blur rounded-xl border border-slate-50/20 overflow-hidden shadow-lg shadow-black">
           <Link href="/">
