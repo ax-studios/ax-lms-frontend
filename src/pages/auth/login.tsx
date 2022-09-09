@@ -19,7 +19,7 @@ const Login: NextPage = () => {
   return (
     <AuthWrapper>
       <>
-        <h1 className="font-bold text-center">Sign in to your account</h1>
+        <h1 className="font-bold text-center">Log in to your account</h1>
         <form action="#" className="flex flex-col gap-4">
           <Input
             displayName="Your Email"

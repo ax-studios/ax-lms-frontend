@@ -82,7 +82,7 @@ const ForgotPassword: NextPage = () => {
   return (
     <AuthWrapper>
       <>
-        <h1 className="font-bold text-center"> Sign in to your account</h1>
+        <h1 className="font-bold text-center">Forgot Password</h1>
         <form
           action="#"
           className="flex flex-col gap-4"
