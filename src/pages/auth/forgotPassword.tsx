@@ -1,4 +1,5 @@
 import { NextPage } from 'next';
+import Link from 'next/link';
 import { ChangeEvent, useState } from 'react';
 import AuthWrapper from '../../components/AuthWrapper';
 import CTA from '../../components/CTA';
@@ -137,7 +138,7 @@ const ForgotPassword: NextPage = () => {
                   displayName="Password"
                   id="password"
                   name="password"
-                  type="text"
+                  type="password"
                   placeholder="••••••••"
                   value={formState.password.value}
                   onChange={handleChange}
@@ -148,7 +149,7 @@ const ForgotPassword: NextPage = () => {
                   displayName="Renter Password"
                   id="repassword"
                   name="repassword"
-                  type="text"
+                  type="password"
                   placeholder="••••••••"
                   value={formState.repassword.value}
                   onChange={handleChange}
@@ -158,6 +159,16 @@ const ForgotPassword: NextPage = () => {
                 <CTA onClick={handleChangePassword}>Change Password</CTA>
               </>
             )}
+          <div className="text-center text-sm">
+            <Link href="/auth/login">
+              <a
+                href="#"
+                className="hover:underline font-medium text-blue-500 focus:outline-none focus:underline focus:text-slate-50"
+              >
+                Login Now
+              </a>
+            </Link>
+          </div>
         </form>
       </>
     </AuthWrapper>
