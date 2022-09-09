@@ -31,6 +31,7 @@ const Input: FC<InputProps> = ({
   disabled,
   onChange,
   displayName,
+  value,
   error,
 }): ReactElement => {
   const [inputType, setInputType] = useState(type);
@@ -58,6 +59,7 @@ const Input: FC<InputProps> = ({
           required={required}
           disabled={disabled}
           onChange={onChange}
+          value={value}
         />
         {type === 'password' && (
           <div
