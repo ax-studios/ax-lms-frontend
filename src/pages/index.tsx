@@ -35,14 +35,16 @@ const Home: NextPage = () => (
     </section>
     <section>
       {[
+        'Curriculum & Timetable Management',
+        'Learning Management System',
+        'Examination Management',
+        'Fee Management (Cashless Campus)',
+        'Infrastructure Management',
         'Student can pay their Fees',
         'Teacher can upload their notes',
-        'Student can view their attendance and announcements',
-        'Student can view their teachers, classes, clubs and eventes',
-        'Created Woth NextJS',
-        'Written in Typescript',
+        'Student can view their teachers, classes, clubs, eventes, attendance and announcements',
+        'Build using NextJS, Typescript and Tailwind',
         'Apache-2.0 License',
-        'Styled with tailwindCSS',
       ].map((item) => (
         <div className="p-2 max-w-2xl mx-auto" key={item}>
           <div className="bg-gray-800 rounded flex p-4 h-full items-center">
