@@ -7,7 +7,7 @@ import {
 } from 'react';
 import CloseEye from '../../icons/CloseEye';
 import OpenEye from '../../icons/OpenEye';
-import IconWrapper from '../IconWrapper';
+import IconWrapper from '../../core/components/IconWrapper';
 
 interface InputProps {
   id: string;

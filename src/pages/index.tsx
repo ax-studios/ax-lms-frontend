@@ -1,7 +1,6 @@
 import type { NextPage } from 'next';
 import Link from 'next/link';
-import CTA from '../components/CTA';
-import Logo from '../components/Logo';
+import { CTA, Logo } from '../core';
 
 const Home: NextPage = () => (
   <div className="w-full min-h-screen bg-slate-900 text-slate-50">

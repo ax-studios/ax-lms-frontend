@@ -1,7 +1,7 @@
 import { NextPage } from 'next';
 import Link from 'next/link';
 import { ChangeEvent, useState } from 'react';
-import AuthWrapper from '../../components/AuthWrapper';
+import AuthWrapper from '../../components/pages/auth/AuthWrapper';
 import CTA from '../../components/CTA';
 import Input from '../../components/Input';
 
