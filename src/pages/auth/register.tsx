@@ -1,9 +1,9 @@
 import { NextPage } from 'next';
 import Link from 'next/link';
 import { ChangeEvent, useState } from 'react';
-import AuthWrapper from '../../components/pages/auth/AuthWrapper';
-import CTA from '../../components/CTA';
 import Input from '../../components/Input';
+import AuthWrapper from '../../components/pages/auth/AuthWrapper';
+import { CTA } from '../../core';
 
 const Register: NextPage = () => {
   const [formState, setFormState] = useState({

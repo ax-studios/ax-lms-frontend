@@ -2,8 +2,8 @@ import { NextPage } from 'next';
 import Link from 'next/link';
 import { ChangeEvent, useState } from 'react';
 import AuthWrapper from '../../components/pages/auth/AuthWrapper';
-import CTA from '../../components/CTA';
 import Input from '../../components/Input';
+import { CTA } from '../../core';
 
 const Login: NextPage = () => {
   const [formState, setFormState] = useState({

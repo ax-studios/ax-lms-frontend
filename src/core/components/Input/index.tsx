@@ -5,9 +5,8 @@ import {
   ReactElement,
   useState,
 } from 'react';
-import CloseEye from '../../icons/CloseEye';
-import OpenEye from '../../icons/OpenEye';
-import IconWrapper from '../../core/components/IconWrapper';
+import { CloseEye, OpenEye } from '../../../icons';
+import IconWrapper from '../IconWrapper';
 
 interface InputProps {
   id: string;

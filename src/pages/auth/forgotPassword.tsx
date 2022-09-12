@@ -2,9 +2,9 @@ import { NextPage } from 'next';
 import Link from 'next/link';
 import { ChangeEvent, useState } from 'react';
 import AuthWrapper from '../../components/pages/auth/AuthWrapper';
-import CTA from '../../components/CTA';
 import Input from '../../components/Input';
 import { EMAIL_REGEX, OTP_REGEX } from '../../lib/config/AUTH_REGEX';
+import { CTA } from '../../core';
 
 interface InputValue {
   value: null | string;
