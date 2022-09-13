@@ -27,7 +27,7 @@ const Home: NextPage = () => (
         </a>
         <Link href="/auth/login">
           <a>
-            <CTA onClick={() => {}}>Login In</CTA>
+            <CTA onClick={() => {}}>Login </CTA>
           </a>
         </Link>
       </div>
