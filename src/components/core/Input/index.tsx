@@ -5,9 +5,8 @@ import {
   ReactElement,
   useState,
 } from 'react';
-import CloseEye from '../../icons/CloseEye';
-import OpenEye from '../../icons/OpenEye';
-import IconWrapper from '../../core/components/IconWrapper';
+import { CloseEye, OpenEye } from '../../../icons';
+import IconWrapper from '../IconWrapper';
 
 interface InputProps {
   id: string;
@@ -42,13 +41,13 @@ const Input: FC<InputProps> = ({
   };
   return (
     <div>
-      <label className="text-slate font-medium text-sm block relative">
+      <label className="text-slate relative block text-sm font-medium">
         {displayName}
         <input
           type={inputType}
           id={id}
           name={name}
-          className="bg-slate-50/10 text-medium p-3 border border-slate-50/10 rounded-lg w-full block focus:ring-2 outline-none  focus:ring-blue-500 mt-2"
+          className="text-medium mt-2 block w-full rounded-lg border border-slate-50/10 bg-slate-50/10 p-3 outline-none  focus:ring-2 focus:ring-blue-500"
           placeholder={
             type === 'password'
               ? inputType === 'password'
@@ -64,7 +63,7 @@ const Input: FC<InputProps> = ({
         {type === 'password' && (
           <div
             onClick={handleShow}
-            className="cursor-pointer absolute right-2 top-1/2"
+            className="absolute right-2 top-1/2 w-6 cursor-pointer"
           >
             <IconWrapper>
               {inputType === 'password' ? <OpenEye /> : <CloseEye />}
@@ -73,7 +72,7 @@ const Input: FC<InputProps> = ({
         )}
       </label>
       {error !== null && (
-        <span className="text-red-500 mt-2 text-sm">{error}</span>
+        <span className="mt-2 text-sm text-red-500">{error}</span>
       )}
     </div>
   );

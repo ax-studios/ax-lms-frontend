@@ -12,7 +12,9 @@ const IconWrapper: FC<IconWrapperProps> = ({
   height = 24,
 }) => {
   return (
-    <div style={{ width: `${width}px`, height: `${height}px` }}>{children}</div>
+    <span style={{ width: `${width}px`, height: `${height}px` }}>
+      {children}
+    </span>
   );
 };
 
