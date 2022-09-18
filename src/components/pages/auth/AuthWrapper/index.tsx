@@ -9,7 +9,7 @@ interface AuthWrapperProps {
 const AuthWrapper: FC<AuthWrapperProps> = ({ children }) => {
   return (
     <div className="select-none bg-slate-700 bg-opacity-60 bg-[url(/images/auth/background.jpg)] bg-cover bg-center bg-no-repeat text-slate-50 bg-blend-multiply">
-      <div className="flex h-screen items-center justify-center p-6 py-8">
+      <div className="flex min-h-screen items-center justify-center p-6 py-8">
         <div className="mx-auto flex w-full max-w-md flex-col items-center justify-center overflow-hidden rounded-xl border border-slate-50/20 bg-slate-900/30 shadow-lg shadow-black backdrop-blur">
           <Link href="/">
             <a className="my-6 flex items-center text-2xl font-semibold decoration-inherit focus:text-blue-500 focus:outline-none">
