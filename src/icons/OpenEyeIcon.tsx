@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-const OpenEye: FC = () => {
+const OpenEyeIcon: FC = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -15,4 +15,4 @@ const OpenEye: FC = () => {
   );
 };
 
-export default OpenEye;
+export default OpenEyeIcon;

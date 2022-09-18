@@ -5,7 +5,7 @@ import {
   ReactElement,
   useState,
 } from 'react';
-import { CloseEye, OpenEye } from '../../../icons';
+import { CloseEyeIcon, OpenEyeIcon } from '../../../icons';
 import IconWrapper from '../IconWrapper';
 
 interface InputProps {
@@ -66,7 +66,7 @@ const Input: FC<InputProps> = ({
             className="absolute right-2 top-1/2 w-6 cursor-pointer"
           >
             <IconWrapper>
-              {inputType === 'password' ? <OpenEye /> : <CloseEye />}
+              {inputType === 'password' ? <OpenEyeIcon /> : <CloseEyeIcon />}
             </IconWrapper>
           </div>
         )}
