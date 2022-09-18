@@ -6,6 +6,7 @@ const OpenEye: FC = () => {
       xmlns="http://www.w3.org/2000/svg"
       width="100%"
       height="100%"
+      viewBox="0 0 24 24"
       fill="currentColor"
     >
       <path d="M12 9a3.02 3.02 0 0 0-3 3c0 1.642 1.358 3 3 3 1.641 0 3-1.358 3-3 0-1.641-1.359-3-3-3z"></path>
