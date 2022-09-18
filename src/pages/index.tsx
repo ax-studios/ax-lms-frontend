@@ -1,23 +1,23 @@
 import type { NextPage } from 'next';
 import Link from 'next/link';
-import { CTA, Logo } from '../core';
+import { CTA, Logo } from '../components/core';
 
 const Home: NextPage = () => (
-  <div className="w-full min-h-screen bg-slate-900 text-slate-50">
-    <section className="font-bold text-4xl py-16 text-center ">
+  <div className="min-h-screen w-full bg-slate-900 text-slate-50">
+    <section className="py-16 text-center text-4xl font-bold ">
       <Link href="/">
-        <a className="font-semibold items-center flex justify-center py-5 decoration-inherit focus:outline-none focus:text-blue-500 ">
-          <div className="w-10 h-10 mr-2">
+        <a className="flex items-center justify-center py-5 font-semibold decoration-inherit focus:text-blue-500 focus:outline-none ">
+          <div className="mr-2 h-10 w-10">
             <Logo />
           </div>
           Ax Studios
         </a>
       </Link>
-      <h1 className="max-w-xl mx-auto">
+      <h1 className="mx-auto max-w-xl">
         Open Source College CMS System made with NextJS, tailwind, and
         typescript
       </h1>
-      <div className="w-max whitespace-nowrap mx-auto mt-10 text-xl flex gap-2">
+      <div className="mx-auto mt-10 flex w-max gap-2 whitespace-nowrap text-xl">
         <a
           href="https://github.com/ax-studios"
           target="_blank"
@@ -45,15 +45,15 @@ const Home: NextPage = () => (
         'Build using NextJS, Typescript and Tailwind',
         'Apache-2.0 License',
       ].map((item) => (
-        <div className="p-2 max-w-2xl mx-auto" key={item}>
-          <div className="bg-gray-800 rounded flex p-4 h-full items-center">
+        <div className="mx-auto max-w-2xl p-2" key={item}>
+          <div className="flex h-full items-center rounded bg-gray-800 p-4">
             <svg
               fill="none"
               stroke="currentColor"
               strokeLinecap="round"
               strokeLinejoin="round"
               strokeWidth="3"
-              className="text-indigo-400 w-6 h-6 flex-shrink-0 mr-4"
+              className="mr-4 h-6 w-6 flex-shrink-0 text-indigo-400"
               viewBox="0 0 24 24"
             >
               <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
@@ -64,7 +64,7 @@ const Home: NextPage = () => (
         </div>
       ))}
     </section>
-    <div className="text-center text-blue-600 font-bold text-xl py-4">
+    <div className="py-4 text-center text-xl font-bold text-blue-600">
       © Ax Studios 2022
     </div>
   </div>

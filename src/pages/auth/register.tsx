@@ -1,9 +1,8 @@
 import { NextPage } from 'next';
 import Link from 'next/link';
 import { ChangeEvent, useState } from 'react';
-import Input from '../../components/Input';
+import { CTA, Input } from '../../components/core';
 import AuthWrapper from '../../components/pages/auth/AuthWrapper';
-import { CTA } from '../../core';
 
 const Register: NextPage = () => {
   const [formState, setFormState] = useState({
@@ -21,7 +20,7 @@ const Register: NextPage = () => {
   return (
     <AuthWrapper>
       <>
-        <h1 className="font-bold text-center">Register an account</h1>
+        <h1 className="text-center font-bold">Register an account</h1>
         <form action="#" className="flex flex-col gap-4">
           <Input
             displayName="Your Email"
@@ -71,7 +70,7 @@ const Register: NextPage = () => {
             <Link href="/auth/login">
               <a
                 href="#"
-                className="hover:underline font-medium text-blue-500 focus:outline-none focus:underline focus:text-slate-50"
+                className="font-medium text-blue-500 hover:underline focus:text-slate-50 focus:underline focus:outline-none"
               >
                 Login Now
               </a>

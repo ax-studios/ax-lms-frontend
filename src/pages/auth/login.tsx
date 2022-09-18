@@ -1,9 +1,8 @@
 import { NextPage } from 'next';
 import Link from 'next/link';
 import { ChangeEvent, useState } from 'react';
+import { CTA, Input } from '../../components/core';
 import AuthWrapper from '../../components/pages/auth/AuthWrapper';
-import Input from '../../components/Input';
-import { CTA } from '../../core';
 
 const Login: NextPage = () => {
   const [formState, setFormState] = useState({
@@ -19,7 +18,7 @@ const Login: NextPage = () => {
   return (
     <AuthWrapper>
       <>
-        <h1 className="font-bold text-center">Log in to your account</h1>
+        <h1 className="text-center font-bold">Log in to your account</h1>
         <form action="#" className="flex flex-col gap-4">
           <Input
             displayName="Your Email"
@@ -41,9 +40,9 @@ const Login: NextPage = () => {
             onChange={handleChange}
             required
           />
-          <div className="justify-end items-center flex">
+          <div className="flex items-center justify-end">
             <Link href="/auth/forgotPassword">
-              <a className="hover:underline font-medium text-sm text-blue-500 focus:outline-none focus:underline focus:text-slate-50">
+              <a className="text-sm font-medium text-blue-500 hover:underline focus:text-slate-50 focus:underline focus:outline-none">
                 Forgot Password?
               </a>
             </Link>
@@ -52,7 +51,7 @@ const Login: NextPage = () => {
           <div className="text-center text-sm">
             Need account?{' '}
             <Link href="/auth/register">
-              <a className="hover:underline font-medium text-blue-500 focus:outline-none focus:underline focus:text-slate-50">
+              <a className="font-medium text-blue-500 hover:underline focus:text-slate-50 focus:underline focus:outline-none">
                 Create account now
               </a>
             </Link>

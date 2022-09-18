@@ -1,10 +1,9 @@
 import { NextPage } from 'next';
 import Link from 'next/link';
 import { ChangeEvent, useState } from 'react';
+import { CTA, Input } from '../../components/core';
 import AuthWrapper from '../../components/pages/auth/AuthWrapper';
-import Input from '../../components/Input';
-import { EMAIL_REGEX, OTP_REGEX } from '../../lib/config/AUTH_REGEX';
-import { CTA } from '../../core';
+import { EMAIL_REGEX, OTP_REGEX } from '../../lib/config';
 
 interface InputValue {
   value: null | string;
@@ -82,7 +81,7 @@ const ForgotPassword: NextPage = () => {
   return (
     <AuthWrapper>
       <>
-        <h1 className="font-bold text-center">Forgot Password</h1>
+        <h1 className="text-center font-bold">Forgot Password</h1>
         <form
           action="#"
           className="flex flex-col gap-4"
@@ -163,7 +162,7 @@ const ForgotPassword: NextPage = () => {
             <Link href="/auth/login">
               <a
                 href="#"
-                className="hover:underline font-medium text-blue-500 focus:outline-none focus:underline focus:text-slate-50"
+                className="font-medium text-blue-500 hover:underline focus:text-slate-50 focus:underline focus:outline-none"
               >
                 Login Now
               </a>

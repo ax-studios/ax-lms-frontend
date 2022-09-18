@@ -1,9 +1,8 @@
 import { NextPage } from 'next';
 import Link from 'next/link';
 import { ChangeEvent, useState } from 'react';
+import { CTA, Input } from '../../components/core';
 import AuthWrapper from '../../components/pages/auth/AuthWrapper';
-import Input from '../../components/Input';
-import { CTA } from '../../core';
 
 interface InputValue {
   value: string;
@@ -53,7 +52,7 @@ const ChangePassword: NextPage = () => {
   return (
     <AuthWrapper>
       <>
-        <h1 className="font-bold text-center">Change Password</h1>
+        <h1 className="text-center font-bold">Change Password</h1>
         <form
           action="#"
           className="flex flex-col gap-4"
@@ -96,7 +95,7 @@ const ChangePassword: NextPage = () => {
             <Link href="/auth/login">
               <a
                 href="#"
-                className="hover:underline font-medium text-blue-500 focus:outline-none focus:underline focus:text-slate-50"
+                className="font-medium text-blue-500 hover:underline focus:text-slate-50 focus:underline focus:outline-none"
               >
                 Login Now
               </a>
