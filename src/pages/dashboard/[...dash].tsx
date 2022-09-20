@@ -1,11 +1,15 @@
-import { FC, useContext } from 'react';
+import { NextPage } from 'next';
+import { useRouter } from 'next/router';
+import { useContext } from 'react';
 import { SettingsContext } from '../../lib/context/settings';
 
-const Dashboard: FC = () => {
+const Dash: NextPage = () => {
+  const router = useRouter();
+  const { dash } = router.query;
   const { toggleDrawer } = useContext(SettingsContext);
-
   return (
-    <div className="flex min-h-[95vh] items-center justify-center">
+    <div>
+      Dash {dash}{' '}
       <button
         onClick={toggleDrawer}
         className="btn drawer-button btn-primary lg:hidden"
@@ -16,4 +20,4 @@ const Dashboard: FC = () => {
   );
 };
 
-export default Dashboard;
+export default Dash;
