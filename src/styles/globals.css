@@ -10,3 +10,9 @@
   background-color: rgb(162, 162, 162);
   border-radius: 9999px;
 }
+.menu li.bordered a {
+  @apply border-0 border-r-4;
+}
+.menu li.hover-bordered a {
+  @apply border-0 border-r-4 border-transparent;
+}
