@@ -4,8 +4,10 @@ import { createContext } from 'react';
  * @description Setting Interface for Context
  */
 interface SettingdInterface {
-  theme: 'dark' | 'winter' | 'synthwave' | 'halloween';
-  setTheme: (theme: 'dark' | 'winter' | 'synthwave' | 'halloween') => void;
+  theme: 'dark' | 'winter' | 'synthwave' | 'halloween' | 'cmyk';
+  setTheme: (
+    theme: 'dark' | 'winter' | 'synthwave' | 'halloween' | 'cmyk'
+  ) => void;
   drawerOpen: boolean;
   setDrawerOpen: (setTo: boolean) => void;
   toggleDrawer: () => void;
@@ -19,7 +21,9 @@ interface SettingdInterface {
  */
 const defaults = {
   theme: 'winter' as 'winter',
-  setTheme: (theme: 'dark' | 'winter' | 'synthwave' | 'halloween') => {},
+  setTheme: (
+    theme: 'dark' | 'winter' | 'synthwave' | 'halloween' | 'cmyk'
+  ) => {},
   drawerOpen: true,
   setDrawerOpen: (setTo: boolean) => {},
   toggleDrawer: () => {},

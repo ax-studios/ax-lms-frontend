@@ -9,7 +9,7 @@ const CloseSidebar: FC = () => {
   const { open, closed } = width.drawer;
   return (
     <button
-      className="absolute bottom-8 z-[999] w-14 -translate-x-1/2 -translate-y-1/2 cursor-pointer rounded-full  border border-primary/30 bg-base-300 p-1 text-primary transition-all duration-200 hover:shadow hover:shadow-primary active:scale-95 active:shadow-lg"
+      className="absolute bottom-8 z-[999] w-14 -translate-x-1/2 -translate-y-1/2 cursor-pointer rounded-full  border border-primary/30 bg-base-200 p-1 text-primary transition-all duration-200 hover:shadow hover:shadow-primary active:scale-95 active:shadow-lg"
       style={{
         left: drawerCollapsed ? closed : open,
       }}

@@ -11,8 +11,8 @@ interface DashboardWrapperProps {
 const DashboardWrapper: FC<DashboardWrapperProps> = ({ children }) => {
   const route = useRouter();
   const [theme, setTheme] = useState<
-    'dark' | 'winter' | 'synthwave' | 'halloween'
-  >('winter');
+    'dark' | 'winter' | 'synthwave' | 'halloween' | 'cmyk'
+  >('cmyk');
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [drawerCollapsed, setDrawerCollapsed] = useState(false);
   const defaultSettings = {
@@ -29,7 +29,7 @@ const DashboardWrapper: FC<DashboardWrapperProps> = ({ children }) => {
   if (route.pathname.split('/')[1] === 'dashboard') {
     return (
       <SettingsContext.Provider value={defaultSettings}>
-        <div className="drawer-mobile drawer">
+        <div className="drawer-mobile drawer" data-theme={theme}>
           <input
             id="my-drawer-2"
             type="checkbox"

@@ -24,7 +24,7 @@ const Sidebar: FC = () => {
         }}
       >
         <div
-          className={` sticky top-0 flex h-20 items-center gap-2 whitespace-nowrap border-b-2 border-primary/30 bg-base-300 px-4 text-2xl font-bold ${
+          className={` sticky top-0 flex h-20 items-center gap-2 whitespace-nowrap border-b-2 border-primary/30 bg-base-200 px-4 text-2xl font-bold ${
             drawerCollapsed ? 'justify-center' : 'justify-start'
           }`}
         >
