@@ -1,12 +1,11 @@
 import { createContext } from 'react';
 
-// Random Single User Data
 export const UserData = {
   name: 'Chandraprakash Darji',
   enrollmentID: '21C22004',
   type: 'student',
   branch:
-    'B.tech in Computer Science and Engineering ( Artificial Intelligence)',
+    'B.tech in Computer Science and Engineering ( Artificial Intelligence )',
   banner:
     'https://user-images.githubusercontent.com/93640141/154883570-4886fb9e-8a31-4eae-bd99-5f4b70d9c44b.png',
   profileURL: 'https://www.github.com/Chandraprakash-Darji.png',
