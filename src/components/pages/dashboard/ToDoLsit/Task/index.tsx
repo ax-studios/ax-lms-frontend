@@ -13,7 +13,7 @@ const Task: FC<Props> = ({ delay, task }) => {
   const [showTaskMenu, setShowTaskMenu] = useState(false);
   return (
     <li
-      className="font-roboto group relative shrink-0 rounded-lg border border-base-content/70 bg-base-200 py-2 pr-4 pl-5 text-left text-lg transition-all duration-300"
+      className="font-roboto group relative shrink-0 overflow-hidden rounded-lg border border-base-content/70 bg-base-200 py-2 pr-4 pl-5 text-left text-lg transition-all duration-300"
       style={{
         ...(toDoCollapsed
           ? { scale: '0' }

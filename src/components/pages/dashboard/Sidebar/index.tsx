@@ -19,7 +19,7 @@ const Sidebar: FC = () => {
   return (
     <>
       <aside
-        className="select-none overflow-hidden border-r-2 border-primary/30 bg-base-100 text-base-content"
+        className="max-h-screen select-none overflow-hidden border-r-2 border-primary/30 bg-base-100 text-base-content"
         style={{
           width: drawerCollapsed ? closed : open,
         }}
@@ -40,7 +40,7 @@ const Sidebar: FC = () => {
             Ax Studios
           </span>
         </div>
-        <ul className="menu flex h-[calc(100vh-77px)] flex-col gap-1 overflow-x-hidden py-2 transition-all duration-200">
+        <ul className="menu relative flex h-full max-h-[calc(100vh-77px)] flex-col gap-1 overflow-y-auto overflow-x-hidden py-2 transition-all duration-200">
           <ProfileCard />
           {sidebarOptions.map((option) => (
             <li
@@ -67,7 +67,7 @@ const Sidebar: FC = () => {
           ))}
           <li className="hover-bordered mt-auto from-primary/50 to-primary/10 text-xl hover:bg-gradient-to-l hover:shadow-xl">
             <a
-              className={`items-center !rounded-none py-4 ${
+              className={`items-center !rounded-none py-4 hover:bg-transparent focus:bg-transparent  ${
                 drawerCollapsed ? 'justify-center' : 'justify-start'
               }`}
             >

@@ -11,7 +11,7 @@ const TaskOptions: FC<Props> = ({ show, toggleShow }) => {
   return (
     <ul
       className={
-        'menu menu-horizontal absolute top-1/2 right-0 h-full origin-top -translate-y-1/2  scale-0 border border-transparent border-l-base-content/60 bg-base-100 transition-all duration-200 group-hover:scale-100'
+        'menu menu-horizontal absolute top-1/2 right-0 h-full origin-right -translate-y-1/2  scale-0 border border-transparent border-l-base-content/60 bg-base-100 transition-all duration-200 group-hover:scale-100'
       }
     >
       <li>
