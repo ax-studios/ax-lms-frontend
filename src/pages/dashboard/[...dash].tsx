@@ -12,7 +12,7 @@ const Dash: NextPage = () => {
       Dash {dash}{' '}
       <button
         onClick={toggleDrawer}
-        className="btn drawer-button btn-primary lg:hidden"
+        className="btn btn-primary drawer-button lg:hidden"
       >
         Open drawer
       </button>
