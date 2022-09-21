@@ -40,7 +40,7 @@ const Sidebar: FC = () => {
             Ax Studios
           </span>
         </div>
-        <ul className="menu relative flex h-full max-h-[calc(100vh-77px)] flex-col gap-1 overflow-y-auto overflow-x-hidden py-2 transition-all duration-200">
+        <ul className="menu relative flex h-full max-h-[calc(100vh-77px)] flex-col gap-1 overflow-y-auto overflow-x-hidden pb-2 transition-all duration-200">
           <ProfileCard />
           {sidebarOptions.map((option) => (
             <li
