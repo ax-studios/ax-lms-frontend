@@ -3,6 +3,7 @@ import { FC, useState } from 'react';
 import { SettingsContext } from '../../../lib/context/settings';
 import Header from './Header';
 import Sidebar from './Sidebar';
+import ToDoList from './ToDoLsit';
 
 interface DashboardWrapperProps {
   children: React.ReactNode;
@@ -12,9 +13,10 @@ const DashboardWrapper: FC<DashboardWrapperProps> = ({ children }) => {
   const route = useRouter();
   const [theme, setTheme] = useState<
     'dark' | 'winter' | 'synthwave' | 'halloween' | 'cmyk'
-  >('cmyk');
+  >('dark');
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [drawerCollapsed, setDrawerCollapsed] = useState(false);
+  const [toDoCollapsed, setToDoCollapsed] = useState(false);
   const defaultSettings = {
     theme,
     setTheme,
@@ -24,11 +26,15 @@ const DashboardWrapper: FC<DashboardWrapperProps> = ({ children }) => {
     drawerCollapsed,
     setDrawerCollapsed,
     toggleDrawerCollapsed: () => setDrawerCollapsed((p) => !p),
+    toDoCollapsed,
+    setToDoCollapsed,
+    toggleToDoCollapsed: () => setToDoCollapsed((p) => !p),
   };
 
   if (route.pathname.split('/')[1] === 'dashboard') {
     return (
       <SettingsContext.Provider value={defaultSettings}>
+        {/* eslint-disable-next-line prettier/prettier */}
         <div className="drawer-mobile drawer" data-theme={theme}>
           <input
             id="my-drawer-2"
@@ -37,9 +43,12 @@ const DashboardWrapper: FC<DashboardWrapperProps> = ({ children }) => {
             checked={drawerOpen}
             onChange={defaultSettings.toggleDrawer}
           />
-          <div className="drawer-content">
-            <Header />
-            {children}
+          <div className="drawer-content flex">
+            <div className="w-full">
+              <Header />
+              {children}
+            </div>
+            <ToDoList />
           </div>
           <div className="drawer-side">
             <div

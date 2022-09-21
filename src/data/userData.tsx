@@ -1,4 +1,5 @@
 import { createContext } from 'react';
+import tasks from './tasks';
 
 export const UserData = {
   name: 'Chandraprakash Darji',
@@ -27,5 +28,6 @@ export const UserData = {
       link: 'https://github.com/Chandraprakash-Darji',
     },
   ],
+  tasks,
 };
 export const UserContext = createContext<typeof UserData>(UserData);

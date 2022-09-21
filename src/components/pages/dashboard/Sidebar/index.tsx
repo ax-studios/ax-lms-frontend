@@ -7,18 +7,19 @@ import { SettingsContext } from '../../../../lib/context/settings';
 import useSidebarMenu from '../../../../lib/hooks/useSidebarMenu';
 import { IconWrapper, Logo } from '../../../core';
 import ProfileCard from '../ProfileCard';
-import CloseSidebar from './CloseSidebar';
+import ToggleCollapsed from '../ToggleCollapsed';
 
 const Sidebar: FC = () => {
   const router = useRouter();
   const sidebarOptions = useSidebarMenu();
   const sidebarIcons = useSidebarIcons();
-  const { toggleDrawer, drawerCollapsed } = useContext(SettingsContext);
+  const { toggleDrawer, drawerCollapsed, toggleDrawerCollapsed } =
+    useContext(SettingsContext);
   const { open, closed } = width.drawer;
   return (
     <>
       <aside
-        className="select-none overflow-hidden border-r-2 border-primary/30 bg-base-100 text-base-content"
+        className="max-h-screen select-none overflow-hidden border-r-2 border-primary/30 bg-base-100 text-base-content"
         style={{
           width: drawerCollapsed ? closed : open,
         }}
@@ -39,22 +40,22 @@ const Sidebar: FC = () => {
             Ax Studios
           </span>
         </div>
-        <ul className="menu flex h-[calc(100vh-77px)] flex-col gap-1 overflow-x-hidden py-2 transition-all duration-200">
+        <ul className="menu relative flex h-full max-h-[calc(100vh-77px)] flex-col gap-1 overflow-y-auto overflow-x-hidden py-2 transition-all duration-200">
           <ProfileCard />
           {sidebarOptions.map((option) => (
             <li
               key={option.name}
-              className={`from-primary/50 to-primary/10 text-xl  ${
+              className={`from-primary/50 to-primary/10  text-xl  ${
                 router.query.dash !== undefined &&
                 router.query.dash[0] === option.link
-                  ? 'bordered bg-gradient-to-l shadow-xl shadow-base-300/50'
-                  : 'hover-bordered shadow-base-300/50 hover:bg-gradient-to-l hover:shadow-xl'
+                  ? 'bordered bg-gradient-to-l '
+                  : 'hover-bordered hover:bg-gradient-to-l focus:bg-gradient-to-l'
               }`}
             >
               <Link href={`/dashboard/${option.link}`}>
                 <a
                   onClick={toggleDrawer}
-                  className={`items-center !rounded-none py-4 ${
+                  className={`items-center !rounded-none py-4  hover:bg-transparent focus:bg-transparent ${
                     drawerCollapsed ? 'justify-center' : 'justify-start'
                   }`}
                 >
@@ -66,7 +67,7 @@ const Sidebar: FC = () => {
           ))}
           <li className="hover-bordered mt-auto from-primary/50 to-primary/10 text-xl hover:bg-gradient-to-l hover:shadow-xl">
             <a
-              className={`items-center !rounded-none py-4 ${
+              className={`items-center !rounded-none py-4 hover:bg-transparent focus:bg-transparent  ${
                 drawerCollapsed ? 'justify-center' : 'justify-start'
               }`}
             >
@@ -78,7 +79,10 @@ const Sidebar: FC = () => {
           </li>
         </ul>
       </aside>
-      <CloseSidebar />
+      <ToggleCollapsed
+        left={drawerCollapsed ? closed : open}
+        toggle={toggleDrawerCollapsed}
+      />
     </>
   );
 };
