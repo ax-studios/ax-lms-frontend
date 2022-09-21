@@ -7,13 +7,14 @@ import { SettingsContext } from '../../../../lib/context/settings';
 import useSidebarMenu from '../../../../lib/hooks/useSidebarMenu';
 import { IconWrapper, Logo } from '../../../core';
 import ProfileCard from '../ProfileCard';
-import CloseSidebar from './CloseSidebar';
+import ToggleCollapsed from '../ToggleCollapsed';
 
 const Sidebar: FC = () => {
   const router = useRouter();
   const sidebarOptions = useSidebarMenu();
   const sidebarIcons = useSidebarIcons();
-  const { toggleDrawer, drawerCollapsed } = useContext(SettingsContext);
+  const { toggleDrawer, drawerCollapsed, toggleDrawerCollapsed } =
+    useContext(SettingsContext);
   const { open, closed } = width.drawer;
   return (
     <>
@@ -44,17 +45,17 @@ const Sidebar: FC = () => {
           {sidebarOptions.map((option) => (
             <li
               key={option.name}
-              className={`from-primary/50 to-primary/10 text-xl  ${
+              className={`from-primary/50 to-primary/10  text-xl  ${
                 router.query.dash !== undefined &&
                 router.query.dash[0] === option.link
-                  ? 'bordered bg-gradient-to-l shadow-xl shadow-base-300/50'
-                  : 'hover-bordered shadow-base-300/50 hover:bg-gradient-to-l hover:shadow-xl'
+                  ? 'bordered bg-gradient-to-l '
+                  : 'hover-bordered hover:bg-gradient-to-l focus:bg-gradient-to-l'
               }`}
             >
               <Link href={`/dashboard/${option.link}`}>
                 <a
                   onClick={toggleDrawer}
-                  className={`items-center !rounded-none py-4 ${
+                  className={`items-center !rounded-none py-4  hover:bg-transparent focus:bg-transparent ${
                     drawerCollapsed ? 'justify-center' : 'justify-start'
                   }`}
                 >
@@ -78,7 +79,10 @@ const Sidebar: FC = () => {
           </li>
         </ul>
       </aside>
-      <CloseSidebar />
+      <ToggleCollapsed
+        left={drawerCollapsed ? closed : open}
+        toggle={toggleDrawerCollapsed}
+      />
     </>
   );
 };

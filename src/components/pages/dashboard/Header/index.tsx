@@ -14,7 +14,7 @@ const Header: FC = () => {
         <span className="absolute left-4 top-1/2 w-5 -translate-y-1/2 ">
           <SearchIcon />
         </span>
-        <span className="relative block w-6">
+        <span className="relative block w-6 shrink-0">
           <BellIcon />
           <span className="absolute top-0 right-0 block h-3 w-3 rounded-full bg-red-500" />
         </span>
