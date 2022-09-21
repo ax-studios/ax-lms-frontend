@@ -12,7 +12,7 @@ const ProfileCard: FC = () => {
   const { drawerCollapsed } = useContext(SettingsContext);
   return (
     <div
-      className={`relative mx-2 flex flex-col items-center overflow-hidden rounded-lg border-primary  text-center text-xl transition-all  duration-200 ${
+      className={`relative mx-2 mb-3 flex flex-col items-center overflow-hidden rounded-lg  border-primary text-center text-xl  transition-all duration-200 ${
         drawerCollapsed
           ? 'border-0 p-0 shadow-none'
           : 'border-2 bg-base-300/50 p-2 shadow-xl'

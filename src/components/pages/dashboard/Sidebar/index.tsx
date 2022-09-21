@@ -67,7 +67,7 @@ const Sidebar: FC = () => {
           ))}
           <li className="hover-bordered mt-auto from-primary/50 to-primary/10 text-xl hover:bg-gradient-to-l hover:shadow-xl">
             <a
-              className={`items-center !rounded-none py-4 ${
+              className={`items-center !rounded-none py-4 hover:bg-transparent focus:bg-transparent  ${
                 drawerCollapsed ? 'justify-center' : 'justify-start'
               }`}
             >
