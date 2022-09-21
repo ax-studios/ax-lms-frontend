@@ -6,4 +6,8 @@ export const width = {
     closed: '80px',
     open: '320px',
   },
+  Todo: {
+    closed: '60px',
+    open: '500px',
+  },
 };

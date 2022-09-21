@@ -14,6 +14,9 @@ interface SettingdInterface {
   drawerCollapsed: boolean;
   setDrawerCollapsed: (setTo: boolean) => void;
   toggleDrawerCollapsed: () => void;
+  toDoCollapsed: boolean;
+  setToDoCollapsed: (setTo: boolean) => void;
+  toggleToDoCollapsed: () => void;
 }
 
 /**
@@ -30,6 +33,9 @@ const defaults = {
   drawerCollapsed: false,
   setDrawerCollapsed: (setTo: boolean) => {},
   toggleDrawerCollapsed: () => {},
+  toDoCollapsed: false,
+  setToDoCollapsed: (setTo: boolean) => {},
+  toggleToDoCollapsed: () => {},
 };
 
 /**
