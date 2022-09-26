@@ -1,9 +1,9 @@
 import { useRouter } from 'next/router';
 import { FC, useState } from 'react';
 import { SettingsContext } from '../../../lib/context/settings';
-import Header from './Header';
-import Sidebar from './Sidebar';
-import ToDoList from './ToDoLsit';
+import Header from './Wrappers/Header';
+import Sidebar from './Wrappers/Sidebar';
+import ToDoList from './Wrappers/ToDoList';
 
 interface DashboardWrapperProps {
   children: React.ReactNode;
@@ -17,6 +17,7 @@ const DashboardWrapper: FC<DashboardWrapperProps> = ({ children }) => {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [drawerCollapsed, setDrawerCollapsed] = useState(false);
   const [toDoCollapsed, setToDoCollapsed] = useState(false);
+
   const defaultSettings = {
     theme,
     setTheme,

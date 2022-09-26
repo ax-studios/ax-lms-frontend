@@ -1,4 +1,5 @@
 import { createContext } from 'react';
+import examSchedule from './examSchedule';
 import tasks from './tasks';
 
 export const UserData = {
@@ -29,5 +30,6 @@ export const UserData = {
     },
   ],
   tasks,
+  examSchedule,
 };
 export const UserContext = createContext<typeof UserData>(UserData);

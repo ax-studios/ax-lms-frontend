@@ -1,3 +1,4 @@
+const themes = ['dark', 'winter', 'synthwave', 'halloween', 'cmyk'];
 module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
   theme: {
@@ -5,6 +6,6 @@ module.exports = {
   },
   plugins: [require('daisyui')],
   daisyui: {
-    themes: ['dark', 'winter', 'synthwave', 'halloween', 'cmyk'],
+    themes,
   },
 };

@@ -6,6 +6,7 @@ import HomeIcon from './HomeIcon';
 import LogoutIcon from './LogoutIcon';
 import ResultIcon from './ResultIcon';
 import SchoolIcon from './SchoolIcon';
+import SettingsIcon from './SettingsIcon';
 
 interface sidebarIconListIn {
   [key: string]: ReactElement;
@@ -19,5 +20,6 @@ export const useSidebarIcons = (): sidebarIconListIn => {
     exam: <ExamIcon />,
     results: <ResultIcon />,
     logout: <LogoutIcon />,
+    settings: <SettingsIcon />,
   };
 };
