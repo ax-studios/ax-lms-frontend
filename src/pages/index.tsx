@@ -3,10 +3,10 @@ import Link from 'next/link';
 import { CTA, Logo } from '../components/core';
 
 const Home: NextPage = () => (
-  <div className="min-h-screen w-full bg-slate-900 text-slate-50">
+  <div className="min-h-screen w-full bg-base-300 text-base-content">
     <section className="py-16 text-center text-4xl font-bold ">
       <Link href="/">
-        <a className="flex items-center justify-center py-5 font-semibold decoration-inherit focus:text-blue-500 focus:outline-none ">
+        <a className="flex items-center justify-center py-5 font-semibold decoration-inherit focus:text-primary focus:outline-none ">
           <div className="mr-2 h-10 w-10">
             <Logo />
           </div>
@@ -23,8 +23,17 @@ const Home: NextPage = () => (
           target="_blank"
           rel="noreferrer"
         >
-          <CTA onClick={() => {}}>Source Code</CTA>
+          <CTA onClick={() => {}} type="outline">
+            Source Code
+          </CTA>
         </a>
+        <Link href="/dashboard">
+          <a>
+            <CTA onClick={() => {}} type="outline">
+              Dashboard
+            </CTA>
+          </a>
+        </Link>
         <Link href="/auth/login">
           <a>
             <CTA onClick={() => {}}>Login </CTA>
@@ -46,25 +55,27 @@ const Home: NextPage = () => (
         'Apache-2.0 License',
       ].map((item) => (
         <div className="mx-auto max-w-2xl p-2" key={item}>
-          <div className="flex h-full items-center rounded bg-gray-800 p-4">
+          <div className="flex h-full items-center rounded bg-base-100 p-4">
             <svg
               fill="none"
               stroke="currentColor"
               strokeLinecap="round"
               strokeLinejoin="round"
               strokeWidth="3"
-              className="mr-4 h-6 w-6 flex-shrink-0 text-indigo-400"
+              className="mr-4 h-6 w-6 flex-shrink-0 text-primary-focus"
               viewBox="0 0 24 24"
             >
               <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
               <path d="M22 4L12 14.01l-3-3"></path>
             </svg>
-            <span className="title-font font-medium text-white">{item}</span>
+            <span className="title-font font-medium text-base-content">
+              {item}
+            </span>
           </div>
         </div>
       ))}
     </section>
-    <div className="py-4 text-center text-xl font-bold text-blue-600">
+    <div className="py-4 text-center text-xl font-bold text-primary">
       © Ax Studios 2022
     </div>
   </div>

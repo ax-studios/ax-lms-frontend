@@ -7,7 +7,7 @@ const Tasks: FC = () => {
   const { toDoCollapsed } = useContext(SettingsContext);
   const { tasks } = useContext(UserContext);
   return (
-    <ul className="mt-4 space-y-4">
+    <ul className={`mt-4 space-y-4 ${toDoCollapsed ? 'mt-0 h-0' : 'h-[75vh]'}`}>
       {tasks.map((task, i) => (
         <Task delay={100 + i * 50} key={task.id} task={task} />
       ))}

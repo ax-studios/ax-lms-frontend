@@ -31,7 +31,7 @@ const SettingModal: FC = () => {
 export default SettingModal;
 
 interface ThemeLayoutProps {
-  dataTheme: 'dark' | 'winter' | 'synthwave' | 'halloween' | 'cmyk';
+  dataTheme: 'dark' | 'winter' | 'synthwave' | 'halloween' | 'cmyk' | 'forest';
 }
 
 const ThemeLayout: FC<ThemeLayoutProps> = ({ dataTheme }) => {

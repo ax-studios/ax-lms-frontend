@@ -12,7 +12,7 @@ interface DashboardWrapperProps {
 const DashboardWrapper: FC<DashboardWrapperProps> = ({ children }) => {
   const route = useRouter();
   const [theme, setTheme] = useState<
-    'dark' | 'winter' | 'synthwave' | 'halloween' | 'cmyk'
+    'dark' | 'winter' | 'synthwave' | 'halloween' | 'cmyk' | 'forest'
   >('dark');
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [drawerCollapsed, setDrawerCollapsed] = useState(false);
@@ -36,7 +36,7 @@ const DashboardWrapper: FC<DashboardWrapperProps> = ({ children }) => {
     return (
       <SettingsContext.Provider value={defaultSettings}>
         {/* eslint-disable-next-line prettier/prettier */}
-        <div className="drawer-mobile drawer" data-theme={theme}>
+        <div className="drawer drawer-mobile" data-theme={theme}>
           <input
             id="my-drawer-2"
             type="checkbox"
@@ -62,7 +62,7 @@ const DashboardWrapper: FC<DashboardWrapperProps> = ({ children }) => {
       </SettingsContext.Provider>
     );
   }
-  return <>{children}</>;
+  return <div data-theme={theme}>{children}</div>;
 };
 
 export default DashboardWrapper;

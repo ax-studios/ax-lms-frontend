@@ -62,7 +62,7 @@ const Register: NextPage = () => {
             onChange={handleChange}
             required
           />
-          <div className="mt-2">
+          <div className="mt-2 w-full">
             <CTA onClick={handleSubmit}>Submit</CTA>
           </div>
           <div className="text-center text-sm">
