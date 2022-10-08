@@ -1,8 +1,17 @@
-import { FC, useContext } from 'react';
+import { useRouter } from 'next/router';
+import { FC, useContext, useEffect } from 'react';
 import { SettingsContext } from '../../lib/context/settings';
 
 const Dashboard: FC = () => {
   const { toggleDrawer } = useContext(SettingsContext);
+  const { push } = useRouter();
+  useEffect(() => {
+    // eslint-disable-next-line prettier/prettier
+    const redirect = async(): Promise<any> => {
+      await push('/dashboard/home');
+    };
+    void redirect();
+  }, [push]);
 
   return (
     <div className="flex min-h-[90vh] items-center justify-center">
