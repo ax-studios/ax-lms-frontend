@@ -33,8 +33,6 @@
         }
       }
     ],
-    "space-before-function-paren": "off",
-    "@typescript-eslint/space-before-function-paren": ["error", "never"],
     "comma-dangle": "off",
     "react/jsx-filename-extension": [
       2,
