@@ -14,7 +14,7 @@ const Home: NextPage = () => (
         </a>
       </Link>
       <h1 className="mx-auto max-w-xl">
-        Open Source College CMS System made with NextJS, tailwind, and
+        Open Source University LMS System made with NextJS, tailwind, and
         typescript
       </h1>
       <div className="mx-auto mt-10 flex w-max gap-2 whitespace-nowrap text-xl">

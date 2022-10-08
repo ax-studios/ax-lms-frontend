@@ -1,40 +1,61 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<div  align="center" >
+    <img  src="https://raw.githubusercontent.com/ax-studios/frontend-web/main/public/images/logo.svg"  alt="Ax Logo"  width="100"  height="100"  />     <h1> Ax Studios </h1>
+    <p> College LMS </p>
 
-## Getting Started
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/mit/) [![Issues](https://img.shields.io/github/issues/ax-studios/frontend-web)](https://github.com/ax-studios/frontend-web/issues) [![Contributors](https://img.shields.io/github/contributors/ax-studios/frontend-web)](https://github.com/ax-studios/frontend-web/graphs/contributors) ![Forks](https://img.shields.io/github/forks/ax-studios/frontend-web) ![Stars](https://img.shields.io/github/stars/ax-studios/frontend-web)
+</div>
 
-First, run the development server:
+## What is Ax Studios
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+Ax Studios is a University LMS (Learning Management System) that is designed to be used by students and teachers. It is a web application that allows students to view their courses, assignments, grades and other information.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## How to run Ax Studios
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+### What stack is Ax Studios built on?
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+- [React JS](hhttps://reactjs.org/)
+- [Nextjs](https://nextjs.org/)
+- [Tailwindcss](https://tailwindcss.com/)
+- [Typescript](https://www.typescriptlang.org/)
+- [Daisy UI](https://daisyui.com/)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### Prerequisites
 
-## Learn More
+- [Node.js](https://nodejs.org/en/)
+- [Git](https://git-scm.com/)
+- [yarn](https://yarnpkg.com/)
 
-To learn more about Next.js, take a look at the following resources:
+### Installation
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Fork the repo
+2. Clone the repository `git clone`
+3. Run `yarn` to install all dependencies
+4. Run `yarn dev` to start the application
+5. Visit <https://localhost:3000> to view the application
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## How to contribute
 
-## Deploy on Vercel
+1. Run installation steps
+2. Find Issue to work on or create a new issue for feature request or bug
+3. Create a new branch for your feature git checkout -b feature-name
+4. Make your changes
+5. Commit your changes git commit -m "Add some feature"
+6. Push to the branch git push origin feature-name
+7. Create a new pull request
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Design for UI
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-<!-- Adarsh Sir ( Hair )
-     Akash sir (  )
-     Akil sir ( Eliggten Info System )
-     Prasun sir
-     Varang Acharya sir - React 
- -->
+Design is created using [Figma](https://www.figma.com/file/M9R185mY2Es6dqzSW0WHBE/dashbaord-ax-studios?node-id=0%3A1)
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE.md file for details
+
+## Contact
+
+If you have any questions, please contact us at [Discussions](https://github.com/ax-studios/frontend-web/discussions)
+
+## Team
+
+- [@Chandraprakash-Darji](https://github.com/Chandraprakash-Darji)
+- [@tirth-bhagwat](https://github.com/tirth-bhagwat)
