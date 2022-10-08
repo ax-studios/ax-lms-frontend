@@ -6,7 +6,8 @@ const Dashboard: FC = () => {
   const { toggleDrawer } = useContext(SettingsContext);
   const { push } = useRouter();
   useEffect(() => {
-    const redirect = async (): Promise<any> => {
+    // eslint-disable-next-line prettier/prettier
+    const redirect = async(): Promise<any> => {
       await push('/dashboard/home');
     };
     void redirect();
