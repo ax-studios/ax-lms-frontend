@@ -2,6 +2,7 @@ import { createContext } from 'react';
 import examSchedule from './examSchedule';
 import tasks from './tasks';
 import announcements from './announcements';
+import events from './upcoming_events';
 
 export const UserData = {
   name: 'Chandraprakash Darji',
@@ -33,5 +34,6 @@ export const UserData = {
   tasks,
   examSchedule,
   announcements,
+  events,
 };
 export const UserContext = createContext<typeof UserData>(UserData);

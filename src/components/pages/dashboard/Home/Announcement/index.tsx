@@ -7,7 +7,7 @@ const Announcements: FC = () => {
   return (
     <div className="flex max-w-lg flex-col gap-3 font-bold">
       <h2 className="mb-2 text-3xl font-bold text-base-content">
-        Exam Schedule
+        Announcement
       </h2>
       {announcements.map((announcement) => (
         <Card key={announcement.id}>
