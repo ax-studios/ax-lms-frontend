@@ -7,7 +7,7 @@ const Dashboard: FC = () => {
   const { push } = useRouter();
   useEffect(() => {
     // eslint-disable-next-line prettier/prettier
-    const redirect = async (): Promise<any> => {
+    const redirect = async(): Promise<any> => {
       await push('/dashboard/home');
     };
     void redirect();

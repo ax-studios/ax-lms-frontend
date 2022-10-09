@@ -3,6 +3,7 @@ import Card from '..';
 import CalenderIcon from '../../../../../icons/Sidebar Icons/CalenderIcon';
 import PlusIcon from '../../../../../icons/PlusIcon';
 import { UserContext } from '../../../../../data/userData';
+import Link from 'next/link';
 
 const Events: FC = () => {
   const { events } = useContext(UserContext);
@@ -27,8 +28,8 @@ const Events: FC = () => {
       ))}
       <div className="rounded-2xl  border-2 border-dashed border-blue-500 border-base-content/10  ">
         <div className="flex gap-1  p-3 px-5 text-center text-blue-500 ">
-          <PlusIcon />
-          <a href="/"> Add an Event</a>
+          <PlusIcon></PlusIcon>
+          <Link href={'/'}> Add an Event</Link>
         </div>
       </div>
     </div>
