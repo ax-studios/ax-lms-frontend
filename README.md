@@ -9,9 +9,11 @@
 
 Ax Studios is a University LMS (Learning Management System) that is designed to be used by students and teachers. It is a web application that allows students to view their courses, assignments, grades and other information.
 
-## How to run Ax Studios
+## 👨‍💻 Demo
 
-### What stack is Ax Studios built on?
+Check out the website: <https://ax-studio.vercel.app/>
+
+## What stack is Ax Studios built on?
 
 - [React JS](hhttps://reactjs.org/)
 - [Nextjs](https://nextjs.org/)
@@ -19,13 +21,13 @@ Ax Studios is a University LMS (Learning Management System) that is designed to 
 - [Typescript](https://www.typescriptlang.org/)
 - [Daisy UI](https://daisyui.com/)
 
-### Prerequisites
+## 👇 Prerequisites
 
 - [Node.js](https://nodejs.org/en/)
 - [Git](https://git-scm.com/)
 - [yarn](https://yarnpkg.com/)
 
-### Installation
+## 🛠️ Installation
 
 1. Fork the repo
 2. Clone the repository `git clone`
@@ -33,7 +35,7 @@ Ax Studios is a University LMS (Learning Management System) that is designed to 
 4. Run `yarn dev` to start the application
 5. Visit <https://localhost:3000> to view the application
 
-## How to contribute
+## 🎭 How to contribute
 
 1. Run installation steps
 2. Find Issue to work on or create a new issue for feature request or bug
@@ -47,7 +49,7 @@ Ax Studios is a University LMS (Learning Management System) that is designed to 
 
 Design is created using [Figma](https://www.figma.com/file/M9R185mY2Es6dqzSW0WHBE/dashbaord-ax-studios?node-id=0%3A1)
 
-## License
+## 🛡️ License
 
 This project is licensed under the MIT License - see the LICENSE.md file for details
 
@@ -59,3 +61,13 @@ If you have any questions, please contact us at [Discussions](https://github.com
 
 - [@Chandraprakash-Darji](https://github.com/Chandraprakash-Darji)
 - [@tirth-bhagwat](https://github.com/tirth-bhagwat)
+
+## 💪 Thanks to all Contributors
+
+Thanks a lot for spending your time helping LinkFree grow. Thanks a lot! Keep rocking 🍻
+
+[![Contributors](https://contrib.rocks/image?repo=ax-studios/frontend-web)](https://github.com/ax-studios/frontend-web/graphs/contributors)
+
+## 🙏 Support
+
+This project needs a ⭐️ from you. Don't forget to leave a star ⭐️
