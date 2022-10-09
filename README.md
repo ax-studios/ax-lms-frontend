@@ -64,7 +64,7 @@ If you have any questions, please contact us at [Discussions](https://github.com
 
 ## 💪 Thanks to all Contributors
 
-Thanks a lot for spending your time helping LinkFree grow. Thanks a lot! Keep rocking 🍻
+Thanks a lot for spending your time helping Ax Studios grow. Thanks a lot! Keep rocking 🍻
 
 [![Contributors](https://contrib.rocks/image?repo=ax-studios/frontend-web)](https://github.com/ax-studios/frontend-web/graphs/contributors)
 
