@@ -1,11 +1,11 @@
 import { FC } from 'react';
 import Announcements from '../../components/pages/dashboard/Home/Announcement';
-import ExamSchedule from '../../components/pages/dashboard/Home/Exam Schedule';
 import ClassSchedule from '../../components/pages/dashboard/Home/ClassSchedule';
+import ExamSchedule from '../../components/pages/dashboard/Home/Exam Schedule';
 
 const Home: FC = () => {
   return (
-    <div className="flex gap-5 p-4">
+    <div className="flex flex-wrap gap-5 p-4">
       <ExamSchedule />
       <Announcements />
       <ClassSchedule />
