@@ -2,13 +2,17 @@ import { FC } from 'react';
 import Announcements from '../../components/pages/dashboard/Home/Announcement';
 import ExamSchedule from '../../components/pages/dashboard/Home/Exam Schedule';
 import ClassSchedule from '../../components/pages/dashboard/Home/ClassSchedule';
+import Attendance from '../../components/pages/dashboard/Home/Attendance';
 
 const Home: FC = () => {
   return (
-    <div className="flex gap-5 p-4">
-      <ExamSchedule />
-      <Announcements />
-      <ClassSchedule />
+    <div className="px-8 py-5">
+      <div className="grid grid-cols-3 gap-4">
+        <ExamSchedule />
+        <Announcements />
+        <ClassSchedule />
+        <Attendance />
+      </div>
     </div>
   );
 };
