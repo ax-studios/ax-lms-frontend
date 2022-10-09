@@ -13,7 +13,7 @@ const DashboardWrapper: FC<DashboardWrapperProps> = ({ children }) => {
   const route = useRouter();
   const [theme, setTheme] = useState<
     'dark' | 'winter' | 'synthwave' | 'halloween' | 'cmyk' | 'forest'
-  >('dark');
+  >('synthwave');
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [drawerCollapsed, setDrawerCollapsed] = useState(true);
   const [toDoCollapsed, setToDoCollapsed] = useState(true);
