@@ -3,6 +3,7 @@ import examSchedule from './examSchedule';
 import tasks from './tasks';
 import announcements from './announcements';
 import events from './upcoming_events';
+import classSchedule from './class-schedule';
 
 export const UserData = {
   name: 'Chandraprakash Darji',
@@ -35,5 +36,6 @@ export const UserData = {
   examSchedule,
   announcements,
   events,
+  classSchedule,
 };
 export const UserContext = createContext<typeof UserData>(UserData);
