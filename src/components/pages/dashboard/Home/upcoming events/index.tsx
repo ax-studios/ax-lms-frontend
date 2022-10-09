@@ -1,7 +1,7 @@
 import { FC, useContext } from 'react';
 import Card from '..';
-import {AiOutlineCalendar} from "react-icons/ai";
-// import Eventcard from '../../Home/index';
+import CalenderIcon from '../../../../../icons/Sidebar Icons/CalenderIcon';
+import PlusIcon from '../../../../../icons/PlusIcon';
 import { UserContext } from '../../../../../data/userData';
 import {AiOutlinePlus} from "react-icons/ai";
 const Events: FC = () => {
@@ -13,7 +13,7 @@ const Events: FC = () => {
             </h2>
                  <div className="rounded-2xl border-2 border-base-content/10 bg-blue-500 shadow-lg shadow-blue-500/50  shadow-lg transition-all duration-200 hover:border-base-content/50 hover:shadow-xl">
                         <div className="flex text-center gap-1 p-3 px-5 text-black ">
-                         <AiOutlineCalendar className='text-[30px] '/> Go to Calendar
+                        <CalenderIcon  /> Go to Calendar
                       </div>
                     </div>
    
@@ -27,7 +27,7 @@ const Events: FC = () => {
                 ))}
                  <div className="rounded-2xl  border-dashed border-blue-500 border-2 border-base-content/10  ">
                         <div className="flex text-center  gap-1 p-3 px-5 text-blue-500 ">
-                         <AiOutlinePlus className='text-[30px]'/>
+                         <PlusIcon/>
                          <a href='/' > Add an Event
                          </a>
                       </div>
