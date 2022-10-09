@@ -5,7 +5,7 @@ import { UserContext } from '../../../../../data/userData';
 const Announcements: FC = () => {
   const { announcements } = useContext(UserContext);
   return (
-    <div className="flex max-w-lg flex-col gap-3 font-bold">
+    <div className="flex max-w-lg shrink-0 flex-col gap-3 font-bold">
       <h2 className="mb-2 text-3xl font-bold text-base-content">
         Announcement
       </h2>

@@ -4,10 +4,12 @@ import ExamSchedule from '../../components/pages/dashboard/Home/Exam Schedule';
 import UpcomingEvents from '../../components/pages/dashboard/Home/upcoming events';
 import ClassSchedule from '../../components/pages/dashboard/Home/ClassSchedule';
 
+
 const Home: FC = () => {
   return (
     <div >
     <div className="flex gap-5 p-4">
+    <div className="flex flex-wrap gap-5 p-4">
       <ExamSchedule />
       <Announcements />
       <ClassSchedule />
@@ -16,7 +18,7 @@ const Home: FC = () => {
       <UpcomingEvents />
   </div>
   </div>
-
+</div>
   );
 };
 

@@ -3,7 +3,7 @@ import Card from '..';
 import CalenderIcon from '../../../../../icons/Sidebar Icons/CalenderIcon';
 import PlusIcon from '../../../../../icons/PlusIcon';
 import { UserContext } from '../../../../../data/userData';
-import {AiOutlinePlus} from "react-icons/ai";
+
 const Events: FC = () => {
     const { events } = useContext(UserContext);
     return (

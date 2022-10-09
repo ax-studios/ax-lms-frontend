@@ -6,6 +6,7 @@ const ExamSchedule: FC = () => {
   const { examSchedule } = useContext(UserContext);
   return (
     <div className="flex max-w-lg flex-col gap-3 mx-5 font-bold">
+    <div className="flex max-w-lg shrink-0 flex-col gap-3 font-bold">
       <h2 className="mb-2 text-3xl font-bold text-base-content">
         Exam Schedule
       </h2>
@@ -22,6 +23,7 @@ const ExamSchedule: FC = () => {
           </div>
         </Card>
       ))}
+    </div>
     </div>
   );
 };
