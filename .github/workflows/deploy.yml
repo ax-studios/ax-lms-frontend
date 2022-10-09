@@ -12,6 +12,7 @@ jobs:
           token: ${{ secrets.VERCEL_TOKEN }}
           teamId: ${{ secrets.VERCEL_TEAM_ID }} # optional, without will use personal
           projectName: frontend-web # project name in Vercel
+          envVariableKeys: ENV_VAR1,ENV_VAR2
 
         env:
           ENV_VAR1: myEnvVar1
