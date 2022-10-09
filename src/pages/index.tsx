@@ -75,6 +75,14 @@ const Home: NextPage = () => (
         </div>
       ))}
     </section>
+    <div className="py-5 text-center text-xl">
+      <h2>💪 Thanks to all Contributors</h2>
+      <p>
+        Thanks a lot for spending your time helping Ax Studios grow. Thanks a
+        lot! Keep rocking 🍻
+      </p>
+    </div>
+
     <div className="py-4 text-center text-xl font-bold text-primary">
       © Ax Studios 2022
     </div>
