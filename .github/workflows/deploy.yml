@@ -13,6 +13,14 @@ jobs:
           teamId: ${{ secrets.VERCEL_TEAM_ID }} # optional, without will use personal
           projectName: frontend-web # project name in Vercel
 
+        env:
+          ENV_VAR1: myEnvVar1
+          TARGET_ENV_VAR1: production # comma delimited, one of [production, preview, development]
+          TYPE_ENV_VAR1: encrypted # one of [plain, encrypted]
+          ENV_VAR2: envVar2Value
+          TARGET_ENV_VAR2: preview,development
+          TYPE_ENV_VAR2: plain
+          
       # deploy app to vercel
       - name: deploy site to vercel
         uses: amondnet/vercel-action@v20
