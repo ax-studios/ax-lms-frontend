@@ -6,12 +6,17 @@ import ClassSchedule from '../../components/pages/dashboard/Home/ClassSchedule';
 
 const Home: FC = () => {
   return (
+    <div >
     <div className="flex gap-5 p-4">
       <ExamSchedule />
       <Announcements />
-      <UpcomingEvents />
       <ClassSchedule />
     </div>
+    <div className="flex gap-5 p-4">
+      <UpcomingEvents />
+  </div>
+  </div>
+
   );
 };
 
