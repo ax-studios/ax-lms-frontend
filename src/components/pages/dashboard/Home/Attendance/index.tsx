@@ -2,6 +2,7 @@ import { FC, useContext } from 'react';
 import Card from '..';
 import { UserContext } from '../../../../../data/userData';
 import TotalIcon from '../../../../../icons/Course Icons/TotalIcon';
+import AttendancePie from '../../Charts/attendancePie';
 
 const Attendance: FC = () => {
   const { attendance } = useContext(UserContext);
@@ -12,6 +13,7 @@ const Attendance: FC = () => {
       <h2 className="mb-2 text-3xl font-bold text-base-content">Attendance</h2>
       <Card>
         <div className="flex flex-col gap-3 px-8 py-5">
+          <AttendancePie />
           {attendance.map((item) => {
             totalDaysAttended += item.days_attended;
             totalDaysTotal += item.days_total;

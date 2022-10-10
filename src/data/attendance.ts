@@ -9,6 +9,7 @@ export interface attendanceInterface {
   days_attended: number;
   days_total: number;
   icon: React.FC<any>;
+  color: string;
 }
 
 const attendance: attendanceInterface[] = [
@@ -18,6 +19,7 @@ const attendance: attendanceInterface[] = [
     days_attended: 10,
     days_total: 30,
     icon: ComputerIcon,
+    color: '#EC485B',
   },
 
   {
@@ -26,6 +28,7 @@ const attendance: attendanceInterface[] = [
     days_attended: 30,
     days_total: 35,
     icon: SystemIcon,
+    color: '#5FEC48',
   },
 
   {
@@ -34,6 +37,7 @@ const attendance: attendanceInterface[] = [
     days_attended: 20,
     days_total: 25,
     icon: JavaIcon,
+    color: '#4880EC',
   },
 
   {
@@ -42,6 +46,7 @@ const attendance: attendanceInterface[] = [
     days_attended: 20,
     days_total: 35,
     icon: DatabaseIcon,
+    color: '#ECAB48',
   },
 ];
 
