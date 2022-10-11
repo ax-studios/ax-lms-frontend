@@ -36,7 +36,7 @@ const DashboardWrapper: FC<DashboardWrapperProps> = ({ children }) => {
     return (
       <SettingsContext.Provider value={defaultSettings}>
         {/* eslint-disable-next-line prettier/prettier */}
-        <div className="drawer drawer-mobile" data-theme={theme}>
+        <div className="drawer-mobile drawer" data-theme={theme}>
           <input
             id="my-drawer-2"
             type="checkbox"
@@ -45,7 +45,7 @@ const DashboardWrapper: FC<DashboardWrapperProps> = ({ children }) => {
             onChange={defaultSettings.toggleDrawer}
           />
           <div className="drawer-content flex">
-            <div className="w-full">
+            <div className="h-screen w-full overflow-x-hidden overflow-y-scroll">
               <Header />
               {children}
             </div>

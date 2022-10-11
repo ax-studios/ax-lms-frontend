@@ -48,8 +48,7 @@ const Sidebar: FC = () => {
             <li
               key={option.name}
               className={`from-primary/50 to-primary/10  text-xl  ${
-                router.query.dash !== undefined &&
-                router.query.dash[0] === option.link
+                router.asPath.split('/')[2] === option.link
                   ? 'bordered bg-gradient-to-l '
                   : 'hover-bordered hover:bg-gradient-to-l focus:bg-gradient-to-l'
               }`}
