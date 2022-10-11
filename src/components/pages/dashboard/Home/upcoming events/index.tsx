@@ -4,6 +4,7 @@ import CalenderIcon from '../../../../../icons/Sidebar Icons/CalenderIcon';
 import PlusIcon from '../../../../../icons/PlusIcon';
 import { UserContext } from '../../../../../data/userData';
 import Link from 'next/link';
+import { IconWrapper } from '../../../../core';
 
 const Events: FC = () => {
   const { events } = useContext(UserContext);
@@ -14,7 +15,10 @@ const Events: FC = () => {
       </h2>
       <div className="rounded-2xl border-2 border-base-content/10 bg-blue-500 shadow-lg shadow-lg  shadow-blue-500/50 transition-all duration-200 hover:border-base-content/50 hover:shadow-xl">
         <div className="flex gap-1 p-3 px-5 text-center text-black ">
-          <CalenderIcon /> Go to Calendar
+          <IconWrapper height={35} width={35}>
+            <CalenderIcon />
+          </IconWrapper>
+          Go to Calendar
         </div>
       </div>
 
