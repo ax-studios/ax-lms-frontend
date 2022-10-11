@@ -1,6 +1,5 @@
 import { FC } from 'react';
 import Announcements from '../../components/pages/dashboard/Home/Announcement';
-import ExamSchedule from '../../components/pages/dashboard/Home/Exam Schedule';
 import ClassSchedule from '../../components/pages/dashboard/Home/ClassSchedule';
 import Attendance from '../../components/pages/dashboard/Home/Attendance';
 
