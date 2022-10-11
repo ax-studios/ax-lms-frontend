@@ -4,7 +4,7 @@ import SearchIcon from '../../../../../icons/SearchIcon';
 
 const Header: FC = () => {
   return (
-    <div className="sticky top-0 flex h-20 items-center justify-start gap-2 px-4 text-2xl font-bold">
+    <div className="sticky top-0 flex h-20 items-center justify-start gap-2 bg-base-300 px-4 text-2xl font-bold">
       <div className="relative flex w-full items-center justify-between gap-4">
         <input
           type="text"
