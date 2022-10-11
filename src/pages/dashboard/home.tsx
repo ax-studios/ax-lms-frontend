@@ -1,7 +1,8 @@
 import { FC } from 'react';
 import Announcements from '../../components/pages/dashboard/Home/Announcement';
-import ClassSchedule from '../../components/pages/dashboard/Home/ClassSchedule';
 import ExamSchedule from '../../components/pages/dashboard/Home/Exam Schedule';
+import UpcomingEvents from '../../components/pages/dashboard/Home/upcoming events';
+import ClassSchedule from '../../components/pages/dashboard/Home/ClassSchedule';
 
 const Home: FC = () => {
   return (
@@ -9,6 +10,7 @@ const Home: FC = () => {
       <ExamSchedule />
       <Announcements />
       <ClassSchedule />
+      <UpcomingEvents />
     </div>
   );
 };
