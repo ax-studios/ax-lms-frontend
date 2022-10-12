@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import {
   Announcements,
+  Attendance,
   ClassSchedule,
   ExamSchedule,
   UpcomingEvents,
@@ -12,6 +13,7 @@ const Home: FC = () => {
       <ExamSchedule />
       <Announcements />
       <UpcomingEvents />
+      <Attendance />
       <ClassSchedule />
     </div>
   );
