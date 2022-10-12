@@ -2,6 +2,7 @@ import { createContext } from 'react';
 import examSchedule from './examSchedule';
 import tasks from './tasks';
 import announcements from './announcements';
+import events from './upcoming_events';
 import classSchedule from './class-schedule';
 import attendance from './attendance';
 
@@ -35,6 +36,7 @@ export const UserData = {
   tasks,
   examSchedule,
   announcements,
+  events,
   classSchedule,
   attendance,
 };

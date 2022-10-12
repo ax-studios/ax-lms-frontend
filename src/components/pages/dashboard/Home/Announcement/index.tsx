@@ -1,5 +1,4 @@
 import { FC, useContext } from 'react';
-import Card from '..';
 import { UserContext } from '../../../../../data/userData';
 
 const Announcements: FC = () => {
@@ -7,15 +6,18 @@ const Announcements: FC = () => {
   return (
     <div className="flex max-w-lg shrink-0 flex-col gap-3 font-bold">
       <h2 className="mb-2 text-3xl font-bold text-base-content">
-        Exam Schedule
+        Announcement
       </h2>
       {announcements.map((announcement) => (
-        <Card key={announcement.id}>
-          <div className="flex flex-col gap-1 p-3 px-5">
-            <span className="text-sm font-semibold">{announcement.date}</span>
-            <span className="">{announcement.name}</span>
-          </div>
-        </Card>
+        <div
+          key={announcement.id}
+          className="gradient-card flex flex-col gap-1 p-3 px-5"
+        >
+          <span className="text-sm font-semibold text-base-content/70">
+            {announcement.date}
+          </span>
+          <span>{announcement.name}</span>
+        </div>
       ))}
     </div>
   );

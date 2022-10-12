@@ -10,7 +10,7 @@ const ToDoList: FC = () => {
   return (
     <div
       className={`fixed bottom-0 left-0 w-full shrink-0 rounded-t-[2rem] border border-primary/30 bg-base-200 p-5 py-4 transition-all duration-300 lg:relative lg:h-full lg:rounded-l-[2rem] lg:rounded-tr-none ${
-        toDoCollapsed ? 'lg:w-[60px]' : 'lg:w-[500px]'
+        toDoCollapsed ? 'lg:max-w-[60px]' : 'lg:max-w-[500px]'
       }`}
     >
       <p
@@ -21,7 +21,12 @@ const ToDoList: FC = () => {
         To-do List
       </p>
       <Tasks />
-      <ToggleCollapsed left="0px" toggle={toggleToDoCollapsed} />
+      <ToggleCollapsed
+        className={`right-0 top-0 transition-all duration-300 md:top-auto md:right-auto md:left-0 ${
+          toDoCollapsed ? 'rotate-90 md:rotate-0' : '-rotate-90 md:rotate-180'
+        }`}
+        toggle={toggleToDoCollapsed}
+      />
     </div>
   );
 };
