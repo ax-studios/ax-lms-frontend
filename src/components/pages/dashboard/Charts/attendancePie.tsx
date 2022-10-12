@@ -1,7 +1,7 @@
-import { FC, useState, useEffect } from 'react';
-import { Pie } from '@visx/shape';
 import { Group } from '@visx/group';
+import { Pie } from '@visx/shape';
 import { Text } from '@visx/text';
+import { FC, useEffect, useState } from 'react';
 import attendance from '../../../../data/attendance';
 
 // types
@@ -48,7 +48,7 @@ const AttendancePie: FC = () => {
     });
 
     setItems(pieItems);
-  }, []);
+  }, [totalDays, totalDaysAttended]);
 
   return (
     <svg width={width} height={width}>
@@ -79,7 +79,7 @@ const AttendancePie: FC = () => {
                       fill={arc.data.font_color}
                       fontSize="16"
                     >
-                      {`${arc.data.porcentage}%`}
+                      {`${String(arc.data.porcentage)}%`}
                     </Text>
                   </g>
                 </g>

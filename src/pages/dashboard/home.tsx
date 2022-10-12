@@ -1,11 +1,11 @@
 import { FC } from 'react';
 import {
   Announcements,
+  Attendance,
   ClassSchedule,
   ExamSchedule,
   UpcomingEvents,
 } from '../../components/pages/dashboard/Home';
-import Attendance from '../../components/pages/dashboard/Home/Attendance';
 
 const Home: FC = () => {
   return (
@@ -13,7 +13,7 @@ const Home: FC = () => {
       <ExamSchedule />
       <Announcements />
       <UpcomingEvents />
-      <Attendance/>
+      <Attendance />
       <ClassSchedule />
     </div>
   );

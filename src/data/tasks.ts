@@ -30,7 +30,8 @@ const tasks: taskInterface[] = [
   {
     id: 3,
     name: 'Task 3',
-    description: 'Description 3',
+    description:
+      'Description 3 This Is large descript of task to see what the Ui changes happen when the text is large',
     dueDate: '2020-12-31T00:00:00.000Z',
     priority: 'Low',
     createdDate: '2020-12-31T00:00:00.000Z',
