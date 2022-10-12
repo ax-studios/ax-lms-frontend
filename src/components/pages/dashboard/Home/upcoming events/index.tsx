@@ -29,7 +29,7 @@ const UpcomingEvents: FC = () => {
           <span className="">{event.name}</span>
         </div>
       ))}
-      <div className="flex items-center justify-center gap-1 rounded-2xl border-2 border-dashed border-primary border-base-content/10 bg-gradient-to-br from-base-content/20 via-base-content/10 to-white/0 py-5 text-center text-primary shadow-lg shadow-primary/10 hover:shadow-primary/20">
+      <div className="flex items-center justify-center gap-1 rounded-2xl border-2 border-dashed border-primary bg-gradient-to-br from-base-content/20 via-base-content/10 to-white/0 py-5 text-center text-primary shadow-lg shadow-primary/10 hover:shadow-primary/20">
         <IconWrapper>
           <PlusIcon />
         </IconWrapper>
