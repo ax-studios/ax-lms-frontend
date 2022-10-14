@@ -16,7 +16,7 @@ const DashboardWrapper: FC<DashboardWrapperProps> = ({ children }) => {
   >('synthwave');
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [drawerCollapsed, setDrawerCollapsed] = useState(true);
-  const [toDoCollapsed, setToDoCollapsed] = useState(true);
+  const [toDoCollapsed, setToDoCollapsed] = useState(false);
 
   const defaultSettings = {
     theme,
@@ -36,7 +36,7 @@ const DashboardWrapper: FC<DashboardWrapperProps> = ({ children }) => {
     return (
       <SettingsContext.Provider value={defaultSettings}>
         {/* eslint-disable-next-line prettier/prettier */}
-        <div className="drawer-mobile drawer" data-theme={theme}>
+        <div className="drawer drawer-mobile" data-theme={theme}>
           <input
             id="my-drawer-2"
             type="checkbox"
@@ -44,7 +44,7 @@ const DashboardWrapper: FC<DashboardWrapperProps> = ({ children }) => {
             checked={drawerOpen}
             onChange={defaultSettings.toggleDrawer}
           />
-          <div className="drawer-content flex">
+          <div className="drawer-content flex h-screen overflow-hidden">
             <div className="h-screen w-full overflow-x-hidden overflow-y-scroll">
               <Header />
               {children}
