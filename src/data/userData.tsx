@@ -40,6 +40,6 @@ export const UserData = {
   events,
   classSchedule,
   attendance,
-  news
+  news,
 };
 export const UserContext = createContext<typeof UserData>(UserData);

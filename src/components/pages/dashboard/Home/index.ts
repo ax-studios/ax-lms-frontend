@@ -11,5 +11,5 @@ export {
   ExamSchedule,
   UpcomingEvents,
   Attendance,
-  NewsOfAI
+  NewsOfAI,
 };
