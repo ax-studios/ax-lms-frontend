@@ -3,7 +3,7 @@ export interface taskInterface {
   name: string;
   description: string;
   dueDate: string;
-  priority: 'High' | 'Medium' | 'Low';
+  priority: 'high' | 'medium' | 'low';
   createdDate: string;
   modifiedDate: string;
 }
@@ -14,7 +14,7 @@ const tasks: taskInterface[] = [
     name: 'Task 1',
     description: 'Description 1',
     dueDate: '2020-12-31T00:00:00.000Z',
-    priority: 'High',
+    priority: 'high',
     createdDate: '2020-12-31T00:00:00.000Z',
     modifiedDate: '2020-12-31T00:00:00.000Z',
   },
@@ -23,7 +23,7 @@ const tasks: taskInterface[] = [
     name: 'Task 2',
     description: 'Description 2',
     dueDate: '2020-12-31T00:00:00.000Z',
-    priority: 'Medium',
+    priority: 'medium',
     createdDate: '2020-12-31T00:00:00.000Z',
     modifiedDate: '2020-12-31T00:00:00.000Z',
   },
@@ -33,7 +33,7 @@ const tasks: taskInterface[] = [
     description:
       'Description 3 This Is large descript of task to see what the Ui changes happen when the text is large',
     dueDate: '2020-12-31T00:00:00.000Z',
-    priority: 'Low',
+    priority: 'low',
     createdDate: '2020-12-31T00:00:00.000Z',
     modifiedDate: '2020-12-31T00:00:00.000Z',
   },

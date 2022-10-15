@@ -14,14 +14,14 @@ Filled.args = {
   children: 'Submit',
   onClick: () => {},
   disabled: false,
-  type: 'filled',
+  style: 'filled',
 };
 export const Outlined = Template.bind({});
 Outlined.args = {
   children: 'Submit',
   onClick: () => {},
   disabled: false,
-  type: 'outline',
+  style: 'outline',
 };
 
 export const Disabled = Template.bind({});
@@ -29,5 +29,5 @@ Disabled.args = {
   children: 'Submit',
   onClick: () => {},
   disabled: true,
-  type: 'filled',
+  style: 'filled',
 };

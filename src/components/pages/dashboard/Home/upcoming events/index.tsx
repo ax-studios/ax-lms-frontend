@@ -11,12 +11,12 @@ const UpcomingEvents: FC = () => {
       <h2 className="mb-2 text-3xl font-bold text-base-content">
         Upcoming Events
       </h2>
-      <div className="flex items-center justify-center gap-1 rounded-2xl  bg-primary py-4 text-center text-base-300 shadow-lg shadow-primary/30 transition-all duration-200 hover:shadow-xl">
+      <button className="btn btn-primary h-16 items-center gap-1 text-lg shadow-lg shadow-primary/30 hover:shadow-xl">
         <IconWrapper height={35} width={35}>
           <CalenderIcon />
         </IconWrapper>
         Go to Calendar
-      </div>
+      </button>
 
       {events.map((event) => (
         <div
@@ -29,12 +29,12 @@ const UpcomingEvents: FC = () => {
           <span className="">{event.name}</span>
         </div>
       ))}
-      <div className="flex items-center justify-center gap-1 rounded-2xl border-2 border-dashed border-primary border-base-content/10 bg-gradient-to-br from-base-content/20 via-base-content/10 to-white/0 py-5 text-center text-primary shadow-lg shadow-primary/10 hover:shadow-primary/20">
+      <button className="btn flex h-16  items-center justify-center gap-1 border-2 border-dashed border-primary bg-transparent bg-gradient-to-br from-base-content/20 via-base-content/10 to-white/0 py-5 text-center text-primary shadow-lg shadow-primary/10 hover:border-primary hover:bg-transparent hover:shadow-primary/20">
         <IconWrapper>
           <PlusIcon />
         </IconWrapper>
         <span>Add an Event</span>
-      </div>
+      </button>
     </div>
   );
 };

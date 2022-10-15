@@ -6,23 +6,23 @@ import Tasks from './Tasks';
 
 const ToDoList: FC = () => {
   const { toDoCollapsed, toggleToDoCollapsed } = useContext(SettingsContext);
-  // const { open, closed } = width.Todo;
   return (
     <>
       <div
-        className={`fixed top-0 left-0 h-screen w-screen bg-primary/10 backdrop-blur transition-all duration-200 ${
+        className={`let-0 fixed top-0 h-screen w-screen cursor-pointer select-none backdrop-blur transition-all duration-200 ${
           toDoCollapsed
             ? 'invisible opacity-0'
-            : 'visible opacity-100 md:invisible  md:opacity-0'
+            : 'visible opacity-100 lg:invisible lg:opacity-0'
         }`}
+        onClick={toggleToDoCollapsed}
       />
       <div
-        className={`fixed bottom-0 left-0 w-full shrink-0 rounded-t-[2rem] border border-primary/30 bg-base-200 py-4 transition-all duration-300 lg:relative lg:h-full lg:rounded-l-[2rem] lg:rounded-tr-none ${
+        className={`fixed bottom-0 left-0 w-full shrink-0 rounded-t-[2rem] border border-primary/30 bg-base-200 pb-0 transition-all duration-300 lg:relative lg:h-auto lg:rounded-l-[2rem] lg:rounded-tr-none lg:pb-5 ${
           toDoCollapsed ? 'lg:max-w-[60px]' : 'lg:max-w-[500px]'
         }`}
       >
         <p
-          className={`whitespace-nowrap px-5 text-2xl font-bold transition-all duration-300 lg:h-auto ${
+          className={`flex h-16 items-center whitespace-nowrap px-4 text-3xl font-bold text-base-content transition-all  duration-300 lg:h-20 ${
             toDoCollapsed ? 'lg:rotate-90' : ''
           }`}
         >

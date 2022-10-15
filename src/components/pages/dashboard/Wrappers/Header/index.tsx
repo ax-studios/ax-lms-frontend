@@ -9,7 +9,7 @@ const Header: FC = () => {
         <input
           type="text"
           placeholder="Search..."
-          className="input input-bordered h-14 w-full max-w-xs rounded-full bg-base-200 pl-10 text-lg outline-none transition-all duration-300 focus:max-w-md focus:outline-none"
+          className="input input-bordered h-14 w-full max-w-xs rounded-full bg-base-200 pl-10 text-lg outline-none transition-all duration-300 focus:max-w-md focus:outline-primary"
         />
         <span className="absolute left-4 top-1/2 w-5 -translate-y-1/2">
           <SearchIcon />

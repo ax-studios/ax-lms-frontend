@@ -1,21 +1,24 @@
-import { FC, ReactElement } from 'react';
+import { ButtonHTMLAttributes, FC, ReactElement } from 'react';
 
 interface CTAProps {
   children: string;
   onClick: () => void;
   disabled?: boolean;
-  type?: 'filled' | 'outline';
+  style?: 'filled' | 'outline';
+  type?: ButtonHTMLAttributes<HTMLButtonElement>['type'];
 }
 
 const CTA: FC<CTAProps> = ({
   children,
   onClick,
   disabled,
-  type = 'filled',
+  type,
+  style = 'filled',
 }): ReactElement => {
   return (
     <button
-      className={`btn btn-primary ${type === 'outline' ? 'btn-outline' : ''}`}
+      type={type}
+      className={`btn btn-primary ${style === 'outline' ? 'btn-outline' : ''}`}
       onClick={onClick}
       disabled={disabled}
     >

@@ -56,7 +56,7 @@ const Sidebar: FC = () => {
               <Link href={`/dashboard/${option.link}`}>
                 <a
                   onClick={toggleDrawer}
-                  className={`items-center !rounded-none py-4 hover:bg-transparent focus:bg-transparent ${
+                  className={`items-center !rounded-none py-4 hover:bg-transparent  ${
                     drawerCollapsed ? 'justify-center' : 'justify-start'
                   }`}
                 >
