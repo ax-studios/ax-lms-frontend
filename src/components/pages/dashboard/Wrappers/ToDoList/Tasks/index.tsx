@@ -6,9 +6,10 @@ import AddTask from '../AddTask';
 import Task from '../Task';
 const Tasks: FC = () => {
   const { toDoCollapsed } = useContext(SettingsContext);
-  const { tasks, addTask, removeTask } = useTodo();
+  const todoHook = useTodo();
+
   return (
-    <TodoContext.Provider value={{ tasks, addTask, removeTask }}>
+    <TodoContext.Provider value={todoHook}>
       <div
         className={`flex flex-col gap-4 overflow-x-hidden overflow-y-scroll px-4 transition-all duration-300  ${
           toDoCollapsed
@@ -16,8 +17,8 @@ const Tasks: FC = () => {
             : 'h-[calc(85vh-80px-16px)] pb-5 lg:h-[calc(100vh-80px-20px)] lg:pb-2'
         }`}
       >
-        {tasks.length > 0 ? (
-          tasks.map((task, i) => (
+        {todoHook.tasks.length > 0 ? (
+          todoHook.tasks.map((task, i) => (
             <Task delay={100 + i * 50} key={task.id} task={task} />
           ))
         ) : (

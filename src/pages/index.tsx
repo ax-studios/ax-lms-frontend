@@ -23,13 +23,13 @@ const Home: NextPage = () => (
           target="_blank"
           rel="noreferrer"
         >
-          <CTA onClick={() => {}} type="outline">
+          <CTA onClick={() => {}} style="outline">
             Source Code
           </CTA>
         </a>
         <Link href="/dashboard">
           <a>
-            <CTA onClick={() => {}} type="outline">
+            <CTA onClick={() => {}} style="outline">
               Dashboard
             </CTA>
           </a>

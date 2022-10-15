@@ -8,22 +8,40 @@ interface Props {
 }
 
 const TaskOptions: FC<Props> = ({ todoId }) => {
-  const { removeTask } = useContext(TodoContext);
+  const { removeTask, setEditKey } = useContext(TodoContext);
   return (
     <ul
       className={
-        'menu menu-horizontal absolute top-1/2 right-0 h-full origin-right -translate-y-1/2  scale-0 select-none border border-transparent border-l-base-content/60 bg-base-100 transition-all duration-200 group-hover:scale-100'
+        'menu menu-horizontal h-full select-none transition-all duration-200 focus-within:scale-100 lg:absolute lg:top-1/2 lg:right-0 lg:origin-right lg:-translate-y-1/2 lg:scale-0 lg:border lg:border-transparent lg:border-l-base-content/60 lg:bg-base-100 lg:group-hover:scale-100'
       }
     >
       <li>
-        <a onClick={() => removeTask(todoId)}>
+        <a
+          onClick={() => removeTask(todoId)}
+          onKeyUp={(e) => {
+            if (e.code === 'Space' || e.code === 'Enter') {
+              removeTask(todoId);
+            }
+          }}
+          tabIndex={0}
+          className=""
+        >
           <span className="h-5 w-5">
             <TrashIcon />
           </span>
         </a>
       </li>
       <li>
-        <a>
+        <a
+          onClick={() => setEditKey(todoId)}
+          onKeyUp={(e) => {
+            if (e.code === 'Space' || e.code === 'Enter') {
+              setEditKey(todoId);
+            }
+          }}
+          tabIndex={0}
+          className=""
+        >
           <span className="h-5 w-5">
             <EditIcon />
           </span>

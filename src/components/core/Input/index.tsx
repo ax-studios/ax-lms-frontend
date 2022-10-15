@@ -19,6 +19,7 @@ interface InputProps {
   value: string;
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
   error?: null | string;
+  className?: string;
 }
 
 const Input: FC<InputProps> = ({
@@ -32,6 +33,7 @@ const Input: FC<InputProps> = ({
   displayName,
   value,
   error,
+  className,
 }): ReactElement => {
   const [inputType, setInputType] = useState(type);
   const handleShow = (): void => {
@@ -41,13 +43,15 @@ const Input: FC<InputProps> = ({
   };
   return (
     <div>
-      <label className="text-slate relative block text-sm font-medium">
+      <label className="relative block text-sm font-medium">
         {displayName}
         <input
           type={inputType}
           id={id}
           name={name}
-          className="text-medium mt-2 block w-full rounded-lg border border-slate-50/10 bg-slate-50/10 p-3 outline-none  focus:ring-2 focus:ring-blue-500"
+          className={`text-medium mt-2 block w-full ${
+            typeof className !== 'undefined' ? className : ''
+          }`}
           placeholder={
             type === 'password'
               ? inputType === 'password'
