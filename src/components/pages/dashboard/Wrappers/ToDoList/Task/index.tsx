@@ -27,8 +27,8 @@ const Task: FC<Props> = ({ delay, task }) => {
           <b className="">{task.name}</b>
           <div className=" text-xs font-medium">{task.description}</div>
         </div>
-        <div className="relative inline-block text-xs font-medium">
-          {new Date(task.dueDate).toDateString()}
+        <div className="relative col-span-2 inline-block shrink-0 text-right text-xs font-medium">
+          {new Date(task.dueDate).toLocaleString()}
         </div>
         <TaskOptions todoId={task.id} />
       </div>

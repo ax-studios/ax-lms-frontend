@@ -4,6 +4,8 @@ import tasks from './tasks';
 import announcements from './announcements';
 import events from './upcoming_events';
 import classSchedule from './class-schedule';
+import attendance from './attendance';
+import news from './news';
 
 export const UserData = {
   name: 'Chandraprakash Darji',
@@ -37,5 +39,7 @@ export const UserData = {
   announcements,
   events,
   classSchedule,
+  attendance,
+  news,
 };
 export const UserContext = createContext<typeof UserData>(UserData);

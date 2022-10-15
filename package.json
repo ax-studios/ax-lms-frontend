@@ -12,6 +12,9 @@
   },
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@visx/group": "^2.10.0",
+    "@visx/shape": "^2.12.2",
+    "@visx/text": "^2.12.2",
     "daisyui": "^2.27.0",
     "eslint-config-standard-with-typescript": "^22.0.0",
     "eslint-plugin-import": "2.25.3",
