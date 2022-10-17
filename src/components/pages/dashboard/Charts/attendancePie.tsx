@@ -53,11 +53,8 @@ const AttendancePie: FC = () => {
     if (mount.current) {
       const response = fectchData();
       setItems(response);
-    }
-
-    return () => {
       mount.current = false;
-    };
+    }
   }, []);
 
   return (
