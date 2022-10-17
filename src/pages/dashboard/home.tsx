@@ -4,21 +4,25 @@ import {
   Attendance,
   ClassSchedule,
   ExamSchedule,
+  News,
   UpcomingEvents,
-  NewsOfAI,
 } from '../../components/pages/dashboard/Home';
 
 const Home: FC = () => {
   return (
-    <div className="grid grid-flow-row-dense gap-5 p-4 md:grid-cols-3">
-      <ExamSchedule />
-      <Announcements />
-      <div className="row-span-3">
-        <NewsOfAI />
+    <div className="flex flex-wrap gap-5 p-4">
+      <div className="flex flex-col flex-wrap gap-5">
+        <ClassSchedule />
+        <ExamSchedule />
       </div>
-      <UpcomingEvents />
-      <Attendance />
-      <ClassSchedule />
+      <div className="flex flex-col flex-wrap gap-5">
+        <Announcements />
+        <News />
+      </div>
+      <div className="flex flex-col flex-wrap gap-5">
+        <UpcomingEvents />
+        <Attendance />
+      </div>
     </div>
   );
 };

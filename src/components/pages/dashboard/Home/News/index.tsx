@@ -1,7 +1,7 @@
 import { FC, useContext } from 'react';
 import { UserContext } from '../../../../../data/userData';
 
-const NewsOfAI: FC = () => {
+const News: FC = () => {
   // extracting news data from context
   const { news } = useContext(UserContext);
   return (
@@ -21,4 +21,4 @@ const NewsOfAI: FC = () => {
     </div>
   );
 };
-export default NewsOfAI;
+export default News;

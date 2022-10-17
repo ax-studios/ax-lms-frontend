@@ -3,7 +3,7 @@ import Attendance from './Attendance';
 import ClassSchedule from './ClassSchedule';
 import ExamSchedule from './ExamSchedule';
 import UpcomingEvents from './upcoming events';
-import NewsOfAI from './News';
+import News from './News';
 
 export {
   Announcements,
@@ -11,5 +11,5 @@ export {
   ExamSchedule,
   UpcomingEvents,
   Attendance,
-  NewsOfAI,
+  News,
 };

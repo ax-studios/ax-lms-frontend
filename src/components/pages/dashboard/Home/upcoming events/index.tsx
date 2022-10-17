@@ -7,7 +7,7 @@ import { IconWrapper } from '../../../../core';
 const UpcomingEvents: FC = () => {
   const { events } = useContext(UserContext);
   return (
-    <div className="flex w-full max-w-sm shrink-0 flex-col gap-3 font-bold">
+    <div className="flex w-full max-w-[21rem] shrink-0 flex-col gap-3 font-bold">
       <h2 className="mb-2 text-3xl font-bold text-base-content">
         Upcoming Events
       </h2>

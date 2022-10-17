@@ -8,7 +8,7 @@ const Attendance: FC = () => {
   let totalDaysAttended = 0;
   let totalDaysTotal = 0;
   return (
-    <div className="flex max-w-lg flex-col gap-3 font-bold">
+    <div className="flex w-full max-w-[21rem] flex-col gap-3 font-bold">
       <h2 className="mb-2 text-3xl font-bold text-base-content">Attendance</h2>
       <div className="gradient-card flex flex-col items-center gap-3 px-8 py-5">
         <AttendancePie />
