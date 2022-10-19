@@ -8,6 +8,7 @@ import {
 } from '../../../components/pages/dashboard/Profile';
 import { UserContext } from '../../../data/userData';
 import EditIcon from '../../../icons/EditIcon';
+import LinkIcon from '../../../icons/LinkIcon';
 
 const tabs = [
   {
@@ -58,7 +59,7 @@ const User: NextPage = () => {
               rel="noreferrer"
             >
               <IconWrapper>
-                <EditIcon />
+                <LinkIcon />
               </IconWrapper>
               <span>{userData.profileSpecialLink.name}</span>
             </a>
