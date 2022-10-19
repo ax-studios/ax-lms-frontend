@@ -23,7 +23,7 @@ const UpcomingEvents: FC = () => {
           <span className="">{event.name}</span>
         </div>
       ))}
-      <button className="btn flex h-16  items-center justify-center gap-1 border-2 border-dashed border-primary bg-transparent bg-gradient-to-br from-base-content/20 via-base-content/10 to-white/0 py-5 text-center text-primary shadow-lg shadow-primary/10 hover:border-primary hover:bg-transparent hover:shadow-primary/20">
+      <button className="btn flex h-16 items-center justify-center gap-1 border-2 border-dashed border-primary bg-transparent py-5 text-center shadow-lg shadow-primary/10 hover:border-primary hover:bg-transparent hover:shadow-primary/20">
         <span className="block aspect-square h-6">
           <PlusIcon />
         </span>

@@ -25,7 +25,7 @@ const User: NextPage = () => {
   const userData = useContext(UserContext);
   const [selectedTab, setSelectedTab] = useState<'about' | 'records'>('about');
   return (
-    <div className="container mx-auto overflow-hidden rounded-xl border-2 border-primary/40 pb-2 md:pb-10">
+    <div className="container mx-auto mt-7 overflow-hidden rounded-xl border-2 border-primary/40 pb-2 md:pb-10">
       <div className="relative h-32 w-full md:h-80">
         <Image
           src={userData.banner}
