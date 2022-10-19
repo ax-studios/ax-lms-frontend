@@ -16,12 +16,8 @@ const Sidebar: FC = () => {
   const router = useRouter();
   const sidebarOptions = useSidebarMenu();
   const sidebarIcons = useSidebarIcons();
-  const {
-    toggleDrawer,
-    drawerCollapsed,
-    setDrawerCollapsed,
-    toggleDrawerCollapsed,
-  } = useContext(SettingsContext);
+  const { toggleDrawer, drawerCollapsed, toggleDrawerCollapsed } =
+    useContext(SettingsContext);
   const { open, closed } = width.drawer;
   const [modalState, setModalState] = useState(false);
   const handleModalState = (): void => setModalState((p) => !p);

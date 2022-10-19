@@ -3,6 +3,7 @@ import { FC, useState } from 'react';
 import { SettingsContext } from '../../../lib/context/settings';
 import Header from './Wrappers/Header';
 import Sidebar from './Wrappers/Sidebar';
+import ToDoList from './Wrappers/ToDoList';
 
 interface DashboardWrapperProps {
   children: React.ReactNode;
@@ -48,8 +49,7 @@ const DashboardWrapper: FC<DashboardWrapperProps> = ({ children }) => {
               <Header />
               <div className="p-2 md:p-5 ">{children}</div>
             </div>
-            {/* TODO */}
-            {/* <ToDoList /> */}
+            <ToDoList />
           </div>
           <div className="drawer-side">
             <div
