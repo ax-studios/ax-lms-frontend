@@ -8,23 +8,17 @@
 ::-webkit-scrollbar-thumb {
   @apply rounded-full bg-primary;
 }
-.menu li.bordered a {
-  @apply border-0 border-r-4;
-}
-.menu li.hover-bordered a {
-  @apply border-0 border-r-4 border-transparent;
-}
 
 .gradient-card {
-  @apply rounded-2xl border-2 border-primary/10 bg-gradient-to-br from-base-content/20 via-base-content/10 to-white/0 shadow-lg transition-all duration-200  hover:border-primary/50 hover:shadow-xl;
+  @apply rounded-2xl border-2 border-primary/10 bg-gradient-to-br from-primary/20 via-primary/10 to-white/0 shadow-lg transition-all duration-200  hover:border-primary/50 hover:shadow-xl;
 }
 
 .todo-high {
-  background-color: rgb(247, 100, 100);
+  @apply btn-error;
 }
 .todo-medium {
-  background-color: rgb(247, 245, 100);
+  @apply btn-info;
 }
 .todo-low {
-  background-color: rgb(100, 247, 107);
+  @apply btn-success;
 }

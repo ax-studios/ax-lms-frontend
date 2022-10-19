@@ -1,39 +1,46 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { FC, useContext, useState } from 'react';
+import { ArrowIcon } from '../../../../../icons';
+import SearchIcon from '../../../../../icons/SearchIcon';
 import { useSidebarIcons } from '../../../../../icons/Sidebar Icons';
 import { width } from '../../../../../lib/config';
 import { SettingsContext } from '../../../../../lib/context/settings';
 import useSidebarMenu from '../../../../../lib/hooks/useSidebarMenu';
-import { IconWrapper, Logo } from '../../../../core';
+import { Logo } from '../../../../core';
 import Modal from '../../../../core/Modal';
-import ProfileCard from '../ProfileCard';
+import ProfileMenu from '../ProfileMenu';
 import SettingModal from '../SettingsModal.tsx';
 
 const Sidebar: FC = () => {
   const router = useRouter();
   const sidebarOptions = useSidebarMenu();
   const sidebarIcons = useSidebarIcons();
-  const { toggleDrawer, drawerCollapsed } = useContext(SettingsContext);
+  const {
+    toggleDrawer,
+    drawerCollapsed,
+    setDrawerCollapsed,
+    toggleDrawerCollapsed,
+  } = useContext(SettingsContext);
   const { open, closed } = width.drawer;
   const [modalState, setModalState] = useState(false);
   const handleModalState = (): void => setModalState((p) => !p);
   return (
     <>
       <aside
-        className="max-h-screen select-none overflow-hidden border-r-2 border-primary/30 bg-base-100 text-base-content"
+        className="max-h-screen select-none overflow-x-hidden border-r-2 border-primary/30 bg-base-100 text-base-content"
         style={{
           width: drawerCollapsed ? closed : open,
         }}
       >
         <div
-          className={`sticky top-0 flex h-20 items-center gap-2 whitespace-nowrap border-b-2 border-primary/30 bg-base-200 px-4 text-2xl font-bold ${
+          className={`sticky top-0 z-50 flex h-20 items-center gap-2 whitespace-nowrap border-b-2 border-primary/30 bg-base-300 p-4 text-2xl font-bold ${
             drawerCollapsed ? 'justify-center' : 'justify-start'
           }`}
         >
-          <IconWrapper height={35} width={35}>
+          <span className="block aspect-square h-9">
             <Logo />
-          </IconWrapper>
+          </span>
           <span
             className={`transition-all ${
               drawerCollapsed ? 'h-0 w-0 opacity-0' : ''
@@ -42,52 +49,51 @@ const Sidebar: FC = () => {
             Ax Studios
           </span>
         </div>
-        <ul className="menu relative flex h-full max-h-[calc(100vh-77px)] flex-col gap-1 overflow-y-auto overflow-x-hidden pb-2 transition-all duration-200">
-          <ProfileCard />
+
+        <ul className="menu relative h-[calc(100vh-80px)] overflow-y-auto overflow-x-hidden font-bold transition-all duration-200">
+          <li className="relative flex w-full justify-center p-2">
+            <input
+              type="text"
+              id="sidebarSerach"
+              placeholder={drawerCollapsed ? '' : 'Search...'}
+              className="input input-bordered h-14 w-full rounded-lg  pl-10 text-lg "
+            />
+            <label
+              htmlFor="sidebarSerach"
+              className={`absolute h-6 w-6 p-0 ${
+                drawerCollapsed
+                  ? 'left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2'
+                  : 'left-5'
+              }`}
+            >
+              <SearchIcon />
+            </label>
+          </li>
           {sidebarOptions.map((option) => (
             <li
               key={option.name}
-              className={`from-primary/50 to-primary/10  text-xl  ${
+              className={`from-primary/50 to-primary/10  ${
                 router.asPath.split('/')[2] === option.link
-                  ? 'bordered bg-gradient-to-l '
-                  : 'hover-bordered hover:bg-gradient-to-l focus:bg-gradient-to-l'
+                  ? 'bordered'
+                  : 'hover-bordered'
               }`}
             >
               <Link href={`/dashboard/${option.link}`}>
                 <a
                   onClick={toggleDrawer}
-                  className={`items-center !rounded-none py-4 hover:bg-transparent  ${
+                  className={`items-center ${
                     drawerCollapsed ? 'justify-center' : 'justify-start'
+                  } ${
+                    router.asPath.split('/')[2] === option.link ? 'active' : ''
                   }`}
                 >
-                  <span className={'w-8'}>{sidebarIcons[option.link]}</span>
+                  <span className={'w-6'}>{sidebarIcons[option.link]}</span>
                   {!drawerCollapsed && <span>{option.name}</span>}
                 </a>
               </Link>
             </li>
           ))}
-          <li className="hover-bordered mt-auto from-primary/50 to-primary/10 text-xl hover:bg-gradient-to-l hover:shadow-xl">
-            <a
-              className={`flex items-center gap-2 !rounded-none py-4 hover:bg-transparent focus:bg-transparent ${
-                drawerCollapsed ? 'justify-center' : 'justify-start'
-              }`}
-              onClick={handleModalState}
-            >
-              <span className={'w-8'}>{sidebarIcons.settings}</span>
-              {!drawerCollapsed && <span>Settings</span>}
-            </a>
-          </li>
-          <li className="hover-bordered from-primary/50 to-primary/10 text-xl hover:bg-gradient-to-l hover:shadow-xl">
-            <a
-              className={`items-center !rounded-none py-4 hover:bg-transparent focus:bg-transparent  ${
-                drawerCollapsed ? 'justify-center' : 'justify-start'
-              }`}
-            >
-              <span className={'w-8'}>{sidebarIcons.logout}</span>
-
-              {!drawerCollapsed && <span>Logout</span>}
-            </a>
-          </li>
+          <ProfileMenu settingModalToggle={handleModalState} />
         </ul>
       </aside>
       <Modal
@@ -97,6 +103,16 @@ const Sidebar: FC = () => {
       >
         <SettingModal />
       </Modal>
+      <button
+        onClick={toggleDrawerCollapsed}
+        className="btn-primary absolute top-5 z-50 h-8 w-12 origin-left -translate-x-1/2 rounded-full transition-all duration-300"
+        style={{
+          left: drawerCollapsed ? closed : open,
+          rotate: drawerCollapsed ? '180deg' : '0deg',
+        }}
+      >
+        <ArrowIcon />
+      </button>
     </>
   );
 };

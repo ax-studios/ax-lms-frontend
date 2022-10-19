@@ -3,7 +3,6 @@ import { FC, useState } from 'react';
 import { SettingsContext } from '../../../lib/context/settings';
 import Header from './Wrappers/Header';
 import Sidebar from './Wrappers/Sidebar';
-import ToDoList from './Wrappers/ToDoList';
 
 interface DashboardWrapperProps {
   children: React.ReactNode;
@@ -13,7 +12,7 @@ const DashboardWrapper: FC<DashboardWrapperProps> = ({ children }) => {
   const route = useRouter();
   const [theme, setTheme] = useState<
     'dark' | 'winter' | 'synthwave' | 'halloween' | 'cmyk' | 'forest'
-  >('synthwave');
+  >('dark');
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [drawerCollapsed, setDrawerCollapsed] = useState(false);
   const [toDoCollapsed, setToDoCollapsed] = useState(false);
@@ -36,7 +35,7 @@ const DashboardWrapper: FC<DashboardWrapperProps> = ({ children }) => {
     return (
       <SettingsContext.Provider value={defaultSettings}>
         {/* eslint-disable-next-line prettier/prettier */}
-        <div className="drawer drawer-mobile" data-theme={theme}>
+        <div className="drawer-mobile drawer" data-theme={theme}>
           <input
             id="my-drawer-2"
             type="checkbox"
@@ -49,7 +48,8 @@ const DashboardWrapper: FC<DashboardWrapperProps> = ({ children }) => {
               <Header />
               <div className="p-2 md:p-5 ">{children}</div>
             </div>
-            <ToDoList />
+            {/* TODO */}
+            {/* <ToDoList /> */}
           </div>
           <div className="drawer-side">
             <div
