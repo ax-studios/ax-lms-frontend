@@ -15,7 +15,7 @@ const DashboardWrapper: FC<DashboardWrapperProps> = ({ children }) => {
     'dark' | 'winter' | 'synthwave' | 'halloween' | 'cmyk' | 'forest'
   >('synthwave');
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const [drawerCollapsed, setDrawerCollapsed] = useState(true);
+  const [drawerCollapsed, setDrawerCollapsed] = useState(false);
   const [toDoCollapsed, setToDoCollapsed] = useState(false);
 
   const defaultSettings = {
@@ -47,7 +47,7 @@ const DashboardWrapper: FC<DashboardWrapperProps> = ({ children }) => {
           <div className="drawer-content flex h-screen overflow-hidden">
             <div className="h-screen w-full overflow-x-hidden overflow-y-scroll">
               <Header />
-              {children}
+              <div className="p-2 md:p-5 ">{children}</div>
             </div>
             <ToDoList />
           </div>

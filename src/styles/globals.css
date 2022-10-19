@@ -3,14 +3,10 @@
 @tailwind utilities;
 
 ::-webkit-scrollbar {
-  width: 0.5rem;
-  height: 0.5rem;
-
-  background-color: rgb(30 41 59);
+  @apply h-2 w-2 rounded-full bg-base-content;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: rgb(162, 162, 162);
-  border-radius: 9999px;
+  @apply rounded-full bg-primary;
 }
 .menu li.bordered a {
   @apply border-0 border-r-4;
