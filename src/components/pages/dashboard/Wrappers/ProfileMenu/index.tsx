@@ -11,7 +11,7 @@ const ProfileMenu: FC<{ settingModalToggle: () => void }> = ({
   settingModalToggle,
 }) => {
   const userData = useContext(UserContext);
-  const { drawerCollapsed } = useContext(SettingsContext);
+  const { drawerCollapsed, toggleDrawer } = useContext(SettingsContext);
   const [profileMenuOpened, setProfileMenuOpened] = useState(false);
 
   useEffect(() => {
@@ -44,7 +44,10 @@ const ProfileMenu: FC<{ settingModalToggle: () => void }> = ({
         }`}
       >
         <Link href={`/dashboard/user/${userData.enrollmentID}`}>
-          <a className="relative h-12 w-12 shrink-0 rounded-full transition-all duration-500">
+          <a
+            className="relative h-12 w-12 shrink-0 rounded-full transition-all duration-500"
+            onClick={toggleDrawer}
+          >
             <Image src={userData.profileURL} alt="Banner" layout="fill" />
           </a>
         </Link>
@@ -56,7 +59,10 @@ const ProfileMenu: FC<{ settingModalToggle: () => void }> = ({
           }`}
         >
           <Link href={`/dashboard/user/${userData.enrollmentID}`}>
-            <a className="w-full max-w-[11rem] overflow-hidden text-ellipsis whitespace-nowrap font-bold transition-all duration-200 hover:text-primary">
+            <a
+              className="w-full max-w-[11rem] overflow-hidden text-ellipsis whitespace-nowrap font-bold transition-all duration-200 hover:text-primary"
+              onClick={toggleDrawer}
+            >
               {userData.name}
             </a>
           </Link>

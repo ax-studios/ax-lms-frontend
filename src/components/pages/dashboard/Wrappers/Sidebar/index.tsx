@@ -29,8 +29,9 @@ const Sidebar: FC = () => {
           width: drawerCollapsed ? closed : open,
         }}
       >
+        {/* Header Component */}
         <div
-          className={`sticky top-0 z-50 flex h-20 items-center gap-2 whitespace-nowrap border-b-2 border-primary/30 bg-base-300 p-4 text-2xl font-bold ${
+          className={`sticky top-0 z-50 flex h-20 items-center gap-2 whitespace-nowrap p-4 text-2xl font-bold ${
             drawerCollapsed ? 'justify-center' : 'justify-start'
           }`}
         >
@@ -47,24 +48,23 @@ const Sidebar: FC = () => {
         </div>
 
         <ul className="menu relative h-[calc(100vh-80px)] overflow-y-auto overflow-x-hidden font-bold transition-all duration-200">
+          {/* Search Bar */}
           <li className="relative flex w-full justify-center p-2">
             <input
               type="text"
               id="sidebarSerach"
               placeholder={drawerCollapsed ? '' : 'Search...'}
-              className="input input-bordered h-14 w-full rounded-lg  pl-10 text-lg "
+              className="input input-bordered h-14 w-full rounded-lg pl-10 text-lg "
             />
             <label
               htmlFor="sidebarSerach"
-              className={`absolute h-6 w-6 p-0 ${
-                drawerCollapsed
-                  ? 'left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2'
-                  : 'left-5'
-              }`}
+              className={`absolute top-1/2 h-6 w-6 -translate-y-1/2 p-0 transition-all
+               duration-300 ${drawerCollapsed ? 'left-7' : 'left-5'}`}
             >
               <SearchIcon />
             </label>
           </li>
+          {/* All the Menu List */}
           {sidebarOptions.map((option) => (
             <li
               key={option.name}
@@ -89,9 +89,11 @@ const Sidebar: FC = () => {
               </Link>
             </li>
           ))}
+          {/* Profile Menu */}
           <ProfileMenu settingModalToggle={handleModalState} />
         </ul>
       </aside>
+      {/* Setting Modal */}
       <Modal
         id="setting-modal"
         modalState={modalState}
@@ -99,9 +101,10 @@ const Sidebar: FC = () => {
       >
         <SettingModal />
       </Modal>
+      {/* SIebar open Close Btn */}
       <button
         onClick={toggleDrawerCollapsed}
-        className="btn-primary absolute top-5 z-50 h-8 w-12 origin-left -translate-x-1/2 rounded-full transition-all duration-300"
+        className="btn-primary absolute top-5 z-50 hidden h-8 w-12 origin-left -translate-x-1/2 rounded-full transition-all duration-300 lg:block"
         style={{
           left: drawerCollapsed ? closed : open,
           rotate: drawerCollapsed ? '180deg' : '0deg',

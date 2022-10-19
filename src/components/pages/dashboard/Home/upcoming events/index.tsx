@@ -6,10 +6,8 @@ import CalenderIcon from '../../../../../icons/Sidebar Icons/CalenderIcon';
 const UpcomingEvents: FC = () => {
   const { events } = useContext(UserContext);
   return (
-    <div className="flex w-full max-w-[21rem] shrink-0 flex-col gap-3 font-bold">
-      <h2 className="mb-2 text-3xl font-bold text-base-content">
-        Upcoming Events
-      </h2>
+    <div className="flex w-full max-w-sm shrink-0 flex-col gap-3 font-bold md:max-w-[21rem] ">
+      <h2 className="text-xl font-bold text-base-content">Upcoming Events</h2>
       <button className="btn btn-primary h-16 items-center gap-1 text-lg shadow-lg shadow-primary/30 hover:shadow-xl">
         <span className="aspect-square h-9">
           <CalenderIcon />
@@ -18,10 +16,7 @@ const UpcomingEvents: FC = () => {
       </button>
 
       {events.map((event) => (
-        <div
-          key={event.id}
-          className="gradient-card flex flex-col gap-1 p-3 px-5"
-        >
+        <div key={event.id} className="card flex flex-col gap-1 p-3 px-5">
           <span className="text-sm font-semibold text-base-content/70">
             {event.date}
           </span>

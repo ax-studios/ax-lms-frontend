@@ -22,7 +22,7 @@ const Modal: FC<Props> = ({ id, children, modalState, handleModalSate }) => {
         className="modal cursor-pointer select-none backdrop-blur"
       >
         <label
-          className="modal-box w-min max-w-none border-2 border-base-content/30"
+          className="modal-box w-full max-w-[40rem] border-2 border-base-content/30"
           htmlFor=""
         >
           {children}

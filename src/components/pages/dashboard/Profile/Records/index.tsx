@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import { FC, useContext } from 'react';
 import { UserContext } from '../../../../../data/userData';
+import FemaleAvatar from '../../../../../icons/illustrations/FemaleAvatar';
+import MaleAvatar from '../../../../../icons/illustrations/MaleAvatar';
 
 const Records: FC = () => {
   const userData = useContext(UserContext);
@@ -48,13 +50,16 @@ const Records: FC = () => {
     <div>
       <h2 className="mb-2 text-2xl font-bold">Official Records</h2>
       <div className="flex flex-col items-center justify-center gap-8 lg:flex-row lg:items-start lg:gap-5 xl:gap-16 ">
-        <div className="relative mt-8 aspect-square h-44 w-44 lg:mt-16 lg:h-52 lg:w-52">
-          <Image
-            src={userData.officalPhotoURL}
-            alt="Banner"
-            layout="fill"
-            className="overflow-hidden rounded-full"
-          />
+        <div className="relative mt-8 aspect-square h-44 w-44 overflow-hidden rounded-full bg-base-content/10 lg:mt-16 lg:h-52 lg:w-52">
+          {userData.officalPhotoURL === '' ? (
+            userData.gender === 'female' ? (
+              <FemaleAvatar />
+            ) : (
+              <MaleAvatar />
+            )
+          ) : (
+            <Image src={userData.officalPhotoURL} alt="Banner" layout="fill" />
+          )}
         </div>
         <div className="flex-1 rounded-lg border-2 border-base-300">
           {records.map((record) => (

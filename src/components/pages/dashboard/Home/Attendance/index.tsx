@@ -8,9 +8,9 @@ const Attendance: FC = () => {
   let totalDaysAttended = 0;
   let totalDaysTotal = 0;
   return (
-    <div className="flex w-full max-w-[21rem] flex-col gap-3 font-bold">
-      <h2 className="mb-2 text-3xl font-bold text-base-content">Attendance</h2>
-      <div className="gradient-card flex flex-col items-center gap-3 px-8 py-5">
+    <div className="flex w-full max-w-sm flex-col gap-3 font-bold md:max-w-[21rem]">
+      <h2 className="text-xl font-bold text-base-content">Attendance</h2>
+      <div className="card flex flex-col items-center gap-3 px-8 py-5">
         <AttendancePie />
         {attendance.map((item) => {
           totalDaysAttended += item.days_attended;

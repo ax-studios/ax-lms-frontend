@@ -6,13 +6,11 @@ const ExamSchedule: FC = () => {
   return (
     <div className="flex max-w-lg shrink-0 flex-col gap-3 font-bold">
       <div className="flex max-w-lg shrink-0 flex-col gap-3 font-bold">
-        <h2 className="mb-2 text-3xl font-bold text-base-content">
-          Exam Schedule
-        </h2>
+        <h2 className="text-xl font-bold text-base-content">Exam Schedule</h2>
         {examSchedule.map((exam) => (
           <div
             key={exam.id}
-            className="gradient-card grid grid-cols-12 items-center gap-5 p-3 px-5"
+            className="card grid grid-cols-12 items-center gap-5 p-3 px-5"
           >
             <span className="flex w-5 flex-col items-center justify-start">
               <span className="text-lg">{exam.start_time}</span>

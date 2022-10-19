@@ -5,13 +5,11 @@ const ClassSchedule: FC = () => {
   const { classSchedule } = useContext(UserContext);
   return (
     <div className="flex max-w-lg shrink-0 flex-col gap-3 font-bold">
-      <h2 className="mb-2 text-3xl font-bold text-base-content">
-        Class Schedule
-      </h2>
+      <h2 className="text-xl font-bold text-base-content">Class Schedule</h2>
       {classSchedule.map((schedule) => (
         <div
           key={schedule.id}
-          className="gradient-card grid grid-cols-12 items-center gap-5 py-3 px-5"
+          className="card grid grid-cols-12 items-center gap-5 py-3 px-5"
         >
           <span className="col-span-2 flex flex-col items-start justify-start">
             <span className="text-lg">{schedule.start_time}</span>

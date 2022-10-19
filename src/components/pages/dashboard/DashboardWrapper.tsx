@@ -45,9 +45,9 @@ const DashboardWrapper: FC<DashboardWrapperProps> = ({ children }) => {
             onChange={defaultSettings.toggleDrawer}
           />
           <div className="drawer-content flex h-screen overflow-hidden">
-            <div className="h-screen w-full overflow-x-hidden overflow-y-scroll">
+            <div className="h-screen w-full overflow-y-auto overflow-x-hidden">
               <Header />
-              <div className="p-2 md:p-5 ">{children}</div>
+              <div className="p-2 pt-0 md:p-5 md:pt-0 ">{children}</div>
             </div>
             <ToDoList />
           </div>

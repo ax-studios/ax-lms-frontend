@@ -2,19 +2,25 @@ import { FC, useContext } from 'react';
 import { themes } from '../../../../../lib/config';
 import { SettingsContext } from '../../../../../lib/context/settings';
 const SettingModal: FC = () => {
-  const { drawerCollapsed, toggleDrawerCollapsed } =
+  const { theme, drawerCollapsed, toggleDrawerCollapsed } =
     useContext(SettingsContext);
   return (
-    <div className="w-[40rem]">
+    <div className="w-full">
       <h3 className="text-xl font-bold">Settings</h3>
-      <h4 className="mt-5 text-lg font-bold">Theme</h4>
-      <div className="grid w-[40rem] grid-cols-3 gap-5 pt-4 pl-4">
+      <h4 className="mt-5 text-lg font-bold">
+        Theme
+        <span className="text-base uppercase text-base-content/70">
+          {' '}
+          ( {theme} )
+        </span>
+      </h4>
+      <div className="flex flex-wrap gap-5 pt-4 pl-4">
         {themes.map((theme) => (
           <ThemeLayout key={theme} dataTheme={theme} />
         ))}
       </div>
       <h4 className="mt-5 text-lg font-bold">Sidebar</h4>
-      <div className="flex w-[40rem] items-center gap-2 pt-4 pl-4 font-bold">
+      <div className="flex items-center gap-2 pt-4 pl-4 font-bold">
         Collapsed
         <input
           type="checkbox"

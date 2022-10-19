@@ -9,8 +9,8 @@
   @apply rounded-full bg-primary;
 }
 
-.gradient-card {
-  @apply rounded-2xl border-2 border-primary/10 bg-gradient-to-br from-primary/20 via-primary/10 to-white/0 shadow-lg transition-all duration-200  hover:border-primary/50 hover:shadow-xl;
+.card {
+  @apply rounded-2xl bg-base-content/5 shadow-lg transition-all duration-200;
 }
 
 .todo-high {

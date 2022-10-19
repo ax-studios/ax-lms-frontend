@@ -18,11 +18,12 @@ export const UserData = {
     'B.tech in Computer Science and Engineering ( Artificial Intelligence )',
   department: 'School of Computer Science Engineering and Technology',
   currentSemister: 3,
+  gender: 'male',
   batchYear: 2021,
   banner:
     'https://user-images.githubusercontent.com/93640141/154883570-4886fb9e-8a31-4eae-bd99-5f4b70d9c44b.png',
   profileURL: 'https://www.github.com/Chandraprakash-Darji.png',
-  officalPhotoURL: 'https://www.github.com/Chandraprakash-Darji.png',
+  officalPhotoURL: '',
   skills: ['Ux Design', 'React JS', 'Next JS', 'Typescript', 'Tailwind css'],
   website: 'https://chandraprakash.codes',
   email: 'prakashchandra3786@gmail.com',
