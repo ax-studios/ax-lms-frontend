@@ -1,7 +1,7 @@
 import { NextPage } from 'next';
 import Image from 'next/image';
 import { useContext, useState } from 'react';
-import { IconWrapper, Tabs } from '../../../components/core';
+import { Tabs } from '../../../components/core';
 import {
   AboutSection,
   Records,
@@ -58,9 +58,9 @@ const User: NextPage = () => {
               target="_blank"
               rel="noreferrer"
             >
-              <IconWrapper>
+              <span className="block aspect-square h-6">
                 <LinkIcon />
-              </IconWrapper>
+              </span>
               <span>{userData.profileSpecialLink.name}</span>
             </a>
           </div>

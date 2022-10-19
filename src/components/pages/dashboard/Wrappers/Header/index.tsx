@@ -9,12 +9,12 @@ const Header: FC = () => {
         <input
           type="text"
           placeholder="Search..."
-          className="input input-bordered h-14 w-full max-w-xs rounded-full bg-base-200 pl-10 text-lg outline-none transition-all duration-300 focus:max-w-md focus:outline-primary"
+          className="input input-bordered h-14 w-full max-w-xs rounded-full bg-base-200 pl-10 text-lg outline-none transition-all duration-300 focus:max-w-md focus:outline-primary lg:hidden"
         />
-        <span className="absolute left-4 top-1/2 w-5 -translate-y-1/2">
+        <span className="absolute left-4 top-1/2 w-5 -translate-y-1/2 lg:hidden">
           <SearchIcon />
         </span>
-        <span className="relative block w-6 shrink-0">
+        <span className="relative ml-auto block w-6 shrink-0">
           <BellIcon />
           <span className="absolute top-0 right-0 block h-3 w-3 rounded-full bg-red-500" />
         </span>

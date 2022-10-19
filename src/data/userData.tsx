@@ -8,7 +8,7 @@ import tasks from './tasks';
 import events from './upcoming_events';
 
 export const UserData = {
-  name: 'Chandraprakash Darji',
+  name: 'Chandraprakash Ramesh Darji',
   enrollmentID: '21C22004',
   applicationNo: '-',
   tagline: 'React Developer',

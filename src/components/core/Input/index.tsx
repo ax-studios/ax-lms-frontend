@@ -6,7 +6,6 @@ import {
   useState,
 } from 'react';
 import { CloseEyeIcon, OpenEyeIcon } from '../../../icons';
-import IconWrapper from '../IconWrapper';
 
 interface InputProps {
   id: string;
@@ -69,9 +68,7 @@ const Input: FC<InputProps> = ({
             onClick={handleShow}
             className="absolute right-2 top-1/2 w-6 cursor-pointer"
           >
-            <IconWrapper>
-              {inputType === 'password' ? <OpenEyeIcon /> : <CloseEyeIcon />}
-            </IconWrapper>
+            {inputType === 'password' ? <OpenEyeIcon /> : <CloseEyeIcon />}
           </div>
         )}
       </label>

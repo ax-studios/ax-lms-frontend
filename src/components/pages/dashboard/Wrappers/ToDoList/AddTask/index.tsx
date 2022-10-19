@@ -107,7 +107,7 @@ const AddTask: FC = () => {
                   value="low"
                   checked={task?.priority === 'low'}
                   onChange={handleTaskChange}
-                  className="mask mask-heart bg-[rgb(100,247,107)]/30 checked:bg-[rgb(100,247,107)]"
+                  className="mask btn-success mask-heart opacity-50 checked:opacity-100"
                 />
               </label>
               <label className="relative flex items-center justify-center before:absolute before:top-2/3 before:left-1/2 before:z-10 before:-translate-x-1/2 before:scale-0 before:rounded-xl before:bg-primary before:py-0.5 before:px-1 before:text-sm before:text-base-300 before:transition-all before:duration-200 before:content-['Medium'] hover:before:scale-100">
@@ -117,7 +117,7 @@ const AddTask: FC = () => {
                   value="medium"
                   checked={task?.priority === 'medium'}
                   onChange={handleTaskChange}
-                  className="mask mask-heart bg-[rgb(247,245,100)]/30 checked:bg-[rgb(247,245,100)]"
+                  className="mask btn-info mask-heart opacity-50 checked:opacity-100"
                 />
               </label>
               <label className="relative flex items-center justify-center before:absolute before:top-2/3 before:left-1/2 before:z-10 before:-translate-x-1/2 before:scale-0 before:rounded-xl before:bg-primary before:py-0.5 before:px-1 before:text-sm before:text-base-300 before:transition-all before:duration-200 before:content-['High'] hover:before:scale-100">
@@ -127,7 +127,7 @@ const AddTask: FC = () => {
                   value="high"
                   checked={task?.priority === 'high'}
                   onChange={handleTaskChange}
-                  className="mask mask-heart bg-[rgb(247,100,100)]/30 checked:bg-[rgb(247,100,100)]"
+                  className="mask btn-error mask-heart opacity-50 checked:opacity-100"
                 />
               </label>
             </div>

@@ -2,7 +2,6 @@ import { FC, useContext } from 'react';
 import { UserContext } from '../../../../../data/userData';
 import PlusIcon from '../../../../../icons/PlusIcon';
 import CalenderIcon from '../../../../../icons/Sidebar Icons/CalenderIcon';
-import { IconWrapper } from '../../../../core';
 
 const UpcomingEvents: FC = () => {
   const { events } = useContext(UserContext);
@@ -12,9 +11,9 @@ const UpcomingEvents: FC = () => {
         Upcoming Events
       </h2>
       <button className="btn btn-primary h-16 items-center gap-1 text-lg shadow-lg shadow-primary/30 hover:shadow-xl">
-        <IconWrapper height={35} width={35}>
+        <span className="aspect-square h-9">
           <CalenderIcon />
-        </IconWrapper>
+        </span>
         Go to Calendar
       </button>
 
@@ -30,9 +29,9 @@ const UpcomingEvents: FC = () => {
         </div>
       ))}
       <button className="btn flex h-16  items-center justify-center gap-1 border-2 border-dashed border-primary bg-transparent bg-gradient-to-br from-base-content/20 via-base-content/10 to-white/0 py-5 text-center text-primary shadow-lg shadow-primary/10 hover:border-primary hover:bg-transparent hover:shadow-primary/20">
-        <IconWrapper>
+        <span className="block aspect-square h-6">
           <PlusIcon />
-        </IconWrapper>
+        </span>
         <span>Add an Event</span>
       </button>
     </div>
