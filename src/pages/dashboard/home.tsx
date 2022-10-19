@@ -10,7 +10,7 @@ import {
 
 const Home: FC = () => {
   return (
-    <div className="flex flex-wrap gap-5 p-4">
+    <div className="flex flex-wrap gap-5">
       <div className="flex flex-col flex-wrap gap-5">
         <ClassSchedule />
         <ExamSchedule />
