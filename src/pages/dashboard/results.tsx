@@ -8,7 +8,7 @@ const Results: NextPage = () => {
         Results
       </h1>
       <div className="flex flex-col items-center justify-center gap-4">
-        <div className="mt-10 w-full max-w-md rounded-2xl border-2 border-primary/20 bg-base-content/5 p-10">
+        <div className="w-full max-w-md rounded-2xl border-2 border-primary/20 bg-base-content/5 p-10">
           <RelaxingWalk />
         </div>
         <h2 className="text-center text-lg font-bold">

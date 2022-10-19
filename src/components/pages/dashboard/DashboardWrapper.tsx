@@ -15,8 +15,8 @@ const DashboardWrapper: FC<DashboardWrapperProps> = ({ children }) => {
     'dark' | 'winter' | 'synthwave' | 'halloween' | 'cmyk' | 'forest'
   >('dark');
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const [drawerCollapsed, setDrawerCollapsed] = useState(false);
-  const [toDoCollapsed, setToDoCollapsed] = useState(false);
+  const [drawerCollapsed, setDrawerCollapsed] = useState(true);
+  const [toDoCollapsed, setToDoCollapsed] = useState(true);
 
   const defaultSettings = {
     theme,

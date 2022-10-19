@@ -16,7 +16,7 @@ const Tabs: FC<Props> = ({ tabs, value, setValue }) => {
             className={`btn no-animation rounded-full px-3 py-2 ${
               tab.value === value
                 ? 'btn-primary border-0 hover:bg-primary'
-                : 'border-0 bg-transparent'
+                : 'border-0 bg-transparent text-base-content hover:text-base-300'
             }`}
             onClick={() => setValue(tab.value)}
           >
