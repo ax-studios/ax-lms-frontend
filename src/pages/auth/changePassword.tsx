@@ -95,7 +95,7 @@ const ChangePassword: NextPage = () => {
             <Link href="/auth/login">
               <a
                 href="#"
-                className="font-medium text-blue-500 hover:underline focus:text-slate-50 focus:underline focus:outline-none"
+                className="font-medium text-primary hover:underline focus:text-base-content focus:underline focus:outline-none"
               >
                 Login Now
               </a>

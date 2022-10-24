@@ -1,9 +1,8 @@
 import { NextPage } from 'next';
 import Link from 'next/link';
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent, FormEvent, useState } from 'react';
 import { CTA, Input } from '../../components/core';
 import AuthWrapper from '../../components/pages/auth/AuthWrapper';
-
 const Login: NextPage = () => {
   const [formState, setFormState] = useState({
     email: '',
@@ -12,14 +11,16 @@ const Login: NextPage = () => {
   const handleChange = (e: ChangeEvent<HTMLInputElement>): void => {
     setFormState({ ...formState, [e.target.name]: e.target.value });
   };
-  const handleSubmit = (): void => {
+  // eslint-disable-next-line @typescript-eslint/space-before-function-paren
+  const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
+    e.preventDefault();
     console.log('submit');
   };
   return (
     <AuthWrapper>
       <>
         <h1 className="text-center font-bold">Log in to your account</h1>
-        <form action="#" className="flex flex-col gap-4">
+        <form onSubmit={(e) => handleSubmit(e)} className="flex flex-col gap-4">
           <Input
             displayName="Your Email"
             id="email"
@@ -42,21 +43,48 @@ const Login: NextPage = () => {
           />
           <div className="flex items-center justify-end">
             <Link href="/auth/forgotPassword">
-              <a className="text-sm font-medium text-blue-500 hover:underline focus:text-slate-50 focus:underline focus:outline-none">
+              <a className="text-sm font-medium text-primary hover:underline focus:text-base-content focus:underline focus:outline-none">
                 Forgot Password?
               </a>
             </Link>
           </div>
-          <CTA onClick={handleSubmit}>Submit</CTA>
+          <CTA onClick={() => handleSubmit}>Submit</CTA>
           <div className="text-center text-sm">
             Need account?{' '}
             <Link href="/auth/register">
-              <a className="font-medium text-blue-500 hover:underline focus:text-slate-50 focus:underline focus:outline-none">
+              <a className="font-medium text-primary hover:underline focus:text-base-content focus:underline focus:outline-none">
                 Create account now
               </a>
             </Link>
           </div>
         </form>
+        <div className="mt-3 flex flex-col items-center gap-2 rounded-lg border-2 border-base-content/40 bg-base-300/30 py-2 pb-4 text-lg font-bold backdrop-blur">
+          <p>Demo Creadintials: </p>
+          <div className="flex items-center justify-center gap-5 ">
+            <CTA
+              onClick={() =>
+                setFormState({
+                  email: 'johnDoe@gmail.com',
+                  password: 'strongPass@1712',
+                })
+              }
+              style="outline"
+            >
+              Teacher Login
+            </CTA>
+            <CTA
+              onClick={() =>
+                setFormState({
+                  email: 'prakashchandra3786@gmail.com',
+                  password: 'strongPass@1712',
+                })
+              }
+              style="outline"
+            >
+              Student Login
+            </CTA>
+          </div>
+        </div>
       </>
     </AuthWrapper>
   );

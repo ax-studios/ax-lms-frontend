@@ -62,15 +62,13 @@ const Register: NextPage = () => {
             onChange={handleChange}
             required
           />
-          <div className="mt-2 w-full">
-            <CTA onClick={handleSubmit}>Submit</CTA>
-          </div>
+          <CTA onClick={handleSubmit}>Submit</CTA>
           <div className="text-center text-sm">
             Already have account?{' '}
             <Link href="/auth/login">
               <a
                 href="#"
-                className="font-medium text-blue-500 hover:underline focus:text-slate-50 focus:underline focus:outline-none"
+                className="font-medium text-primary hover:underline focus:text-base-content focus:underline focus:outline-none"
               >
                 Login Now
               </a>

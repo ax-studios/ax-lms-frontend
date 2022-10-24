@@ -48,7 +48,7 @@ const Input: FC<InputProps> = ({
           type={inputType}
           id={id}
           name={name}
-          className={`text-medium mt-2 block w-full ${
+          className={`text-medium input mt-2 block w-full ${
             typeof className !== 'undefined' ? className : ''
           }`}
           placeholder={
