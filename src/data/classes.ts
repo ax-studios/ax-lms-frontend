@@ -3,7 +3,7 @@ const classes = {
     {
       id: 1,
       name: 'Computer Science',
-      attendeceSubmited: true,
+      attendanceSubmited: true,
       presentStudent: 30,
       totalStudent: 45,
       class: 'TBL Lab',
@@ -13,7 +13,7 @@ const classes = {
     {
       id: 1,
       name: 'Computer Science',
-      attendeceSubmited: true,
+      attendanceSubmited: true,
       presentStudent: 30,
       totalStudent: 45,
       class: 'TBL Lab',
@@ -23,7 +23,7 @@ const classes = {
     {
       id: 1,
       name: 'Computer Science',
-      attendeceSubmited: false,
+      attendanceSubmited: false,
       presentStudent: 30,
       totalStudent: 45,
       class: 'TBL Lab',
@@ -35,7 +35,7 @@ const classes = {
     {
       id: 1,
       name: 'Computer Science',
-      attendeceSubmited: false,
+      attendanceSubmited: false,
       presentStudent: 30,
       totalStudent: 45,
       class: 'TBL Lab',
@@ -45,7 +45,7 @@ const classes = {
     {
       id: 1,
       name: 'Computer Science',
-      attendeceSubmited: false,
+      attendanceSubmited: false,
       presentStudent: 30,
       totalStudent: 45,
       class: 'TBL Lab',
@@ -55,7 +55,7 @@ const classes = {
     {
       id: 1,
       name: 'Computer Science',
-      attendeceSubmited: false,
+      attendanceSubmited: false,
       presentStudent: 30,
       totalStudent: 45,
       class: 'TBL Lab',
@@ -67,7 +67,7 @@ const classes = {
     {
       id: 1,
       name: 'Computer Science',
-      attendeceSubmited: true,
+      attendanceSubmited: true,
       presentStudent: 30,
       totalStudent: 45,
       class: 'TBL Lab',
@@ -77,7 +77,7 @@ const classes = {
     {
       id: 1,
       name: 'Computer Science',
-      attendeceSubmited: true,
+      attendanceSubmited: true,
       presentStudent: 30,
       totalStudent: 45,
       class: 'TBL Lab',
@@ -87,7 +87,7 @@ const classes = {
     {
       id: 1,
       name: 'Computer Science',
-      attendeceSubmited: true,
+      attendanceSubmited: true,
       presentStudent: 30,
       totalStudent: 45,
       class: 'TBL Lab',

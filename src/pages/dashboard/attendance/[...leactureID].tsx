@@ -33,10 +33,10 @@ const ChangeAttendece: NextPage = () => {
   };
 
   return (
-    <div className="h-screen overflow-hidden">
+    <div className="h-[calc(100vh-80px)] overflow-hidden lg:h-screen">
       <Heading title="Update Attendece" />
 
-      <div className="container mx-auto mb-2 flex h-[calc(100vh-88px)] overflow-y-auto px-3  md:px-5">
+      <div className=" mb-2 flex h-[calc(100vh-88px-90px)] overflow-y-auto px-3 md:px-5  lg:h-[calc(100vh-88px)]">
         <table className="relative table w-full border-l-2 border-r-2 border-base-300 ">
           <thead className="sticky top-0 z-50">
             <AttendeceTableHeading

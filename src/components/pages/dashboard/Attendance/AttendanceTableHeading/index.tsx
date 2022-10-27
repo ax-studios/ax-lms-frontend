@@ -13,8 +13,7 @@ const AttendanceTableHeading: FC<Props> = ({
 }) => {
   return (
     <tr>
-      <th></th>
-
+      <th className="static">Sr.</th>
       <th>Name</th>
       <th>Attendance</th>
       <th>Last lecture attended</th>

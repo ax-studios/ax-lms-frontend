@@ -822,7 +822,7 @@ const students: studentsInterface[] = [
 ];
 export default students;
 
-interface studentsInterface {
+export interface studentsInterface {
   class_: {
     name: string;
     subjectTeacher: Array<{
