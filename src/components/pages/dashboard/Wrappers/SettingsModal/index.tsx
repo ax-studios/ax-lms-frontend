@@ -1,5 +1,5 @@
 import { FC, useContext } from 'react';
-import { themes } from '../../../../../lib/config';
+import { themes, themesInterface } from '../../../../../lib/config';
 import { SettingsContext } from '../../../../../lib/context/settings';
 const SettingModal: FC = () => {
   const { theme, drawerCollapsed, toggleDrawerCollapsed } =
@@ -37,14 +37,7 @@ const SettingModal: FC = () => {
 export default SettingModal;
 
 interface ThemeLayoutProps {
-  dataTheme:
-    | 'dark'
-    | 'winter'
-    | 'synthwave'
-    | 'halloween'
-    | 'cmyk'
-    | 'forest'
-    | 'night';
+  dataTheme: themesInterface;
 }
 
 const ThemeLayout: FC<ThemeLayoutProps> = ({ dataTheme }) => {

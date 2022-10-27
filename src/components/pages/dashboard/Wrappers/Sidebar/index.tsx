@@ -10,7 +10,7 @@ import { Logo } from '../../../../core';
 import Link from '../../../../core/Link';
 import Modal from '../../../../core/Modal';
 import ProfileMenu from '../ProfileMenu';
-import SettingModal from '../SettingsModal.tsx';
+import SettingModal from '../SettingsModal';
 
 const Sidebar: FC = () => {
   const router = useRouter();
@@ -28,12 +28,12 @@ const Sidebar: FC = () => {
         style={{
           width: drawerCollapsed ? closed : open,
           backgroundImage:
-            'linear-gradient(hsl(var(--b1)/0.9),hsl(var(--b1)/0.9)),url(/images/auth/background.jpg)',
+            'linear-gradient(hsl(var(--b1)/0.6),hsl(var(--b1)/0.6)),url(/images/auth/background.jpg)',
         }}
       >
         {/* Header Component */}
         <div
-          className={`bg-base-300 text-2xl font-bold ${
+          className={`bg-base-300/30 text-2xl font-bold backdrop-blur ${
             drawerCollapsed ? 'justify-center' : 'justify-start'
           }`}
         >

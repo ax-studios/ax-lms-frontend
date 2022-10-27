@@ -39,7 +39,7 @@ const ProfileMenu: FC<{ settingModalToggle: () => void }> = ({
   return (
     <div className="fixed bottom-0 left-0 w-full bg-base-300/30 backdrop-blur">
       <div
-        className={`relative m-2 flex shrink-0 items-center justify-center gap-2  rounded-lg bg-base-300 py-2 text-lg transition-all duration-200 ${
+        className={`relative m-2 flex shrink-0 items-center justify-center gap-2 rounded-lg bg-base-300 py-2 text-lg transition-all duration-200 ${
           drawerCollapsed ? 'flex-col p-0' : 'px-2'
         }`}
       >

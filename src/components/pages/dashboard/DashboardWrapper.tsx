@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
 import { FC, useState } from 'react';
+import { themesInterface } from '../../../lib/config';
 import { SettingsContext } from '../../../lib/context/settings';
 import Header from './Wrappers/Header';
 import Sidebar from './Wrappers/Sidebar';
@@ -10,9 +11,7 @@ interface DashboardWrapperProps {
 
 const DashboardWrapper: FC<DashboardWrapperProps> = ({ children }) => {
   const route = useRouter();
-  const [theme, setTheme] = useState<
-    'dark' | 'winter' | 'synthwave' | 'halloween' | 'cmyk' | 'forest' | 'night'
-  >('night');
+  const [theme, setTheme] = useState<themesInterface>('night');
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [drawerCollapsed, setDrawerCollapsed] = useState(true);
   const [toDoCollapsed, setToDoCollapsed] = useState(true);
@@ -35,7 +34,7 @@ const DashboardWrapper: FC<DashboardWrapperProps> = ({ children }) => {
     return (
       <SettingsContext.Provider value={defaultSettings}>
         {/* eslint-disable-next-line prettier/prettier */}
-        <div className="drawer-mobile drawer" data-theme={theme}>
+        <div className="drawer drawer-mobile" data-theme={theme}>
           <input
             id="my-drawer-2"
             type="checkbox"
