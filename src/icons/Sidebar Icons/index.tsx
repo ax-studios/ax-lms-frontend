@@ -1,6 +1,7 @@
 import { ReactElement } from 'react';
 
 import CalenderIcon from './CalenderIcon';
+import ClassIcon from './AttendanceIcon';
 import ExamIcon from './ExamIcon';
 import HomeIcon from './HomeIcon';
 import LogoutIcon from './LogoutIcon';
@@ -21,5 +22,6 @@ export const useSidebarIcons = (): sidebarIconListIn => {
     results: <ResultIcon />,
     logout: <LogoutIcon />,
     settings: <SettingsIcon />,
+    attendance: <ClassIcon />,
   };
 };

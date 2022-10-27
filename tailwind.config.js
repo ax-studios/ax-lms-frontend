@@ -1,4 +1,12 @@
-const themes = ['dark', 'winter', 'synthwave', 'halloween', 'cmyk', 'forest'];
+const themes = [
+  'dark',
+  'winter',
+  'synthwave',
+  'halloween',
+  'cmyk',
+  'forest',
+  'night',
+];
 module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
   theme: {

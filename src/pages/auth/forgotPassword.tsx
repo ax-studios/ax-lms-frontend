@@ -1,7 +1,7 @@
 import { NextPage } from 'next';
-import Link from 'next/link';
 import { ChangeEvent, useState } from 'react';
 import { CTA, Input } from '../../components/core';
+import Link from '../../components/core/Link';
 import AuthWrapper from '../../components/pages/auth/AuthWrapper';
 import { EMAIL_REGEX, OTP_REGEX } from '../../lib/config';
 
@@ -159,13 +159,11 @@ const ForgotPassword: NextPage = () => {
               </>
             )}
           <div className="text-center text-sm">
-            <Link href="/auth/login">
-              <a
-                href="#"
-                className="font-medium text-primary hover:underline focus:text-base-content focus:underline focus:outline-none"
-              >
-                Login Now
-              </a>
+            <Link
+              className="font-medium text-primary hover:underline focus:text-base-content focus:underline focus:outline-none"
+              href="/auth/login"
+            >
+              Login Now
             </Link>
           </div>
         </form>

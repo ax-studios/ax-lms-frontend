@@ -1,18 +1,19 @@
 import { NextPage } from 'next';
-import Link from 'next/link';
 import { CTA, Logo } from '../../components/core';
+import Link from '../../components/core/Link';
 
 const Landing: NextPage = () => {
   return (
     <div className="min-h-screen w-full bg-base-300 text-base-content">
       <section className="py-16 text-center text-4xl font-bold ">
-        <Link href="/">
-          <a className="flex items-center justify-center py-5 font-semibold decoration-inherit focus:text-primary focus:outline-none ">
-            <div className="mr-2 h-10 w-10">
-              <Logo />
-            </div>
-            Ax Studios
-          </a>
+        <Link
+          href="/"
+          className="flex items-center justify-center py-5 font-semibold decoration-inherit focus:text-primary focus:outline-none "
+        >
+          <div className="mr-2 h-10 w-10">
+            <Logo />
+          </div>
+          Ax Studios
         </Link>
         <h1 className="mx-auto max-w-xl">
           Open Source University LMS System made with NextJS, tailwind, and
@@ -28,17 +29,13 @@ const Landing: NextPage = () => {
               Source Code
             </CTA>
           </a>
-          <Link href="/dashboard">
-            <a>
-              <CTA onClick={() => {}} style="outline">
-                Dashboard
-              </CTA>
-            </a>
+          <Link href="/dashboard/home">
+            <CTA onClick={() => {}} style="outline">
+              Dashboard
+            </CTA>
           </Link>
           <Link href="/auth/login">
-            <a>
-              <CTA onClick={() => {}}>Login </CTA>
-            </a>
+            <CTA onClick={() => {}}>Login </CTA>
           </Link>
         </div>
       </section>

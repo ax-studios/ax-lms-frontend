@@ -1,7 +1,7 @@
 import { NextPage } from 'next';
-import Link from 'next/link';
 import { ChangeEvent, FormEvent, useState } from 'react';
 import { CTA, Input } from '../../components/core';
+import Link from '../../components/core/Link';
 import AuthWrapper from '../../components/pages/auth/AuthWrapper';
 const Login: NextPage = () => {
   const [formState, setFormState] = useState({
@@ -42,19 +42,21 @@ const Login: NextPage = () => {
             required
           />
           <div className="flex items-center justify-end">
-            <Link href="/auth/forgotPassword">
-              <a className="text-sm font-medium text-primary hover:underline focus:text-base-content focus:underline focus:outline-none">
-                Forgot Password?
-              </a>
+            <Link
+              className="text-sm font-medium text-primary hover:underline focus:text-base-content focus:underline focus:outline-none"
+              href="/auth/forgotPassword"
+            >
+              Forgot Password?
             </Link>
           </div>
           <CTA onClick={() => handleSubmit}>Submit</CTA>
           <div className="text-center text-sm">
             Need account?{' '}
-            <Link href="/auth/register">
-              <a className="font-medium text-primary hover:underline focus:text-base-content focus:underline focus:outline-none">
-                Create account now
-              </a>
+            <Link
+              className="font-medium text-primary hover:underline focus:text-base-content focus:underline focus:outline-none"
+              href="/auth/register"
+            >
+              Create account now
             </Link>
           </div>
         </form>

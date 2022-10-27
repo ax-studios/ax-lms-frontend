@@ -11,8 +11,8 @@ interface DashboardWrapperProps {
 const DashboardWrapper: FC<DashboardWrapperProps> = ({ children }) => {
   const route = useRouter();
   const [theme, setTheme] = useState<
-    'dark' | 'winter' | 'synthwave' | 'halloween' | 'cmyk' | 'forest'
-  >('dark');
+    'dark' | 'winter' | 'synthwave' | 'halloween' | 'cmyk' | 'forest' | 'night'
+  >('night');
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [drawerCollapsed, setDrawerCollapsed] = useState(true);
   const [toDoCollapsed, setToDoCollapsed] = useState(true);
@@ -46,7 +46,7 @@ const DashboardWrapper: FC<DashboardWrapperProps> = ({ children }) => {
           <div className="drawer-content flex h-screen overflow-hidden">
             <div className="h-screen w-full overflow-y-auto overflow-x-hidden">
               <Header />
-              <div className="p-2 pt-0 md:p-5 md:pt-0 ">{children}</div>
+              {children}
             </div>
 
             {/* <ToDoList /> */}

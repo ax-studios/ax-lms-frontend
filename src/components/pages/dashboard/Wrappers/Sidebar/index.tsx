@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { FC, useContext, useState } from 'react';
 import { ArrowIcon } from '../../../../../icons';
@@ -8,6 +7,7 @@ import { width } from '../../../../../lib/config';
 import { SettingsContext } from '../../../../../lib/context/settings';
 import useSidebarMenu from '../../../../../lib/hooks/useSidebarMenu';
 import { Logo } from '../../../../core';
+import Link from '../../../../core/Link';
 import Modal from '../../../../core/Modal';
 import ProfileMenu from '../ProfileMenu';
 import SettingModal from '../SettingsModal.tsx';
@@ -24,20 +24,20 @@ const Sidebar: FC = () => {
   return (
     <>
       <div
-        className="bg-cover bg-center bg-no-repeat"
+        className="relative flex flex-col overflow-hidden border-r-4 border-primary bg-cover bg-center bg-no-repeat"
         style={{
           width: drawerCollapsed ? closed : open,
           backgroundImage:
             'linear-gradient(hsl(var(--b1)/0.9),hsl(var(--b1)/0.9)),url(/images/auth/background.jpg)',
         }}
       >
-        <aside className="relative max-h-screen select-none overflow-x-hidden border-r-4 border-primary backdrop-blur">
-          {/* Header Component */}
-          <div
-            className={`sticky top-0 z-50 flex h-20 items-center gap-2 whitespace-nowrap p-4 text-2xl font-bold ${
-              drawerCollapsed ? 'justify-center' : 'justify-start'
-            }`}
-          >
+        {/* Header Component */}
+        <div
+          className={`bg-base-300 text-2xl font-bold ${
+            drawerCollapsed ? 'justify-center' : 'justify-start'
+          }`}
+        >
+          <div className="flex h-20 items-center gap-2 whitespace-nowrap p-4">
             <span className="block aspect-square h-9">
               <Logo />
             </span>
@@ -49,54 +49,27 @@ const Sidebar: FC = () => {
               Ax Studios
             </span>
           </div>
-
-          <ul className="menu relative h-[calc(100vh-80px)] overflow-y-auto overflow-x-hidden font-bold transition-all duration-200">
-            {/* Search Bar */}
-            <li className="relative flex w-full justify-center p-2">
-              <input
-                type="text"
-                id="sidebarSerach"
-                placeholder={drawerCollapsed ? '' : 'Search...'}
-                className="input input-bordered h-14 w-full rounded-lg pl-10 text-lg "
-              />
-              <label
-                htmlFor="sidebarSerach"
-                className={`absolute top-1/2 h-6 w-6 -translate-y-1/2 p-0 transition-all
-               duration-300 ${drawerCollapsed ? 'left-7' : 'left-5'}`}
-              >
-                <SearchIcon />
-              </label>
-            </li>
-            {/* All the Menu List */}
-            {sidebarOptions.map((option) => (
-              <li
-                key={option.name}
-                className={`from-primary/50 to-primary/10  ${
-                  router.asPath.split('/')[2] === option.link
-                    ? 'bordered'
-                    : 'hover-bordered'
-                }`}
-              >
-                <Link href={`/dashboard/${option.link}`}>
-                  <a
-                    onClick={toggleDrawer}
-                    className={`items-center ${
-                      drawerCollapsed ? 'justify-center' : 'justify-start'
-                    } ${
-                      router.asPath.split('/')[2] === option.link
-                        ? 'active'
-                        : ''
-                    }`}
-                  >
-                    <span className={'w-6'}>{sidebarIcons[option.link]}</span>
-                    {!drawerCollapsed && <span>{option.name}</span>}
-                  </a>
-                </Link>
-              </li>
-            ))}
-            {/* Profile Menu */}
-            <ProfileMenu settingModalToggle={handleModalState} />
-          </ul>
+          {/* Search Bar */}
+          <div className="relative flex w-full justify-center p-2">
+            <input
+              type="text"
+              id="sidebarSerach"
+              placeholder={drawerCollapsed ? '' : 'Search...'}
+              className="input input-bordered h-14 w-full rounded-lg pl-10 text-lg "
+            />
+            <label
+              htmlFor="sidebarSerach"
+              className={`absolute top-1/2 h-6 w-6 -translate-y-1/2 p-0
+               transition-all duration-300 ${
+                 drawerCollapsed
+                   ? 'left-1/2 -translate-x-1/2'
+                   : 'left-5 translate-x-0'
+               }`}
+            >
+              <SearchIcon />
+            </label>
+          </div>
+          {/* Close Btn */}
           <button
             onClick={toggleDrawerCollapsed}
             className={`btn-primary absolute top-5 right-0 z-50 hidden h-8 w-6 origin-center transition-all duration-300 lg:block  ${
@@ -107,7 +80,33 @@ const Sidebar: FC = () => {
           >
             <ArrowIcon />
           </button>
+        </div>
+        <aside className="flex-1 select-none overflow-x-hidden backdrop-blur">
+          <ul className="menu relative h-full flex-nowrap gap-1 overflow-y-auto py-2 font-bold transition-all duration-200">
+            {/* All the Menu List */}
+            {sidebarOptions.map((option) => (
+              <li
+                key={option.name}
+                className="ml-2 from-primary/50 to-primary/10"
+              >
+                <Link
+                  onClick={toggleDrawer}
+                  className={`relative items-center rounded-l-full ${
+                    drawerCollapsed ? 'justify-center' : 'justify-start'
+                  } ${
+                    router.asPath.split('/')[2] === option.link ? 'active' : ''
+                  }`}
+                  href={`/dashboard/${option.link}`}
+                >
+                  <span className={'w-6'}>{sidebarIcons[option.link]}</span>
+                  {!drawerCollapsed && <span>{option.name}</span>}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </aside>
+        {/* Profile Menu */}
+        <ProfileMenu settingModalToggle={handleModalState} />
       </div>
       {/* Setting Modal */}
       <Modal

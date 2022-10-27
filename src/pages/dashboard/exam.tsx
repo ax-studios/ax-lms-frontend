@@ -1,13 +1,12 @@
 import { NextPage } from 'next';
+import Heading from '../../components/pages/dashboard/Wrappers/Heading';
 import ComposeMusic from '../../icons/illustrations/ComposeMusic';
 
 const Exam: NextPage = () => {
   return (
     <div className="flex flex-col">
-      <h1 className="flex h-20 w-full items-center pl-2 text-3xl font-bold">
-        Exam
-      </h1>
-      <div className="flex flex-col items-center justify-center gap-4">
+      <Heading title="Exam" />
+      <div className="container mx-auto flex  flex-col items-center justify-center gap-4 px-3 md:px-5">
         <div className="w-full max-w-md rounded-2xl border-2 border-primary/20 bg-base-content/5 p-10">
           <ComposeMusic />
         </div>

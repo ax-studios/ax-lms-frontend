@@ -3,14 +3,14 @@
 @tailwind utilities;
 
 ::-webkit-scrollbar {
-  @apply h-2 w-2 rounded-full bg-base-content;
+  @apply h-2 w-2 rounded-full bg-base-content/20;
 }
 ::-webkit-scrollbar-thumb {
   @apply rounded-full bg-primary;
 }
 
 .card {
-  @apply rounded-2xl bg-base-content/5 shadow-lg transition-all duration-200;
+  @apply rounded-2xl border border-base-content/20 bg-base-content/5 shadow-lg transition-all duration-200;
 }
 
 .todo-high {

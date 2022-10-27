@@ -1,9 +1,13 @@
 import NextLink from 'next/link';
-import { FC, ReactNode } from 'react';
-interface Props {
+import { FC } from 'react';
+
+interface LinkProps {
   href: string;
-  children: ReactNode;
 }
+
+interface Props
+  extends React.PropsWithChildren<LinkProps>,
+    Omit<React.ComponentPropsWithoutRef<'a'>, keyof LinkProps> {}
 
 const Link: FC<Props> = ({ href, children, ...props }) => {
   return (

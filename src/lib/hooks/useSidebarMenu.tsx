@@ -40,6 +40,10 @@ const useSidebarMenu = (): SidebarMenuInterface[] => {
           name: 'Exam',
           link: 'exam',
         },
+        {
+          name: 'Attendance',
+          link: 'attendance',
+        },
       ];
     default:
       return [];
