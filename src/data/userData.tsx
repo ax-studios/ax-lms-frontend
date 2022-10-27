@@ -54,6 +54,32 @@ export const UserData = {
       link: 'https://github.com/Chandraprakash-Darji',
     },
   ],
+  projects: [
+    {
+      name: 'Portfolio',
+      link: 'https://chandraprakash.codes',
+      image:
+        'https://user-images.githubusercontent.com/93640141/198384929-9cae4227-3ddc-4c2d-a958-034c6398701d.png',
+      tags: ['React', 'Next', 'Tailwind', 'Typescript'],
+      id: '1',
+    },
+    {
+      name: 'Flimpire',
+      link: 'https://filmpirecp.vercel.app/',
+      image:
+        'https://user-images.githubusercontent.com/93640141/198385344-8c9a2574-6195-4811-82e6-752084682380.png',
+      tags: ['React', 'Next', 'Tailwind', 'Typescript'],
+      id: '2',
+    },
+    {
+      name: 'Ax Studios',
+      link: 'https://ax-studio.vercel.app/',
+      image:
+        'https://user-images.githubusercontent.com/93640141/198384925-1c5b652f-19b3-493f-af89-cf68c73ac7b3.png',
+      tags: ['React', 'Next', 'Tailwind', 'Typescript'],
+      id: '3',
+    },
+  ],
   tasks,
   examSchedule,
   announcements,
