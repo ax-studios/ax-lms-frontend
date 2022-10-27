@@ -52,7 +52,9 @@ const Sidebar: FC = () => {
 
           <ul className="menu relative h-[calc(100vh-80px)] overflow-y-auto overflow-x-hidden font-bold transition-all duration-200">
             {/* Search Bar */}
-            <li className="relative flex w-full justify-center p-2">
+            <li className="relative flex w-full justify-center p-2" onClick={() => {
+                if (drawerCollapsed) toggleDrawerCollapsed();
+              }}>
               <input
                 type="text"
                 id="sidebarSerach"
