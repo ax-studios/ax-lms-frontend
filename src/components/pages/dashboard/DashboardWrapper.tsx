@@ -4,6 +4,7 @@ import { themesInterface } from '../../../lib/config';
 import { SettingsContext } from '../../../lib/context/settings';
 import Header from './Wrappers/Header';
 import Sidebar from './Wrappers/Sidebar';
+import ToDoList from './Wrappers/ToDoList';
 
 interface DashboardWrapperProps {
   children: React.ReactNode;
@@ -47,8 +48,8 @@ const DashboardWrapper: FC<DashboardWrapperProps> = ({ children }) => {
               <Header />
               {children}
             </div>
-
             {/* <ToDoList /> */}
+            <ToDoList />
           </div>
           <div className="drawer-side">
             <div

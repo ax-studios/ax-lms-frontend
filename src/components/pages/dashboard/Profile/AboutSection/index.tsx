@@ -71,11 +71,11 @@ const AboutSection: FC = () => {
       </div>
       <div className="mt-5 rounded-xl bg-base-content/5 p-5">
         <h2 className="mb-4 text-2xl font-bold">Projects</h2>
-        <div className="flex gap-6">
+        <div className="flex flex-wrap gap-6">
           {userData.projects.map((project) => (
             <a
               href={project.link}
-              className="group relative aspect-square h-96 overflow-hidden rounded-lg border-2 border-base-content/10 bg-base-content/5 transition-all duration-300  hover:border-primary hover:text-primary"
+              className="group relative aspect-square h-96 shrink-0 overflow-hidden rounded-lg border-2 border-base-content/10 bg-base-content/5 transition-all duration-300 hover:border-primary hover:text-primary"
               key={project.id}
               target="_blank"
               rel="noreferrer"
