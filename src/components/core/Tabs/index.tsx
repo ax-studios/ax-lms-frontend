@@ -1,7 +1,7 @@
 import { Dispatch, FC, SetStateAction, useState } from 'react';
 
 interface Props {
-  tabs: Array<{ name: string; value: string }>;
+  tabs: ReadonlyArray<{ name: string; value: string }>;
   value: string;
   setValue: Dispatch<SetStateAction<any>>;
 }
