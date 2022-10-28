@@ -1,12 +1,12 @@
-import Announcements from './Announcement';
+import Announcement from './Announcement';
 import Attendance from './Attendance';
 import ClassSchedule from './ClassSchedule';
 import ExamSchedule from './ExamSchedule';
-import UpcomingEvents from './upcoming events';
 import News from './News';
+import UpcomingEvents from './UpcomingEvents';
 
 export {
-  Announcements,
+  Announcement,
   ClassSchedule,
   ExamSchedule,
   UpcomingEvents,

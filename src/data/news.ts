@@ -20,21 +20,6 @@ const news = [
     name: 'Dear students you will have TKinter workshop today at new lab-1 from 12:10 to 2:00',
     date: '2020-01-01',
   },
-  {
-    id: 5,
-    name: 'Dear students you will have TKinter workshop today at new lab-1 from 12:10 to 2:00',
-    date: '2020-01-01',
-  },
-  {
-    id: 6,
-    name: 'Dear students you will have TKinter workshop today at new lab-1 from 12:10 to 2:00',
-    date: '2020-01-01',
-  },
-  {
-    id: 7,
-    name: 'Any students who are having SOCSET aarti pics/videos   kindly WhatsApp me',
-    date: '2020-01-01',
-  },
 ];
 
 export default news;
