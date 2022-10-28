@@ -13,10 +13,10 @@ interface InputProps {
   name: string;
   type: HTMLInputTypeAttribute;
   placeholder: string;
-  required?: boolean;
-  disabled?: boolean;
   value: string;
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  required?: boolean;
+  disabled?: boolean;
   error?: null | string;
   className?: string;
 }
@@ -48,7 +48,7 @@ const Input: FC<InputProps> = ({
           type={inputType}
           id={id}
           name={name}
-          className={`text-medium input mt-2 block w-full ${
+          className={`input input-bordered mt-2 block w-full ${
             typeof className !== 'undefined' ? className : ''
           }`}
           placeholder={

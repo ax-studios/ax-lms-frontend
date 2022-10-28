@@ -1,7 +1,7 @@
 import { FC, useContext } from 'react';
 import { UserContext } from '../../../../../data/userData';
 
-const Announcements: FC = () => {
+const Announcement: FC = () => {
   const { announcements } = useContext(UserContext);
   return (
     <div className="flex max-w-lg shrink-0 flex-col gap-3 font-bold">
@@ -20,4 +20,4 @@ const Announcements: FC = () => {
     </div>
   );
 };
-export default Announcements;
+export default Announcement;

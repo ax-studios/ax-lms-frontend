@@ -48,7 +48,6 @@ const DashboardWrapper: FC<DashboardWrapperProps> = ({ children }) => {
               <Header />
               {children}
             </div>
-            {/* <ToDoList /> */}
             <ToDoList />
           </div>
           <div className="drawer-side">

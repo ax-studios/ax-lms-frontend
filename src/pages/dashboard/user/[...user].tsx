@@ -19,11 +19,13 @@ const tabs = [
     name: 'Records',
     value: 'records',
   },
-];
+] as const;
+
+type tabsValue = typeof tabs[number]['value'];
 
 const User: NextPage = () => {
   const userData = useContext(UserContext);
-  const [selectedTab, setSelectedTab] = useState<'about' | 'records'>('about');
+  const [selectedTab, setSelectedTab] = useState<tabsValue>('about');
   return (
     <div className="container mx-auto mt-7 overflow-hidden rounded-xl border-2  border-primary/40 pb-2 md:pb-10">
       <div className="relative h-32 w-full md:h-80">

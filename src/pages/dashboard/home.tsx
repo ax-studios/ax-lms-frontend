@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import {
-  Announcements,
+  Announcement,
   Attendance,
   ClassSchedule,
   ExamSchedule,
@@ -19,7 +19,7 @@ const Home: FC = () => {
           <ExamSchedule />
         </div>
         <div className="flex flex-col flex-wrap gap-5">
-          <Announcements />
+          <Announcement />
           <News />
         </div>
         <div className="flex flex-1 flex-col flex-wrap gap-5">

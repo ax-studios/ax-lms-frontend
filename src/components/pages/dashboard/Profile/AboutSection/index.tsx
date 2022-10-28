@@ -75,7 +75,7 @@ const AboutSection: FC = () => {
           {userData.projects.map((project) => (
             <a
               href={project.link}
-              className="group relative aspect-square h-96 shrink-0 overflow-hidden rounded-lg border-2 border-base-content/10 bg-base-content/5 transition-all duration-300 hover:border-primary hover:text-primary"
+              className="group relative aspect-square h-full max-h-96 w-full max-w-sm shrink-0 overflow-hidden rounded-lg border-2 border-base-content/10 bg-base-content/5 transition-all duration-300 hover:border-primary hover:text-primary"
               key={project.id}
               target="_blank"
               rel="noreferrer"
