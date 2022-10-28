@@ -1,13 +1,20 @@
 name: deploy website
+# When to run
 on: [push, pull_request]
+
+# List of jobs
 jobs:
   build:
+    # System
     runs-on: ubuntu-latest
+    # Steps to Build App
     steps:
       - uses: actions/checkout@v3
+      # yarn install dependencies
       - uses: borales/actions-yarn@v3.0.0
         with:
           cmd: install # will run `yarn install` command
+      # Building app
       - uses: borales/actions-yarn@v3.0.0
         with:
           cmd: build # will run `yarn build` command
