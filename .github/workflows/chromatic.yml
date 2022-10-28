@@ -7,6 +7,9 @@ on: push
 # List of jobs
 jobs:
   chromatic-deployment:
+    # Operating System
+    runs-on: ubuntu-latest
+    # Job Steps
     steps:
       # 👇 Version 2 of the action
       - name: Checkout repository
