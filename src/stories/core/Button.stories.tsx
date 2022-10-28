@@ -1,9 +1,9 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { CTA } from '../components/core';
+import { CTA } from '../../components/core';
 
 // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
 export default {
-  title: 'Core/CTA',
+  title: 'core/CTA',
   component: CTA,
 } as ComponentMeta<typeof CTA>;
 
