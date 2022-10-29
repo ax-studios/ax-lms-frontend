@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { FC, useContext, useState } from 'react';
 import { ArrowIcon } from '../../../../../icons';
@@ -5,9 +6,7 @@ import { useSidebarIcons } from '../../../../../icons/Sidebar Icons';
 import { width } from '../../../../../lib/config';
 import { SettingsContext } from '../../../../../lib/context/settings';
 import useSidebarMenu from '../../../../../lib/hooks/useSidebarMenu';
-import { Logo } from '../../../../core';
-import Link from 'next/link';
-import Modal from '../../../../core/Modal';
+import { Logo, Modal } from '../../../../core';
 import ProfileMenu from '../ProfileMenu';
 import SettingModal from '../SettingsModal';
 import Search from './Search';

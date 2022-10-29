@@ -1,19 +1,13 @@
+import Link from 'next/link';
 import { FC, useContext } from 'react';
 import { UserContext } from '../../../../../data/userData';
 import PlusIcon from '../../../../../icons/PlusIcon';
-import CalenderIcon from '../../../../../icons/Sidebar Icons/CalenderIcon';
 
 const UpcomingEvents: FC = () => {
   const { events } = useContext(UserContext);
   return (
     <div className="flex w-full max-w-sm shrink-0 flex-col gap-3 font-bold md:max-w-[21rem] ">
       <h2 className="text-xl font-bold text-base-content">Upcoming Events</h2>
-      <button className="btn btn-primary h-16 items-center gap-1 text-lg shadow-lg shadow-primary/30 hover:shadow-xl">
-        <span className="aspect-square h-9">
-          <CalenderIcon />
-        </span>
-        Go to Calendar
-      </button>
 
       {events.map((event) => (
         <div key={event.id} className="card flex flex-col gap-1 p-3 px-5">
@@ -23,12 +17,15 @@ const UpcomingEvents: FC = () => {
           <span className="">{event.name}</span>
         </div>
       ))}
-      <button className="btn flex h-16 items-center justify-center gap-1 border-2 border-dashed border-primary bg-transparent py-5 text-center shadow-lg shadow-primary/10 hover:border-primary hover:bg-transparent hover:shadow-primary/20">
+      <Link
+        href="/dashboard/calender"
+        className="btn h-16 gap-1 border-2 border-dashed border-primary bg-transparent text-center text-base-content shadow-lg shadow-primary/10 hover:border-primary hover:bg-transparent hover:shadow-primary/20"
+      >
         <span className="block aspect-square h-6">
           <PlusIcon />
         </span>
         <span>Add an Event</span>
-      </button>
+      </Link>
     </div>
   );
 };

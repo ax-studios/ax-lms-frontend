@@ -11,13 +11,15 @@ const Attendance: FC = () => {
     <div className="flex w-full max-w-sm flex-col gap-3 font-bold md:max-w-[21rem]">
       <h2 className="text-xl font-bold text-base-content">Attendance</h2>
       <div className="card flex flex-col items-center gap-3 px-8 py-5">
-        <AttendancePie />
+        <div className="relative">
+          <AttendancePie />
+        </div>
         {attendance.map((item) => {
           totalDaysAttended += item.days_attended;
           totalDaysTotal += item.days_total;
           return (
             <div key={item.id} className="flex items-center gap-3 self-start">
-              <div className="flex w-8 justify-center">
+              <div className="aspect-square w-8">
                 <item.icon />
               </div>
               <span>{item.course}</span>
@@ -26,7 +28,9 @@ const Attendance: FC = () => {
           );
         })}
         <div className="flex items-center gap-3 self-start">
-          <TotalIcon />
+          <span className="aspect-square w-8">
+            <TotalIcon />
+          </span>
           <span>Total</span>
           <span className="font-normal">{`${totalDaysAttended}/${totalDaysTotal}`}</span>
         </div>

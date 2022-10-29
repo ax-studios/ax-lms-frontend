@@ -4,7 +4,6 @@ import { themesInterface } from '../../../lib/config';
 import { SettingsContext } from '../../../lib/context/settings';
 import Header from './Wrappers/Header';
 import Sidebar from './Wrappers/Sidebar';
-import ToDoList from './Wrappers/ToDoList';
 
 interface DashboardWrapperProps {
   children: React.ReactNode;
@@ -12,7 +11,7 @@ interface DashboardWrapperProps {
 
 const DashboardWrapper: FC<DashboardWrapperProps> = ({ children }) => {
   const route = useRouter();
-  const [theme, setTheme] = useState<themesInterface>('smile');
+  const [theme, setTheme] = useState<themesInterface>('el_regaldo');
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [drawerCollapsed, setDrawerCollapsed] = useState(true);
   const [toDoCollapsed, setToDoCollapsed] = useState(true);
@@ -44,11 +43,11 @@ const DashboardWrapper: FC<DashboardWrapperProps> = ({ children }) => {
             onChange={defaultSettings.toggleDrawer}
           />
           <div className="drawer-content flex h-screen overflow-hidden">
-            <div className="h-screen w-full overflow-y-auto overflow-x-hidden">
+            <div className="h-screen w-full overflow-y-auto overflow-x-hidden pb-5">
               <Header />
               {children}
             </div>
-            <ToDoList />
+            {/* <ToDoList /> */}
           </div>
           <div className="drawer-side">
             <div

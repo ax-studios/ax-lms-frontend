@@ -10,7 +10,7 @@
 }
 
 .card {
-  @apply rounded-2xl border border-base-content/20 bg-base-content/5 shadow-lg transition-all duration-200;
+  @apply border border-base-content/20 bg-base-content/5 transition-all duration-200;
 }
 
 .todo-high {

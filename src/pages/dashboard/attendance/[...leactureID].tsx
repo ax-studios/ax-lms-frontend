@@ -94,7 +94,7 @@ const ChangeAttendece: NextPage = () => {
                 <td>{new Date('10/10/2022').toISOString().substring(0, 10)}</td>
                 <th>
                   <label
-                    className={`btn btn-circle btn-xl ${
+                    className={`btn btn-circle btn-xl border-2 bg-transparent text-base-content ${
                       student.attendance === 'p'
                         ? 'outline outline-primary'
                         : ''
@@ -115,7 +115,7 @@ const ChangeAttendece: NextPage = () => {
                 </th>
                 <th>
                   <label
-                    className={`btn btn-circle btn-xl ${
+                    className={`btn btn-circle btn-xl border-2 bg-transparent text-base-content ${
                       student.attendance === 'a'
                         ? 'outline outline-secondary'
                         : ''
@@ -136,7 +136,7 @@ const ChangeAttendece: NextPage = () => {
                 </th>
                 <th>
                   <label
-                    className={`btn btn-circle btn-xl ${
+                    className={`btn btn-circle btn-xl border-2 bg-transparent text-base-content ${
                       student.attendance === 'e' ? 'outline outline-accent' : ''
                     }`}
                     htmlFor={`student-${student.enrollNo}-E`}
@@ -155,8 +155,10 @@ const ChangeAttendece: NextPage = () => {
                 </th>
                 <th>
                   <label
-                    className={`btn btn-circle btn-xl ${
-                      student.attendance === 'x' ? 'outline' : ''
+                    className={`btn btn-circle btn-xl border-2 bg-transparent text-base-content ${
+                      student.attendance === 'x'
+                        ? 'outline outline-base-content'
+                        : ''
                     }`}
                     htmlFor={`student-${student.enrollNo}-X`}
                   >
@@ -166,7 +168,7 @@ const ChangeAttendece: NextPage = () => {
                     type="radio"
                     name={`student-${student.enrollNo}`}
                     id={`student-${student.enrollNo}-X`}
-                    className="radio radio-mark "
+                    className="radio radio-mark"
                     onChange={() =>
                       handleChangeAttendance(student.enrollNo, 'x')
                     }

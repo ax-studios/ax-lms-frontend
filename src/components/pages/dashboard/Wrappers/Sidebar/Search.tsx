@@ -23,7 +23,7 @@ const Search: FC = () => {
       />
       <label
         htmlFor="sidebarSerach"
-        className={`absolute top-1/2 h-6 w-6 -translate-y-1/2 p-0
+        className={`absolute top-1/2 h-6 w-6 -translate-y-1/2 cursor-pointer p-0
        transition-all duration-300 ${
          drawerCollapsed ? 'left-1/2 -translate-x-1/2' : 'left-5 translate-x-0'
        }`}

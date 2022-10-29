@@ -20,11 +20,17 @@ const AttendanceTableHeading: FC<Props> = ({
 
       <th>
         <div className="flex items-center gap-2">
-          Present
+          <label
+            className="cursor-pointer select-none"
+            htmlFor={`radio-${location}-p`}
+          >
+            Present
+          </label>
           <input
             type="radio"
             value="p"
             name={`radio-${location}`}
+            id={`radio-${location}-p`}
             className="radio radio-primary"
             checked={selectedRadio === 'p'}
             onChange={(e) => onChange(e)}
@@ -33,10 +39,16 @@ const AttendanceTableHeading: FC<Props> = ({
       </th>
       <th>
         <div className="flex items-center gap-2">
-          Absent{' '}
+          <label
+            className="cursor-pointer select-none"
+            htmlFor={`radio-${location}-a`}
+          >
+            Absent{' '}
+          </label>
           <input
             type="radio"
             value="a"
+            id={`radio-${location}-a`}
             name={`radio-${location}`}
             className="radio radio-secondary"
             checked={selectedRadio === 'a'}
@@ -46,10 +58,16 @@ const AttendanceTableHeading: FC<Props> = ({
       </th>
       <th>
         <div className="flex items-center gap-2">
-          Exam{' '}
+          <label
+            className="cursor-pointer select-none"
+            htmlFor={`radio-${location}-e`}
+          >
+            Exam{' '}
+          </label>
           <input
             type="radio"
             value="e"
+            id={`radio-${location}-e`}
             name={`radio-${location}`}
             className="radio radio-accent"
             checked={selectedRadio === 'e'}
@@ -59,10 +77,16 @@ const AttendanceTableHeading: FC<Props> = ({
       </th>
       <th>
         <div className="flex items-center gap-2">
-          Activity
+          <label
+            className="cursor-pointer select-none"
+            htmlFor={`radio-${location}-x`}
+          >
+            Activity
+          </label>
           <input
             type="radio"
             value="x"
+            id={`radio-${location}-x`}
             name={`radio-${location}`}
             className="radio"
             checked={selectedRadio === 'x'}
