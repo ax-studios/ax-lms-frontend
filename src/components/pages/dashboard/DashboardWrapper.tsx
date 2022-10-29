@@ -12,7 +12,7 @@ interface DashboardWrapperProps {
 
 const DashboardWrapper: FC<DashboardWrapperProps> = ({ children }) => {
   const route = useRouter();
-  const [theme, setTheme] = useState<themesInterface>('night');
+  const [theme, setTheme] = useState<themesInterface>('smile');
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [drawerCollapsed, setDrawerCollapsed] = useState(true);
   const [toDoCollapsed, setToDoCollapsed] = useState(true);

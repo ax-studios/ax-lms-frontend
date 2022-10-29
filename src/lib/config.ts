@@ -9,6 +9,8 @@ export const themes = [
   'cmyk',
   'forest',
   'night',
+  'el regaldo',
+  'smile',
 ] as const;
 export type themesInterface = typeof themes[number];
 

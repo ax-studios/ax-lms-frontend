@@ -25,7 +25,7 @@ const Tabs: FC<Props> = ({ tabs, value, setValue }) => {
             key={tab.value}
             className={`btn z-10 rounded-none border-0 border-b-2 bg-transparent px-5 duration-300 hover:btn-primary hover:!bg-transparent focus:btn-primary focus:!bg-transparent focus:!outline-none ${
               tab.value === value
-                ? 'border-primary text-base-content hover:!border-primary'
+                ? 'border-primary text-base-content hover:!border-primary  focus:text-base-content'
                 : 'border-transparent text-base-content/70 hover:!border-transparent focus:!border-transparent '
             }`}
             onClick={() => setValue(tab.value)}
