@@ -1,7 +1,8 @@
 import { useRouter } from 'next/router';
-import { FC, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { themesInterface } from '../../../lib/config';
 import { SettingsContext } from '../../../lib/context/settings';
+import LoadingPage from '../../core/LoadingPage';
 import Header from './Wrappers/Header';
 import Sidebar from './Wrappers/Sidebar';
 
@@ -10,12 +11,12 @@ interface DashboardWrapperProps {
 }
 
 const DashboardWrapper: FC<DashboardWrapperProps> = ({ children }) => {
-  const route = useRouter();
+  const router = useRouter();
   const [theme, setTheme] = useState<themesInterface>('el_regaldo');
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [drawerCollapsed, setDrawerCollapsed] = useState(true);
   const [toDoCollapsed, setToDoCollapsed] = useState(true);
-
+  const [routeChanging, setRouteChanging] = useState(true);
   const defaultSettings = {
     theme,
     setTheme,
@@ -30,11 +31,29 @@ const DashboardWrapper: FC<DashboardWrapperProps> = ({ children }) => {
     toggleToDoCollapsed: () => setToDoCollapsed((p) => !p),
   };
 
-  if (route.pathname.split('/')[1] === 'dashboard') {
+  useEffect(() => {
+    const handleRouteChangeStart = (url: string): void => {
+      console.log(`App is changing to ${url}`);
+      setRouteChanging(true);
+    };
+    const handleRouteChangeComplete = (url: string): void => {
+      setRouteChanging(false);
+    };
+
+    router.events.on('routeChangeStart', handleRouteChangeStart);
+    router.events.on('routeChangeComplete', handleRouteChangeComplete);
+
+    return () => {
+      router.events.off('routeChangeStart', handleRouteChangeStart);
+      router.events.off('routeChangeComplete', handleRouteChangeComplete);
+    };
+  }, []);
+
+  if (router.pathname.split('/')[1] === 'dashboard') {
     return (
       <SettingsContext.Provider value={defaultSettings}>
         {/* eslint-disable-next-line prettier/prettier */}
-        <div className="drawer drawer-mobile" data-theme={theme}>
+        <div className="drawer-mobile drawer" data-theme={theme}>
           <input
             id="my-drawer-2"
             type="checkbox"
@@ -43,8 +62,9 @@ const DashboardWrapper: FC<DashboardWrapperProps> = ({ children }) => {
             onChange={defaultSettings.toggleDrawer}
           />
           <div className="drawer-content flex h-screen overflow-hidden">
-            <div className="h-screen w-full overflow-y-auto overflow-x-hidden pb-5">
+            <div className="relative h-screen w-full overflow-y-auto overflow-x-hidden pb-5">
               <Header />
+              {routeChanging ? <LoadingPage routeState={routeChanging} /> : ''}
               {children}
             </div>
             {/* <ToDoList /> */}

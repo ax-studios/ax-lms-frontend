@@ -11,7 +11,7 @@ const classes = {
       end_time: '11:30',
     },
     {
-      id: 1,
+      id: 2,
       name: 'Computer Science',
       attendanceSubmited: true,
       presentStudent: 30,
@@ -21,7 +21,7 @@ const classes = {
       end_time: '11:30',
     },
     {
-      id: 1,
+      id: 3,
       name: 'Computer Science',
       attendanceSubmited: false,
       presentStudent: 30,
@@ -43,7 +43,7 @@ const classes = {
       end_time: '11:30',
     },
     {
-      id: 1,
+      id: 2,
       name: 'Computer Science',
       attendanceSubmited: false,
       presentStudent: 30,
@@ -53,7 +53,7 @@ const classes = {
       end_time: '11:30',
     },
     {
-      id: 1,
+      id: 3,
       name: 'Computer Science',
       attendanceSubmited: false,
       presentStudent: 30,
@@ -75,7 +75,7 @@ const classes = {
       end_time: '11:30',
     },
     {
-      id: 1,
+      id: 2,
       name: 'Computer Science',
       attendanceSubmited: true,
       presentStudent: 30,
@@ -85,7 +85,7 @@ const classes = {
       end_time: '11:30',
     },
     {
-      id: 1,
+      id: 3,
       name: 'Computer Science',
       attendanceSubmited: true,
       presentStudent: 30,

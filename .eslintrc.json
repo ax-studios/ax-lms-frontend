@@ -42,6 +42,7 @@
     ],
     "react/no-unescaped-entities": "off",
     "@typescript-eslint/indent": "off",
-    "multiline-ternary":"off"
+    "multiline-ternary": "off",
+    "react-hooks/exhaustive-deps": "off"
   }
 }

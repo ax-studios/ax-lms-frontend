@@ -59,7 +59,7 @@ const ChangeAttendece: NextPage = () => {
                 <td>
                   <div className="flex items-center space-x-3">
                     <div className="avatar">
-                      <div className="mask mask-circle h-12 w-12 bg-base-content/30">
+                      <div className="mask mask-circle relative h-12 w-12 bg-base-content/30">
                         {student.profileURL !== '' ? (
                           <Image
                             src={student.profileURL}

@@ -5,6 +5,7 @@
 ::-webkit-scrollbar {
   @apply h-[6px] w-[6px] rounded-full bg-base-content/20;
 }
+
 ::-webkit-scrollbar-thumb {
   @apply rounded-full bg-base-content/50;
 }
@@ -16,9 +17,11 @@
 .todo-high {
   @apply btn-error;
 }
+
 .todo-medium {
   @apply btn-info;
 }
+
 .todo-low {
   @apply btn-success;
 }

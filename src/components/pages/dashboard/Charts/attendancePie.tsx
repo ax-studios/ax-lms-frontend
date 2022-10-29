@@ -51,7 +51,6 @@ const AttendancePie: FC = () => {
     return newPieValue;
   };
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   const data = useMemo(() => fetchData(), []);
 
   useEffect(() => {
