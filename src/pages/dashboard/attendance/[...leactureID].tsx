@@ -1,6 +1,7 @@
 import { NextPage } from 'next';
 import Image from 'next/image';
 import { ChangeEvent, useState } from 'react';
+import { Link } from '../../../components/core';
 import AttendeceTableHeading from '../../../components/pages/dashboard/Attendance/AttendanceTableHeading';
 import Heading from '../../../components/pages/dashboard/Wrappers/Heading';
 import students from '../../../data/students';
@@ -73,7 +74,12 @@ const ChangeAttendece: NextPage = () => {
                       </div>
                     </div>
                     <div>
-                      <div className="font-bold">{student.name}</div>
+                      <Link
+                        href={`/dashboard/user/${student.enrollNo}`}
+                        className="font-bold hover:text-primary"
+                      >
+                        {student.name}
+                      </Link>
                       <div className="text-sm opacity-50">
                         {student.enrollNo.toUpperCase()}
                       </div>

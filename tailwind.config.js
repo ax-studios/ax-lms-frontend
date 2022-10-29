@@ -11,7 +11,7 @@ const themes = [
       warning: '#CBA006',
       error: '#E25336',
     },
-    'el regaldo': {
+    el_regaldo: {
       primary: '#947cd3',
       secondary: '#ef8a70',
       accent: '#ce980e',
@@ -30,6 +30,9 @@ const themes = [
   'cmyk',
   'forest',
   'night',
+  'wireframe',
+  'black',
+  'lofi',
 ];
 module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],

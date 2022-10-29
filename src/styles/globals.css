@@ -22,3 +22,7 @@
 .todo-low {
   @apply btn-success;
 }
+
+[data-theme=wireframe] {
+  @apply !font-sans
+}

@@ -3,14 +3,17 @@ export const EMAIL_REGEX =
 export const OTP_REGEX = /^\d{6}/;
 export const themes = [
   'dark',
-  'winter',
   'synthwave',
   'halloween',
-  'cmyk',
   'forest',
   'night',
-  'el regaldo',
+  'el_regaldo',
+  'black',
+  'winter',
   'smile',
+  'wireframe',
+  'cmyk',
+  'lofi',
 ] as const;
 export type themesInterface = typeof themes[number];
 

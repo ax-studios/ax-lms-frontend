@@ -75,7 +75,7 @@ const AboutSection: FC = () => {
           {userData.projects.map((project) => (
             <a
               href={project.link}
-              className="group relative aspect-square h-full max-h-96 w-full max-w-sm shrink-0 overflow-hidden rounded-lg border-2 border-base-content/10 bg-base-content/5 transition-all duration-300 hover:border-primary hover:text-primary"
+              className="group relative aspect-square h-full max-h-96 w-full max-w-sm shrink-0 overflow-hidden rounded-lg border-2 border-base-content/10 bg-base-content/5 text-base-300 transition-all duration-300 hover:border-primary hover:text-primary"
               key={project.id}
               target="_blank"
               rel="noreferrer"
@@ -84,9 +84,9 @@ const AboutSection: FC = () => {
                 src={project.image}
                 layout="fill"
                 alt={project.name}
-                className="object-cover"
+                className="object-cover transition-transform duration-300 hover:scale-105"
               />
-              <div className="absolute bottom-0 left-0 flex w-full justify-between text-ellipsis whitespace-nowrap rounded-b-lg border-t-2 border-transparent p-5 text-lg font-bold backdrop-blur transition-colors duration-300 group-hover:border-primary">
+              <div className="absolute bottom-0 left-0 flex w-full justify-between text-ellipsis whitespace-nowrap rounded-b-lg border-t-2 border-transparent bg-base-content/60 p-5 text-lg font-bold backdrop-blur transition-colors duration-300 group-hover:border-primary">
                 {project.name}
                 <span className="aspect-square w-8 transition-transform duration-300 group-hover:rotate-180">
                   <LinkIcon />
