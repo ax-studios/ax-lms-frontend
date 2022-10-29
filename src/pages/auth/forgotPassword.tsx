@@ -1,7 +1,7 @@
 import { NextPage } from 'next';
 import { ChangeEvent, useState } from 'react';
 import { CTA, Input } from '../../components/core';
-import Link from '../../components/core/Link';
+import Link from 'next/link';
 import AuthWrapper from '../../components/pages/auth/AuthWrapper';
 import { EMAIL_REGEX, OTP_REGEX } from '../../lib/config';
 

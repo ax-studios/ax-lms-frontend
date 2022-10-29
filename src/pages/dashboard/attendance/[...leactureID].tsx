@@ -1,7 +1,7 @@
 import { NextPage } from 'next';
 import Image from 'next/image';
+import Link from 'next/link';
 import { ChangeEvent, useState } from 'react';
-import { Link } from '../../../components/core';
 import AttendeceTableHeading from '../../../components/pages/dashboard/Attendance/AttendanceTableHeading';
 import Heading from '../../../components/pages/dashboard/Wrappers/Heading';
 import students from '../../../data/students';
@@ -63,7 +63,7 @@ const ChangeAttendece: NextPage = () => {
                         {student.profileURL !== '' ? (
                           <Image
                             src={student.profileURL}
-                            layout="fill"
+                            fill
                             alt={student.name}
                           />
                         ) : student.gender === 'female' ? (

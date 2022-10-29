@@ -6,7 +6,7 @@ import { width } from '../../../../../lib/config';
 import { SettingsContext } from '../../../../../lib/context/settings';
 import useSidebarMenu from '../../../../../lib/hooks/useSidebarMenu';
 import { Logo } from '../../../../core';
-import Link from '../../../../core/Link';
+import Link from 'next/link';
 import Modal from '../../../../core/Modal';
 import ProfileMenu from '../ProfileMenu';
 import SettingModal from '../SettingsModal';

@@ -82,7 +82,7 @@ const AboutSection: FC = () => {
             >
               <Image
                 src={project.image}
-                layout="fill"
+                fill
                 alt={project.name}
                 className="object-cover transition-transform duration-300 hover:scale-105"
               />

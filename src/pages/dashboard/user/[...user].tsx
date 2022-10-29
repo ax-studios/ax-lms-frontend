@@ -32,7 +32,7 @@ const User: NextPage = () => {
         <Image
           src={userData.banner}
           alt="Banner"
-          layout="fill"
+          fill
           className="object-cover"
         />
         <button className="btn btn-primary btn-circle absolute top-2 right-2 aspect-square p-2">
@@ -45,7 +45,7 @@ const User: NextPage = () => {
             <Image
               src={userData.profileURL}
               alt="profile"
-              layout="fill"
+              fill
               className="overflow-hidden rounded-full"
             />
           </div>

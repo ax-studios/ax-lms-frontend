@@ -58,7 +58,7 @@ const Records: FC = () => {
               <MaleAvatar />
             )
           ) : (
-            <Image src={userData.officalPhotoURL} alt="Banner" layout="fill" />
+            <Image src={userData.officalPhotoURL} alt="Banner" fill />
           )}
         </div>
         <div className="flex-1 rounded-lg border-2 border-base-300">

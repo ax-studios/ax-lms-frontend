@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import Link from '../../../../core/Link';
+import Link from 'next/link';
 
 interface Props {
   classes: Array<{

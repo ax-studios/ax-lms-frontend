@@ -30,7 +30,7 @@ const Header: FC = () => {
           onClick={toggleDrawer}
           className="relative h-8 w-8 shrink-0 rounded-full transition-all duration-500"
         >
-          <Image src={userData.profileURL} alt="Banner" layout="fill" />
+          <Image src={userData.profileURL} alt="Banner" fill />
         </button>
 
         {/* <span className="relative block h-7 shrink-0">

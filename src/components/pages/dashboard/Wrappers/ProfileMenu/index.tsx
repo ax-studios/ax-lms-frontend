@@ -5,7 +5,7 @@ import ExpandIcon from '../../../../../icons/Sidebar Icons/ExpandIcon';
 import LogoutIcon from '../../../../../icons/Sidebar Icons/LogoutIcon';
 import SettingsIcon from '../../../../../icons/Sidebar Icons/SettingsIcon';
 import { SettingsContext } from '../../../../../lib/context/settings';
-import Link from '../../../../core/Link';
+import Link from 'next/link';
 
 const ProfileMenu: FC<{ settingModalToggle: () => void }> = ({
   settingModalToggle,
@@ -48,7 +48,7 @@ const ProfileMenu: FC<{ settingModalToggle: () => void }> = ({
           className="relative h-12 w-12 shrink-0 rounded-full transition-all duration-500"
           onClick={toggleDrawer}
         >
-          <Image src={userData.profileURL} alt="Banner" layout="fill" />
+          <Image src={userData.profileURL} alt="Banner" fill />
         </Link>
         <div
           className={`flex origin-top-left flex-col transition-opacity delay-200 duration-500 ${

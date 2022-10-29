@@ -1,6 +1,6 @@
 import { NextPage } from 'next';
 import { CTA, Logo } from '../../components/core';
-import Link from '../../components/core/Link';
+import Link from 'next/link';
 
 const Landing: NextPage = () => {
   return (
