@@ -16,7 +16,7 @@ const DashboardWrapper: FC<DashboardWrapperProps> = ({ children }) => {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [drawerCollapsed, setDrawerCollapsed] = useState(true);
   const [toDoCollapsed, setToDoCollapsed] = useState(true);
-  const [routeChanging, setRouteChanging] = useState(true);
+  const [routeChanging, setRouteChanging] = useState(false);
   const defaultSettings = {
     theme,
     setTheme,
@@ -63,8 +63,8 @@ const DashboardWrapper: FC<DashboardWrapperProps> = ({ children }) => {
           />
           <div className="drawer-content flex h-screen overflow-hidden">
             <div className="relative h-screen w-full overflow-y-auto overflow-x-hidden pb-5">
+              <LoadingPage routeState={routeChanging} />
               <Header />
-              {routeChanging ? <LoadingPage routeState={routeChanging} /> : ''}
               {children}
             </div>
             {/* <ToDoList /> */}

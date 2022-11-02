@@ -36,7 +36,10 @@ const Sidebar: FC = () => {
             drawerCollapsed ? 'justify-center' : 'justify-start'
           }`}
         >
-          <div className="flex h-20 items-center gap-2 whitespace-nowrap p-4">
+          <Link
+            href="/dashboard/home"
+            className="flex h-20 items-center gap-2 whitespace-nowrap p-4"
+          >
             <span className="block aspect-square h-9">
               <Logo />
             </span>
@@ -47,7 +50,7 @@ const Sidebar: FC = () => {
             >
               Ax Studios
             </span>
-          </div>
+          </Link>
           {/* Search Bar */}
           <Search />
           {/* Close Btn */}

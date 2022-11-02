@@ -26,6 +26,6 @@
   @apply btn-success;
 }
 
-[data-theme=wireframe] {
-  @apply !font-sans
+[data-theme='wireframe'] {
+  @apply !font-sans;
 }
