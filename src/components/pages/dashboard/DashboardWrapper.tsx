@@ -12,7 +12,7 @@ interface DashboardWrapperProps {
 
 const DashboardWrapper: FC<DashboardWrapperProps> = ({ children }) => {
   const router = useRouter();
-  const [theme, setTheme] = useState<themesInterface>('el_regaldo');
+  const [theme, setTheme] = useState<themesInterface>('night');
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [drawerCollapsed, setDrawerCollapsed] = useState(true);
   const [toDoCollapsed, setToDoCollapsed] = useState(true);
@@ -53,7 +53,7 @@ const DashboardWrapper: FC<DashboardWrapperProps> = ({ children }) => {
     return (
       <SettingsContext.Provider value={defaultSettings}>
         {/* eslint-disable-next-line prettier/prettier */}
-        <div className="drawer-mobile drawer" data-theme={theme}>
+        <div className="drawer drawer-mobile" data-theme={theme}>
           <input
             id="my-drawer-2"
             type="checkbox"
@@ -62,7 +62,7 @@ const DashboardWrapper: FC<DashboardWrapperProps> = ({ children }) => {
             onChange={defaultSettings.toggleDrawer}
           />
           <div className="drawer-content flex h-screen overflow-hidden">
-            <div className="relative h-screen w-full overflow-y-auto overflow-x-hidden pb-5">
+            <div className="relative h-screen w-full overflow-y-auto overflow-x-hidden">
               <LoadingPage routeState={routeChanging} />
               <Header />
               {children}

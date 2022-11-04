@@ -12,19 +12,22 @@
     "chromatic": "npx chromatic --exit-zero-on-changes --project-token=f4c18ac01188"
   },
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@reduxjs/toolkit": "^1.8.6",
     "@visx/group": "^2.10.0",
     "@visx/shape": "^2.12.2",
     "@visx/text": "^2.12.2",
     "daisyui": "^2.27.0",
+    "dayjs": "^1.11.6",
     "eslint-config-standard-with-typescript": "^22.0.0",
     "eslint-plugin-import": "2.25.3",
     "eslint-plugin-n": "^15.0.0",
     "eslint-plugin-promise": "^6.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
     "eslint-plugin-react": "7.28.0",
     "next": "13.0.0",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-redux": "^8.0.4"
   },
   "devDependencies": {
     "@babel/core": "^7.19.3",
@@ -47,8 +50,8 @@
     "eslint": "8.2.0",
     "eslint-config-next": "^13.0.0",
     "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-jsx-a11y": "6.5.1",
     "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-jsx-a11y": "6.5.1",
     "eslint-plugin-react-hooks": "4.3.0",
     "eslint-plugin-storybook": "^0.6.4",
     "postcss": "^8.4.16",
