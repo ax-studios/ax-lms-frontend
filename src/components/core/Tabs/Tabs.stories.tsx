@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { useEffect, useState } from 'react';
-import { Tabs } from '../../components/core';
+import { Tabs } from '..';
 
 // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
 export default {

@@ -1,7 +1,8 @@
+import { Button, TextField } from '@mui/material';
 import { NextPage } from 'next';
-import { ChangeEvent, useState } from 'react';
-import { CTA, Input } from '../../components/core';
 import Link from 'next/link';
+import { ChangeEvent, useState } from 'react';
+import PasswordInput from '../../components/core/PasswordInput';
 import AuthWrapper from '../../components/pages/auth/AuthWrapper';
 
 interface InputValue {
@@ -9,14 +10,14 @@ interface InputValue {
   error: string;
 }
 
-interface formStateInterface {
+interface valuesInterface {
   email: InputValue;
   password: InputValue;
   repassword: InputValue;
 }
 
 const ChangePassword: NextPage = () => {
-  const [formState, setFormState] = useState<formStateInterface>({
+  const [values, setValues] = useState<valuesInterface>({
     email: {
       value: 'prakashchandra3786@gmail.com',
       error: '',
@@ -31,18 +32,18 @@ const ChangePassword: NextPage = () => {
     },
   });
   const handleChange = (e: ChangeEvent<HTMLInputElement>): void => {
-    setFormState({
-      ...formState,
+    setValues({
+      ...values,
       [e.target.name]: { error: null, value: e.target.value },
     });
   };
 
   const handleChangePassword = (): void => {
-    if (formState.password.value !== formState.repassword.value) {
-      setFormState({
-        ...formState,
+    if (values.password.value !== values.repassword.value) {
+      setValues({
+        ...values,
         repassword: {
-          ...formState.repassword,
+          ...values.repassword,
           error: "Both password doesn't matches",
         },
       });
@@ -55,41 +56,43 @@ const ChangePassword: NextPage = () => {
         <h1 className="text-center font-bold">Change Password</h1>
         <form
           action="#"
-          className="flex flex-col gap-4"
+          className="my-4 flex flex-col gap-4"
           onSubmit={(e) => e.preventDefault()}
         >
-          <Input
-            displayName="Your Email"
+          <TextField
             id="email"
+            label="Email"
+            variant="filled"
             name="email"
             type="email"
-            placeholder="name@company.com"
-            value={formState.email.value}
+            value={values.email.value}
             onChange={handleChange}
+            required
             disabled
           />
-          <Input
-            displayName="Password"
+          <PasswordInput
             id="password"
+            label="Password"
             name="password"
-            type="password"
-            placeholder="••••••••"
-            value={formState.password.value}
-            onChange={handleChange}
-            required
+            variant="filled"
+            value={values.password.value}
+            handleChange={handleChange}
           />
-          <Input
-            displayName="Renter Password"
-            id="repassword"
+          <PasswordInput
+            id="password"
+            label="Renter Password"
             name="repassword"
-            type="password"
-            placeholder="••••••••"
-            value={formState.repassword.value}
-            onChange={handleChange}
-            required
-            error={formState.repassword.error}
+            variant="filled"
+            value={values.repassword.value}
+            handleChange={handleChange}
           />
-          <CTA onClick={handleChangePassword}>Change Password</CTA>
+          <Button
+            className="bg-primary"
+            variant="contained"
+            onClick={handleChangePassword}
+          >
+            Change Password
+          </Button>
 
           <div className="text-center text-sm">
             <Link

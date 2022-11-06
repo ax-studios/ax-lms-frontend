@@ -1,3 +1,6 @@
+import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
+import InsertLinkIcon from '@mui/icons-material/InsertLink';
+import { Button, IconButton } from '@mui/material';
 import { NextPage } from 'next';
 import Image from 'next/image';
 import { useContext, useState } from 'react';
@@ -7,9 +10,6 @@ import {
   Records,
 } from '../../../components/pages/dashboard/Profile';
 import { UserContext } from '../../../data/userData';
-import EditIcon from '../../../icons/EditIcon';
-import LinkIcon from '../../../icons/LinkIcon';
-
 const tabs = [
   {
     name: 'About',
@@ -35,9 +35,9 @@ const User: NextPage = () => {
           fill
           className="object-cover"
         />
-        <button className="btn btn-primary btn-circle absolute top-2 right-2 aspect-square p-2">
-          <EditIcon />
-        </button>
+        <IconButton color="primary" className="!absolute top-5 right-5">
+          <EditOutlinedIcon />
+        </IconButton>
       </div>
       <div className="relative px-2 md:px-10">
         <div className="-mt-10 flex flex-col items-center gap-2 md:-mt-16 md:flex-row md:gap-5">
@@ -49,22 +49,25 @@ const User: NextPage = () => {
               className="overflow-hidden rounded-full"
             />
           </div>
-          <div className="flex w-full flex-col flex-wrap gap-2 md:flex-row md:gap-5 md:pt-16">
+          <div className="flex w-full flex-col flex-wrap items-start gap-2 md:flex-row md:gap-5 md:pt-16">
             <div className="mx-auto text-center md:mx-0 md:mr-auto md:text-left">
               <h1 className="text-3xl font-bold">{userData.name}</h1>
               <p className="text-lg font-semibold">{userData.tagline}</p>
             </div>
-            <a
+            <Button
               href={userData.profileSpecialLink.url}
-              className="btn btn-primary mx-auto max-w-max space-x-2 font-bold md:mx-0"
               target="_blank"
               rel="noreferrer"
+              startIcon={<InsertLinkIcon />}
+              className="bg-primary "
+              variant="contained"
+              sx={{
+                paddingBlock: '13px',
+                flexShrink: '0',
+              }}
             >
-              <span className="block aspect-square h-6">
-                <LinkIcon />
-              </span>
-              <span>{userData.profileSpecialLink.name}</span>
-            </a>
+              {userData.profileSpecialLink.name}
+            </Button>
           </div>
         </div>
         <div className="my-7">

@@ -12,6 +12,7 @@ const Dash: NextPage = () => {
       Dash {dash}{' '}
       <button
         onClick={toggleDrawer}
+        // eslint-disable-next-line prettier/prettier
         className="btn btn-primary drawer-button lg:hidden"
       >
         Open drawer

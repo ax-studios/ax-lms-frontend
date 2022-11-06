@@ -1,11 +1,15 @@
+import { CssBaseline, ThemeProvider } from '@mui/material';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { useRouter } from 'next/router';
 import { FC, useEffect, useState } from 'react';
 import { themesInterface } from '../../../lib/config';
 import { SettingsContext } from '../../../lib/context/settings';
+import { createTheme } from '../../../lib/theme';
 import LoadingPage from '../../core/LoadingPage';
 import Header from './Wrappers/Header';
 import Sidebar from './Wrappers/Sidebar';
-
+import ToDoList from './Wrappers/ToDoList';
 interface DashboardWrapperProps {
   children: React.ReactNode;
 }
@@ -15,8 +19,11 @@ const DashboardWrapper: FC<DashboardWrapperProps> = ({ children }) => {
   const [theme, setTheme] = useState<themesInterface>('night');
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [drawerCollapsed, setDrawerCollapsed] = useState(true);
-  const [toDoCollapsed, setToDoCollapsed] = useState(true);
+  const [toDoCollapsed, setToDoCollapsed] = useState(false);
   const [routeChanging, setRouteChanging] = useState(false);
+
+  const muiTheme = createTheme('dark');
+
   const defaultSettings = {
     theme,
     setTheme,
@@ -51,36 +58,46 @@ const DashboardWrapper: FC<DashboardWrapperProps> = ({ children }) => {
 
   if (router.pathname.split('/')[1] === 'dashboard') {
     return (
-      <SettingsContext.Provider value={defaultSettings}>
-        {/* eslint-disable-next-line prettier/prettier */}
-        <div className="drawer drawer-mobile" data-theme={theme}>
-          <input
-            id="my-drawer-2"
-            type="checkbox"
-            className="drawer-toggle"
-            checked={drawerOpen}
-            onChange={defaultSettings.toggleDrawer}
-          />
-          <div className="drawer-content flex h-screen overflow-hidden">
-            <div className="relative h-screen w-full overflow-y-auto overflow-x-hidden">
-              <LoadingPage routeState={routeChanging} />
-              <Header />
-              {children}
+      <LocalizationProvider dateAdapter={AdapterDayjs}>
+        <SettingsContext.Provider value={defaultSettings}>
+          <ThemeProvider theme={muiTheme}>
+            <CssBaseline />
+            {/* eslint-disable-next-line prettier/prettier */}
+            <div className="drawer drawer-mobile" data-theme={theme}>
+              <input
+                id="my-drawer-2"
+                type="checkbox"
+                className="drawer-toggle"
+                checked={drawerOpen}
+                onChange={defaultSettings.toggleDrawer}
+              />
+              <div className="drawer-content flex h-screen overflow-hidden">
+                <div className="relative h-screen w-full overflow-y-auto overflow-x-hidden">
+                  <LoadingPage routeState={routeChanging} />
+                  <Header />
+                  {children}
+                </div>
+                <ToDoList />
+              </div>
+              <div className="drawer-side">
+                <div
+                  className="drawer-overlay"
+                  onClick={defaultSettings.toggleDrawer}
+                ></div>
+                <Sidebar />
+              </div>
             </div>
-            {/* <ToDoList /> */}
-          </div>
-          <div className="drawer-side">
-            <div
-              className="drawer-overlay"
-              onClick={defaultSettings.toggleDrawer}
-            ></div>
-            <Sidebar />
-          </div>
-        </div>
-      </SettingsContext.Provider>
+          </ThemeProvider>
+        </SettingsContext.Provider>
+      </LocalizationProvider>
     );
   }
-  return <div data-theme={theme}>{children}</div>;
+  return (
+    <ThemeProvider theme={muiTheme}>
+      <CssBaseline />
+      <div data-theme={theme}>{children}</div>
+    </ThemeProvider>
+  );
 };
 
 export default DashboardWrapper;

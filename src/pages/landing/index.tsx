@@ -1,89 +1,120 @@
+import GradeIcon from '@mui/icons-material/Grade';
+import {
+  Avatar,
+  Button,
+  List,
+  ListItem,
+  ListItemAvatar,
+  ListItemText,
+  Stack,
+  Typography,
+} from '@mui/material';
 import { NextPage } from 'next';
-import { CTA, Logo } from '../../components/core';
+import Image from 'next/image';
 import Link from 'next/link';
+import { Logo } from '../../components/core';
 
+const features = [
+  'Curriculum & Timetable Management',
+  'Learning Management System',
+  'Examination Management',
+  'Fee Management (Cashless Campus)',
+  'Infrastructure Management',
+  'Student can pay their Fees',
+  'Teacher can upload their notes',
+  'Build using NextJS, Typescript and Tailwind',
+  'Apache-2.0 License',
+];
 const Landing: NextPage = () => {
   return (
     <div className="min-h-screen w-full bg-base-300 text-base-content">
-      <section className="py-16 text-center text-4xl font-bold ">
-        <Link
-          href="/"
-          className="flex items-center justify-center py-5 font-semibold decoration-inherit focus:text-primary focus:outline-none "
+      <section className="pt-5 text-center text-4xl font-bold ">
+        <Typography
+          variant="h1"
+          className="mx-auto flex w-max items-center justify-center py-5 decoration-inherit focus:text-primary focus-visible:outline-primary "
         >
           <div className="mr-2 h-10 w-10">
             <Logo />
           </div>
           Ax Studios
-        </Link>
-        <h1 className="mx-auto max-w-xl">
-          Open Source University LMS System made with NextJS, tailwind, and
-          typescript
-        </h1>
-        <div className="mx-auto mt-10 flex w-max gap-2 whitespace-nowrap text-xl">
-          <a
+        </Typography>
+
+        <Typography variant="h1" mt={5} maxWidth="700px" mx="auto">
+          Open Source University LMS System made with NextJS, Tailwindcss, and
+          Typescript.
+        </Typography>
+
+        <Stack
+          direction={{ xs: 'column', sm: 'row' }}
+          spacing={{ xs: 1, sm: 2 }}
+          justifyContent="center"
+          mt={5}
+          px={2}
+        >
+          <Button
+            variant="outlined"
+            LinkComponent="a"
             href="https://github.com/ax-studios"
             target="_blank"
             rel="noreferrer"
           >
-            <CTA onClick={() => {}} style="outline">
-              Source Code
-            </CTA>
-          </a>
-          <Link href="/dashboard/home">
-            <CTA onClick={() => {}} style="outline">
-              Dashboard
-            </CTA>
-          </Link>
-          <Link href="/auth/login">
-            <CTA onClick={() => {}}>Login </CTA>
-          </Link>
+            Contribute
+          </Button>
+          <Button
+            variant="outlined"
+            LinkComponent={Link}
+            href="/dashboard/home"
+          >
+            Dashboard
+          </Button>
+          <Button
+            className="bg-primary"
+            variant="contained"
+            LinkComponent={Link}
+            href="/auth/login"
+          >
+            Login
+          </Button>
+        </Stack>
+
+        <div className="relative mx-auto mt-10 aspect-video h-full max-h-[30rem] overflow-hidden rounded-3xl border-2 border-primary">
+          <Image src="/images/dashboard.png" alt="dashboard" fill />
         </div>
       </section>
-      <section>
-        {[
-          'Curriculum & Timetable Management',
-          'Learning Management System',
-          'Examination Management',
-          'Fee Management (Cashless Campus)',
-          'Infrastructure Management',
-          'Student can pay their Fees',
-          'Teacher can upload their notes',
-          'Student can view their teachers, classes, clubs, eventes, attendance and announcements',
-          'Build using NextJS, Typescript and Tailwind',
-          'Apache-2.0 License',
-        ].map((item) => (
-          <div className="mx-auto max-w-2xl p-2" key={item}>
-            <div className="flex h-full items-center rounded bg-base-100 p-4">
-              <svg
-                fill="none"
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="3"
-                className="mr-4 h-6 w-6 flex-shrink-0 text-primary-focus"
-                viewBox="0 0 24 24"
-              >
-                <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
-                <path d="M22 4L12 14.01l-3-3"></path>
-              </svg>
-              <span className="title-font font-medium text-base-content">
-                {item}
-              </span>
-            </div>
-          </div>
-        ))}
-      </section>
-      <div className="py-5 text-center text-xl">
-        <h2>💪 Thanks to all Contributors</h2>
-        <p>
+      <Stack alignItems="center" mt={5}>
+        <Typography mb={2} variant="h2">
+          Features
+        </Typography>
+        <List dense>
+          {features.map((item) => (
+            <ListItem key={item}>
+              <ListItemAvatar>
+                <Avatar>
+                  <GradeIcon color="primary" />
+                </Avatar>
+              </ListItemAvatar>
+              <ListItemText
+                primary={item}
+                primaryTypographyProps={{
+                  fontSize: 16,
+                  fontWeight: 'medium',
+                }}
+              />
+            </ListItem>
+          ))}
+        </List>
+      </Stack>
+      <div className="mt-10 text-center text-xl">
+        <Typography variant="h2">💪 Thanks to all Contributors</Typography>
+        <Typography variant="subtitle1" mt={1}>
           Thanks a lot for spending your time helping Ax Studios grow. Thanks a
           lot! Keep rocking 🍻
-        </p>
+        </Typography>
       </div>
 
-      <div className="py-4 text-center text-xl font-bold text-primary">
+      <Typography variant="h2" className="text-center text-primary" py={5}>
         © Ax Studios 2022
-      </div>
+      </Typography>
     </div>
   );
 };

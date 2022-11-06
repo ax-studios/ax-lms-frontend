@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Logo } from '../../components/core';
+import { Logo } from '..';
 
 // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
 export default {

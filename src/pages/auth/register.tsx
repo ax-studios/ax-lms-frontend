@@ -1,18 +1,19 @@
+import { Button, TextField } from '@mui/material';
 import { NextPage } from 'next';
-import { ChangeEvent, useState } from 'react';
-import { CTA, Input } from '../../components/core';
 import Link from 'next/link';
+import { ChangeEvent, useState } from 'react';
+import PasswordInput from '../../components/core/PasswordInput';
 import AuthWrapper from '../../components/pages/auth/AuthWrapper';
 
 const Register: NextPage = () => {
-  const [formState, setFormState] = useState({
+  const [values, setValues] = useState({
     email: '',
     name: '',
     password: '',
     repassword: '',
   });
   const handleChange = (e: ChangeEvent<HTMLInputElement>): void => {
-    setFormState({ ...formState, [e.target.name]: e.target.value });
+    setValues({ ...values, [e.target.name]: e.target.value });
   };
   const handleSubmit = (): void => {
     console.log('submit');
@@ -21,48 +22,51 @@ const Register: NextPage = () => {
     <AuthWrapper>
       <>
         <h1 className="text-center font-bold">Register an account</h1>
-        <form action="#" className="flex flex-col gap-4">
-          <Input
-            displayName="Your Email"
+        <form action="#" className="my-4 flex flex-col gap-4">
+          <TextField
             id="email"
+            label="Email"
+            variant="filled"
             name="email"
             type="email"
-            placeholder="name@company.com"
-            value={formState.email}
+            value={values.email}
             onChange={handleChange}
             required
           />
-          <Input
-            displayName="Your Name"
+          <TextField
             id="name"
             name="name"
             type="text"
-            placeholder="Thor Odinson"
-            value={formState.name}
+            label="Your Name"
+            variant="filled"
+            value={values.name}
             onChange={handleChange}
             required
           />
-          <Input
-            displayName="Password"
+          <PasswordInput
             id="password"
+            label="Password"
             name="password"
-            type="password"
-            placeholder="••••••••"
-            value={formState.password}
-            onChange={handleChange}
-            required
+            variant="filled"
+            value={values.password}
+            handleChange={handleChange}
           />
-          <Input
-            displayName="Renter Password"
-            id="repassword"
+          <PasswordInput
+            id="password"
+            label="Renter Password"
             name="repassword"
-            type="password"
-            placeholder="••••••••"
-            value={formState.repassword}
-            onChange={handleChange}
-            required
+            variant="filled"
+            value={values.repassword}
+            handleChange={handleChange}
           />
-          <CTA onClick={handleSubmit}>Submit</CTA>
+
+          <Button
+            className="bg-primary"
+            variant="contained"
+            onClick={handleSubmit}
+          >
+            Submit
+          </Button>
           <div className="text-center text-sm">
             Already have account?{' '}
             <Link

@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { ClassSchedule } from '../../../../components/pages/dashboard/Home';
+import { ClassSchedule } from '..';
 
 // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
 export default {

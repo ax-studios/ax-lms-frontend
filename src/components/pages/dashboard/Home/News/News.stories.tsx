@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { News } from '../../../../components/pages/dashboard/Home';
+import { News } from '..';
 
 // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
 export default {

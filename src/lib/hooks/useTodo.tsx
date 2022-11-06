@@ -1,3 +1,4 @@
+import dayjs, { Dayjs } from 'dayjs';
 import { useEffect, useRef, useState } from 'react';
 import { taskInterface } from '../../data/tasks';
 import { todoContextInterface } from '../context/todo';
@@ -6,7 +7,7 @@ import useLocalStorage from './useLocalStorage';
 export interface addTaskArgs {
   name: string;
   description: string;
-  dueDate: string;
+  dueDate: Dayjs;
   priority: 'high' | 'medium' | 'low';
 }
 
@@ -21,8 +22,8 @@ const useTodo = (): todoContextInterface => {
       {
         ...task,
         id: new Date().getTime(),
-        createdDate: new Date().toUTCString(),
-        modifiedDate: new Date().toUTCString(),
+        createdDate: dayjs(),
+        modifiedDate: dayjs(),
       },
     ]);
   };
@@ -38,7 +39,7 @@ const useTodo = (): todoContextInterface => {
         if (t.id === task.id) {
           return {
             ...task,
-            modifiedDate: new Date().toUTCString(),
+            modifiedDate: dayjs(),
           };
         }
         return t;
@@ -48,7 +49,8 @@ const useTodo = (): todoContextInterface => {
   };
 
   useEffect(() => {
-    if (editElement.current !== null) editElement.current.focus();
+    if (editElement.current !== null && editKey !== undefined)
+      editElement.current.focus();
   }, [editKey]);
 
   return {

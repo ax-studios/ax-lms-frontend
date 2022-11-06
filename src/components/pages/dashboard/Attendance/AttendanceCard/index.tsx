@@ -1,5 +1,6 @@
-import { FC } from 'react';
+import { Button } from '@mui/material';
 import Link from 'next/link';
+import { FC } from 'react';
 
 interface Props {
   classes: Array<{
@@ -42,12 +43,16 @@ const AttendanceCard: FC<Props> = ({ classes, title }) => {
                   ).toFixed(2)}{' '}
                   %
                 </span>
-                <Link
-                  className="btn btn-primary col-span-3"
+                <Button
+                  variant={
+                    classObj.attendanceSubmited ? 'outlined' : 'contained'
+                  }
+                  LinkComponent={Link}
+                  className="col-span-3"
                   href={`/dashboard/attendance/${classObj.id}`}
                 >
-                  {classObj.attendanceSubmited ? 'Update' : 'Fill'} Attendence
-                </Link>
+                  {classObj.attendanceSubmited ? 'Update' : 'Fill'}
+                </Button>
               </div>
             ))}
           </div>

@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Records } from '../../../../components/pages/dashboard/Profile';
+import { Records } from '..';
 
 // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
 export default {

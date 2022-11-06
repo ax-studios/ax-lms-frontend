@@ -1,4 +1,16 @@
 import {
+  Button,
+  capitalize,
+  FormControl,
+  FormControlLabel,
+  FormLabel,
+  Radio,
+  RadioGroup,
+  TextField,
+} from '@mui/material';
+import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
+import dayjs, { Dayjs } from 'dayjs';
+import {
   ChangeEvent,
   FC,
   FormEvent,
@@ -6,23 +18,21 @@ import {
   useEffect,
   useState,
 } from 'react';
-import { taskInterface } from '../../../../../../data/tasks';
+import { taskInterface, taskPrioritys } from '../../../../../../data/tasks';
 import { SettingsContext } from '../../../../../../lib/context/settings';
 import { TodoContext } from '../../../../../../lib/context/todo';
-import { CTA } from '../../../../../core';
-
 interface taskInputInterface {
   priority: 'low' | 'medium' | 'high';
   name: string;
   description: string;
-  dueDate: string;
+  dueDate: Dayjs;
 }
 
 const intialState: taskInputInterface = {
   priority: 'low',
   name: '',
   description: '',
-  dueDate: new Date().toISOString().substring(0, 16),
+  dueDate: dayjs(),
 };
 
 const AddTask: FC = () => {
@@ -33,6 +43,10 @@ const AddTask: FC = () => {
   const [task, setTask] = useState<taskInputInterface | taskInterface>(
     intialState
   );
+  const handleChange = (newDueDate: Dayjs | null): void => {
+    if (newDueDate === null) return;
+    setTask({ ...task, dueDate: newDueDate });
+  };
 
   const handleTaskChange = (e: ChangeEvent<HTMLInputElement>): void => {
     setTask({ ...task, [e.target.name]: e.target.value });
@@ -40,7 +54,7 @@ const AddTask: FC = () => {
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
-    if (task.name !== '') {
+    if (task.name !== '' && task.dueDate !== null) {
       if (editKey !== undefined) {
         editTask(task as taskInterface);
       } else {
@@ -76,29 +90,52 @@ const AddTask: FC = () => {
         }}
       >
         <div className="flex flex-col justify-between gap-5">
-          <div className="flex-1 overflow-hidden text-ellipsis text-xl font-medium">
-            Task
-            <input
-              type="text"
-              name="name"
+          <div className="flex-1 space-y-2 overflow-hidden text-ellipsis text-xl font-medium">
+            <TextField
               id="name"
-              placeholder="Task"
-              className="input input-bordered input-sm mt-2 w-full"
-              required
+              label="Task"
+              variant="filled"
+              size="small"
+              name="name"
+              className="w-full"
+              type="text"
               value={task?.name}
               onChange={handleTaskChange}
-              ref={editKey !== undefined ? editElement : null}
+              required
+              inputRef={editElement}
             />
-            <input
-              type="text"
+            <TextField
               name="description"
               id="description"
-              placeholder="Short Description"
-              className="input input-bordered input-md mt-2 w-full"
+              label="Description"
+              multiline
+              className="w-full"
+              rows={4}
+              defaultValue="Default Value"
+              variant="filled"
               value={task?.description}
               onChange={handleTaskChange}
             />
-            <div className="input rating input-bordered mt-2  h-16 items-center justify-center gap-1 overflow-visible py-2 font-bold">
+            <FormControl>
+              <FormLabel id="priority">Priority</FormLabel>
+              <RadioGroup
+                row
+                aria-labelledby="priority"
+                onChange={handleTaskChange}
+                value={task?.priority}
+                name="priority"
+              >
+                {taskPrioritys.map((priority) => (
+                  <FormControlLabel
+                    value={priority}
+                    control={<Radio />}
+                    label={capitalize(priority)}
+                    key={priority}
+                  />
+                ))}
+              </RadioGroup>
+            </FormControl>
+            {/* <div className="input rating input-bordered mt-2  h-16 items-center justify-center gap-1 overflow-visible py-2 font-bold">
               <span className="mr-3">Priority</span>
               <label className="relative flex items-center justify-center before:absolute before:top-2/3 before:left-1/2 before:z-10 before:-translate-x-1/2 before:scale-0 before:rounded-xl before:bg-primary before:py-0.5 before:px-1 before:text-sm before:text-base-300 before:transition-all before:duration-200 before:content-['Low'] hover:before:scale-100">
                 <input
@@ -130,25 +167,37 @@ const AddTask: FC = () => {
                   className="mask btn-error mask-heart opacity-50 checked:opacity-100"
                 />
               </label>
-            </div>
+            </div> */}
           </div>
-          <div className="relative inline-flex items-center gap-4 text-xl font-medium">
-            <span>Due</span>
-            <input
-              type="datetime-local"
-              name="dueDate"
-              id="dueDate"
-              placeholder="Due Date"
-              className="input input-bordered mr-auto"
-              onChange={handleTaskChange}
-              value={task?.dueDate}
-            />
-            <CTA onClick={() => handleSubmit} type="submit">
-              {editKey !== undefined ? 'Edit' : 'Create'}
-            </CTA>
-            <CTA onClick={() => handleReset} style="outline" type="reset">
-              Reset
-            </CTA>
+          <div className="relative inline-flex flex-col justify-between gap-4 text-xl font-medium md:flex-row md:items-center">
+            <div className="inline-flex items-center gap-4">
+              <DateTimePicker
+                label="Due Date&Time"
+                value={task?.dueDate}
+                onChange={handleChange}
+                renderInput={(params) => <TextField {...params} />}
+              />
+            </div>
+            <div className="inline-flex items-center gap-4">
+              <Button
+                className="flex-1 bg-primary"
+                onClick={() => handleSubmit}
+                type="submit"
+                variant="contained"
+                size="small"
+              >
+                {editKey !== undefined ? 'Edit' : 'Create'}
+              </Button>
+              <Button
+                className="flex-1"
+                type="reset"
+                variant="outlined"
+                size="small"
+                onClick={() => handleReset}
+              >
+                Reset
+              </Button>
+            </div>
           </div>
         </div>
       </div>

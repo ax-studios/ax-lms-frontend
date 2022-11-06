@@ -1,3 +1,4 @@
+import { Button } from '@mui/material';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { FC, useContext, useState } from 'react';
@@ -54,16 +55,17 @@ const Sidebar: FC = () => {
           {/* Search Bar */}
           <Search />
           {/* Close Btn */}
-          <button
+          <Button
+            variant="contained"
             onClick={toggleDrawerCollapsed}
-            className={`btn-primary absolute top-5 right-0 z-50 hidden h-8 w-6 origin-center transition-all duration-300 lg:block  ${
+            className={`absolute top-5 right-0 z-50 hidden !h-8 !w-6 min-w-0 origin-center bg-primary p-0 lg:block  ${
               drawerCollapsed
                 ? 'rotate-180 rounded-r-full'
                 : 'rotate-0 rounded-l-full'
             }`}
           >
             <ArrowIcon />
-          </button>
+          </Button>
         </div>
         <aside className="flex-1 select-none overflow-x-hidden backdrop-blur">
           <ul className="menu relative h-full flex-nowrap gap-1 overflow-y-auto py-2 font-bold transition-all duration-200">

@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { AuthWrapper } from '../../../components/pages/auth';
+import { AuthWrapper } from '..';
 
 // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
 export default {

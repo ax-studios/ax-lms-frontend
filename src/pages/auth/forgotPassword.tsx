@@ -1,7 +1,15 @@
+import {
+  Button,
+  FilledInput,
+  FormControl,
+  FormHelperText,
+  InputLabel,
+} from '@mui/material';
 import { NextPage } from 'next';
-import { ChangeEvent, useState } from 'react';
-import { CTA, Input } from '../../components/core';
 import Link from 'next/link';
+import { ChangeEvent, useState } from 'react';
+import PasswordInput from '../../components/core/PasswordInput';
+// import { Input } from '../../components/core';
 import AuthWrapper from '../../components/pages/auth/AuthWrapper';
 import { EMAIL_REGEX, OTP_REGEX } from '../../lib/config';
 
@@ -10,7 +18,7 @@ interface InputValue {
   error: null | string;
 }
 
-interface formStateInterface {
+interface valuesInterface {
   email: InputValue;
   OTP: InputValue;
   password: InputValue;
@@ -18,7 +26,7 @@ interface formStateInterface {
 }
 
 const ForgotPassword: NextPage = () => {
-  const [formState, setFormState] = useState<formStateInterface>({
+  const [values, setValues] = useState<valuesInterface>({
     email: {
       value: '',
       error: null,
@@ -37,41 +45,41 @@ const ForgotPassword: NextPage = () => {
     },
   });
   const handleChange = (e: ChangeEvent<HTMLInputElement>): void => {
-    setFormState({
-      ...formState,
+    setValues({
+      ...values,
       [e.target.name]: { error: null, value: e.target.value },
     });
   };
   const handleGetOTP = (): void => {
-    if (formState.email.value?.match(EMAIL_REGEX) != null) {
-      setFormState({ ...formState, OTP: { ...formState.OTP, value: '' } });
+    if (values.email.value?.match(EMAIL_REGEX) != null) {
+      setValues({ ...values, OTP: { ...values.OTP, value: '' } });
     } else {
-      setFormState({
-        ...formState,
-        email: { ...formState.email, error: 'Enter Valid Email' },
+      setValues({
+        ...values,
+        email: { ...values.email, error: 'Enter Valid Email' },
       });
     }
   };
   const handleVerifyOTP = (): void => {
-    if (formState.OTP.value?.match(OTP_REGEX) != null) {
-      setFormState({
-        ...formState,
-        password: { ...formState.password, value: '' },
-        repassword: { ...formState.repassword, value: '' },
+    if (values.OTP.value?.match(OTP_REGEX) != null) {
+      setValues({
+        ...values,
+        password: { ...values.password, value: '' },
+        repassword: { ...values.repassword, value: '' },
       });
     } else {
-      setFormState({
-        ...formState,
-        OTP: { ...formState.OTP, error: 'Enter Valid OTP' },
+      setValues({
+        ...values,
+        OTP: { ...values.OTP, error: 'Enter Valid OTP' },
       });
     }
   };
   const handleChangePassword = (): void => {
-    if (formState.password.value !== formState.repassword.value) {
-      setFormState({
-        ...formState,
+    if (values.password.value !== values.repassword.value) {
+      setValues({
+        ...values,
         repassword: {
-          ...formState.repassword,
+          ...values.repassword,
           error: "Both password doesn't matches",
         },
       });
@@ -84,80 +92,101 @@ const ForgotPassword: NextPage = () => {
         <h1 className="text-center font-bold">Forgot Password</h1>
         <form
           action="#"
-          className="flex flex-col gap-4"
+          className="my-4 flex flex-col gap-4"
           onSubmit={(e) => e.preventDefault()}
         >
-          <Input
-            displayName="Your Email"
-            id="email"
-            name="email"
-            type="email"
-            placeholder="name@company.com"
-            value={formState.email.value !== null ? formState.email.value : ''}
-            onChange={handleChange}
-            required
-            error={formState.email.error}
-            disabled={formState.OTP.value !== null}
-          />
-          <CTA onClick={handleGetOTP} disabled={formState.OTP.value !== null}>
+          <FormControl
+            {...(values.email.error !== null ? { error: true } : {})}
+            variant="filled"
+          >
+            <InputLabel htmlFor="email">Your Email</InputLabel>
+            <FilledInput
+              id="email"
+              name="email"
+              type="email"
+              value={values.email.value !== null ? values.email.value : ''}
+              onChange={handleChange}
+              required
+              disabled={values.OTP.value !== null}
+              aria-describedby="email-error"
+            />
+            <FormHelperText id="email-error">
+              {values.email.error !== null ? values.email.error : ''}
+            </FormHelperText>
+          </FormControl>
+          <Button
+            className="bg-primary"
+            variant="contained"
+            onClick={handleGetOTP}
+            disabled={values.OTP.value !== null}
+          >
             Get OTP
-          </CTA>
-          {formState.OTP.value !== null && (
+          </Button>
+          {values.OTP.value !== null && (
             <>
-              <Input
-                displayName="OTP"
-                id="otp"
-                name="OTP"
-                type="text"
-                placeholder="123456"
-                value={formState.OTP.value}
-                onChange={handleChange}
-                required
-                error={formState.OTP.error}
-                disabled={
-                  formState.password.value !== null &&
-                  formState.repassword.value !== null
-                }
-              />
-              <CTA
+              <FormControl
+                {...(values.OTP.error !== null ? { error: true } : {})}
+                variant="filled"
+              >
+                <InputLabel htmlFor="email">OTP</InputLabel>
+                <FilledInput
+                  id="otp"
+                  name="OTP"
+                  type="text"
+                  placeholder="123456"
+                  value={values.OTP.value}
+                  onChange={handleChange}
+                  required
+                  disabled={
+                    values.password.value !== null &&
+                    values.repassword.value !== null
+                  }
+                  aria-describedby="email-error"
+                />
+                <FormHelperText id="email-error">
+                  {values.OTP.error !== null ? values.OTP.error : ''}
+                </FormHelperText>
+              </FormControl>
+              <Button
+                className="bg-primary"
+                variant="contained"
                 onClick={handleVerifyOTP}
                 disabled={
-                  formState.password.value !== null &&
-                  formState.repassword.value !== null
+                  values.password.value !== null &&
+                  values.repassword.value !== null
                 }
               >
                 Verify OTP
-              </CTA>
+              </Button>
             </>
           )}
-          {formState.password.value !== null &&
-            formState.repassword.value !== null && (
-              <>
-                <Input
-                  displayName="Password"
-                  id="password"
-                  name="password"
-                  type="password"
-                  placeholder="••••••••"
-                  value={formState.password.value}
-                  onChange={handleChange}
-                  required
-                  error={formState.password.error}
-                />
-                <Input
-                  displayName="Renter Password"
-                  id="repassword"
-                  name="repassword"
-                  type="password"
-                  placeholder="••••••••"
-                  value={formState.repassword.value}
-                  onChange={handleChange}
-                  required
-                  error={formState.repassword.error}
-                />
-                <CTA onClick={handleChangePassword}>Change Password</CTA>
-              </>
-            )}
+          {values.password.value !== null && values.repassword.value !== null && (
+            <>
+              <PasswordInput
+                id="password"
+                label="Password"
+                name="password"
+                variant="filled"
+                value={values.password.value}
+                handleChange={handleChange}
+              />
+              <PasswordInput
+                id="password"
+                label="Renter Password"
+                name="repassword"
+                variant="filled"
+                value={values.repassword.value}
+                handleChange={handleChange}
+              />
+              <Button
+                className="bg-primary"
+                variant="contained"
+                onClick={handleChangePassword}
+              >
+                Change Password
+              </Button>
+            </>
+          )}
           <div className="text-center text-sm">
             <Link
               className="font-medium text-primary hover:underline focus:text-base-content focus:underline focus:outline-none"

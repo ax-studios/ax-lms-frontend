@@ -1,40 +1,27 @@
+import { Button, ListItemIcon, Menu, MenuItem } from '@mui/material';
 import Image from 'next/image';
-import { FC, useContext, useEffect, useState } from 'react';
+import Link from 'next/link';
+import { FC, MouseEvent, useContext, useState } from 'react';
 import { UserContext } from '../../../../../data/userData';
 import ExpandIcon from '../../../../../icons/Sidebar Icons/ExpandIcon';
 import LogoutIcon from '../../../../../icons/Sidebar Icons/LogoutIcon';
 import SettingsIcon from '../../../../../icons/Sidebar Icons/SettingsIcon';
 import { SettingsContext } from '../../../../../lib/context/settings';
-import Link from 'next/link';
 
 const ProfileMenu: FC<{ settingModalToggle: () => void }> = ({
   settingModalToggle,
 }) => {
   const userData = useContext(UserContext);
   const { drawerCollapsed, toggleDrawer } = useContext(SettingsContext);
-  const [profileMenuOpened, setProfileMenuOpened] = useState(false);
 
-  useEffect(() => {
-    const profileMenuClick = (e: MouseEvent): void => {
-      if (profileMenuOpened) {
-        if (
-          (e.target as HTMLElement).closest('#profileMenu') === null ||
-          (e.target as HTMLElement).closest('#profileMenu') === undefined
-        ) {
-          setProfileMenuOpened(false);
-        }
-      } else if (
-        (e.target as HTMLElement).closest('#profileMenuOpenBtn') !== null
-      ) {
-        setProfileMenuOpened(true);
-      }
-    };
-
-    document.addEventListener('click', (e) => profileMenuClick(e));
-    return () => {
-      document.removeEventListener('click', (e) => profileMenuClick(e));
-    };
-  }, [profileMenuOpened]);
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event: MouseEvent<HTMLButtonElement>): void => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = (): void => {
+    setAnchorEl(null);
+  };
 
   return (
     <div className="fixed bottom-0 left-0 w-full bg-base-300/30 backdrop-blur">
@@ -68,41 +55,49 @@ const ProfileMenu: FC<{ settingModalToggle: () => void }> = ({
             {userData.enrollmentID}
           </span>
         </div>
-        <button
-          id="profileMenuOpenBtn"
-          className={`relative aspect-square h-10 rounded-lg bg-primary/30 p-2 transition-all duration-300 ${
-            drawerCollapsed ? 'mx-auto ' : 'ml-auto'
-          }`}
+
+        <Button
+          id="basic-button"
+          className="aspect-square h-10 min-w-0 rounded-lg bg-primary p-2"
+          aria-controls={open ? 'basic-menu' : undefined}
+          aria-haspopup="true"
+          aria-expanded={open ? 'true' : undefined}
+          onClick={handleClick}
+          variant="contained"
         >
           <ExpandIcon />
-          <ul
-            id="profileMenu"
-            className={`menu absolute -top-3 left-1/2 origin-bottom -translate-x-1/2 -translate-y-full rounded-xl bg-base-content text-base-300 transition-all duration-100 ${
-              profileMenuOpened ? 'scale-100' : 'scale-0'
-            }`}
+        </Button>
+        <Menu
+          id="basic-menu"
+          anchorEl={anchorEl}
+          open={open}
+          onClose={handleClose}
+          MenuListProps={{
+            'aria-labelledby': 'basic-button',
+          }}
+        >
+          <MenuItem
+            onClick={() => {
+              settingModalToggle();
+              handleClose();
+            }}
           >
-            <li>
-              <a
-                tabIndex={0}
-                onClick={() => {
-                  settingModalToggle();
-                  setProfileMenuOpened(false);
-                }}
-              >
-                <span className="h-5 w-5">
-                  <SettingsIcon />
-                </span>
-              </a>
-            </li>
-            <li>
-              <a tabIndex={0}>
-                <span className="h-5 w-5">
-                  <LogoutIcon />
-                </span>
-              </a>
-            </li>
-          </ul>
-        </button>
+            <ListItemIcon>
+              <span className="h-5 w-5">
+                <SettingsIcon />
+              </span>
+            </ListItemIcon>
+            Settings
+          </MenuItem>
+          <MenuItem onClick={handleClose}>
+            <ListItemIcon>
+              <span className="h-5 w-5">
+                <LogoutIcon />
+              </span>
+            </ListItemIcon>
+            Logout
+          </MenuItem>
+        </Menu>
       </div>
     </div>
   );

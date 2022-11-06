@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { useState } from 'react';
-import { CTA, Modal } from '../../components/core';
+import { Modal } from '..';
 
 // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
 export default {
@@ -13,7 +13,6 @@ const Template: ComponentStory<typeof Modal> = (args) => {
   const handleModalSate = (): void => setModalState((p) => !p);
   return (
     <div className="relative flex h-96 w-full items-center justify-center">
-      <CTA onClick={() => handleModalSate()}>Open Modal</CTA>
       <Modal
         {...args}
         modalState={modalState}

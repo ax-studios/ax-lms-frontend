@@ -41,14 +41,20 @@ const SmallCalendar: FC = () => {
   return (
     <div className="mt-9">
       <header className="flex justify-between">
-        <p className="font-bold">
+        <p className="text-sm font-bold">
           {dayjs(new Date(dayjs().year(), currentMonthIdx)).format('MMMM YYYY')}
         </p>
         <div>
-          <button className="btn btn-circle" onClick={handlePrevMonth}>
+          <button
+            className="aspect-square h-8 w-8 rounded-full bg-base-300 p-0 text-base-content"
+            onClick={handlePrevMonth}
+          >
             <ArrowIcon />
           </button>
-          <button className="btn btn-circle" onClick={handleNextMonth}>
+          <button
+            className="ml-2 inline-flex aspect-square h-8 w-8 rounded-full bg-base-300 p-0 text-base-content"
+            onClick={handleNextMonth}
+          >
             <span className="rotate-180 ">
               <ArrowIcon />
             </span>

@@ -15,16 +15,16 @@ const Home: FC = () => {
       <Heading title="Dashboard" />
       <div className="container mx-auto flex flex-wrap gap-5 px-3 md:px-5 ">
         <div className="flex flex-col flex-wrap gap-5">
+          <Attendance />
+          <UpcomingEvents />
+        </div>
+        <div className="flex flex-col flex-wrap gap-5">
           <ClassSchedule />
           <ExamSchedule />
         </div>
         <div className="flex flex-col flex-wrap gap-5">
           <Announcement />
           <News />
-        </div>
-        <div className="flex flex-1 flex-col flex-wrap gap-5">
-          <UpcomingEvents />
-          <Attendance />
         </div>
       </div>
     </div>

@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Loader } from '../../components/core';
+import { Loader } from '..';
 
 // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
 export default {

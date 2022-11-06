@@ -101,7 +101,7 @@ const EventModal: FC = () => {
             </div>
           </div>
         </div>
-        <footer className="mt-5 flex justify-end border-t p-3">
+        <footer className="mt-5 flex justify-end p-3">
           <button
             type="submit"
             className="rounded bg-blue-500 px-6 py-2 text-white hover:bg-blue-600"
