@@ -6,7 +6,7 @@ import {
   FormLabel,
   Radio,
   RadioGroup,
-  TextField,
+  TextField
 } from '@mui/material';
 import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
 import dayjs, { Dayjs } from 'dayjs';
@@ -16,7 +16,7 @@ import {
   FormEvent,
   useContext,
   useEffect,
-  useState,
+  useState
 } from 'react';
 import { taskInterface, taskPrioritys } from '../../../../../../data/tasks';
 import { SettingsContext } from '../../../../../../lib/context/settings';
@@ -135,39 +135,6 @@ const AddTask: FC = () => {
                 ))}
               </RadioGroup>
             </FormControl>
-            {/* <div className="input rating input-bordered mt-2  h-16 items-center justify-center gap-1 overflow-visible py-2 font-bold">
-              <span className="mr-3">Priority</span>
-              <label className="relative flex items-center justify-center before:absolute before:top-2/3 before:left-1/2 before:z-10 before:-translate-x-1/2 before:scale-0 before:rounded-xl before:bg-primary before:py-0.5 before:px-1 before:text-sm before:text-base-300 before:transition-all before:duration-200 before:content-['Low'] hover:before:scale-100">
-                <input
-                  type="radio"
-                  name="priority"
-                  value="low"
-                  checked={task?.priority === 'low'}
-                  onChange={handleTaskChange}
-                  className="mask btn-success mask-heart opacity-50 checked:opacity-100"
-                />
-              </label>
-              <label className="relative flex items-center justify-center before:absolute before:top-2/3 before:left-1/2 before:z-10 before:-translate-x-1/2 before:scale-0 before:rounded-xl before:bg-primary before:py-0.5 before:px-1 before:text-sm before:text-base-300 before:transition-all before:duration-200 before:content-['Medium'] hover:before:scale-100">
-                <input
-                  type="radio"
-                  name="priority"
-                  value="medium"
-                  checked={task?.priority === 'medium'}
-                  onChange={handleTaskChange}
-                  className="mask btn-info mask-heart opacity-50 checked:opacity-100"
-                />
-              </label>
-              <label className="relative flex items-center justify-center before:absolute before:top-2/3 before:left-1/2 before:z-10 before:-translate-x-1/2 before:scale-0 before:rounded-xl before:bg-primary before:py-0.5 before:px-1 before:text-sm before:text-base-300 before:transition-all before:duration-200 before:content-['High'] hover:before:scale-100">
-                <input
-                  type="radio"
-                  name="priority"
-                  value="high"
-                  checked={task?.priority === 'high'}
-                  onChange={handleTaskChange}
-                  className="mask btn-error mask-heart opacity-50 checked:opacity-100"
-                />
-              </label>
-            </div> */}
           </div>
           <div className="relative inline-flex flex-col justify-between gap-4 text-xl font-medium md:flex-row md:items-center">
             <div className="inline-flex items-center gap-4">
