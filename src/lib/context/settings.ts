@@ -22,7 +22,7 @@ interface SettingdInterface {
  * @description Default settings for the app
  */
 const defaults = {
-  theme: 'winter' as 'winter',
+  theme: 'night' as 'night',
   setTheme: (theme: themesInterface) => {},
   drawerOpen: true,
   setDrawerOpen: (setTo: boolean) => {},

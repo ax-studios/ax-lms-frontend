@@ -29,15 +29,9 @@ const Landing: NextPage = () => {
   return (
     <div className="min-h-screen w-full bg-base-300 text-base-content">
       <section className="pt-5 text-center text-4xl font-bold ">
-        <Typography
-          variant="h1"
-          className="mx-auto flex w-max items-center justify-center py-5 decoration-inherit focus:text-primary focus-visible:outline-primary "
-        >
-          <div className="mr-2 h-10 w-10">
-            <Logo />
-          </div>
-          Ax Studios
-        </Typography>
+        <div className="mx-auto w-max py-5 ">
+          <Logo height={40} />
+        </div>
 
         <Typography variant="h1" mt={5} maxWidth="700px" mx="auto">
           Open Source University LMS System made with NextJS, Tailwindcss, and

@@ -56,47 +56,46 @@ const DashboardWrapper: FC<DashboardWrapperProps> = ({ children }) => {
     };
   }, []);
 
-  if (router.pathname.split('/')[1] === 'dashboard') {
-    return (
-      <LocalizationProvider dateAdapter={AdapterDayjs}>
-        <SettingsContext.Provider value={defaultSettings}>
-          <ThemeProvider theme={muiTheme}>
-            <CssBaseline />
-            {/* eslint-disable-next-line prettier/prettier */}
-            <div className="drawer drawer-mobile" data-theme={theme}>
-              <input
-                id="my-drawer-2"
-                type="checkbox"
-                className="drawer-toggle"
-                checked={drawerOpen}
-                onChange={defaultSettings.toggleDrawer}
-              />
-              <div className="drawer-content flex h-screen overflow-hidden">
-                <div className="relative h-screen w-full overflow-y-auto overflow-x-hidden">
-                  <LoadingPage routeState={routeChanging} />
-                  <Header />
-                  {children}
-                </div>
-                {/* <ToDoList /> */}
-              </div>
-              <div className="drawer-side">
-                <div
-                  className="drawer-overlay"
-                  onClick={defaultSettings.toggleDrawer}
-                ></div>
-                <Sidebar />
-              </div>
-            </div>
-          </ThemeProvider>
-        </SettingsContext.Provider>
-      </LocalizationProvider>
-    );
-  }
   return (
-    <ThemeProvider theme={muiTheme}>
-      <CssBaseline />
-      <div data-theme={theme}>{children}</div>
-    </ThemeProvider>
+    <LocalizationProvider dateAdapter={AdapterDayjs}>
+      <SettingsContext.Provider value={defaultSettings}>
+        <ThemeProvider theme={muiTheme}>
+          <CssBaseline />
+
+          {router.pathname.split('/')[1] === 'dashboard' ? (
+            <>
+              {/* eslint-disable-next-line prettier/prettier */}
+              <div className="drawer-mobile drawer" data-theme={theme}>
+                <input
+                  id="my-drawer-2"
+                  type="checkbox"
+                  className="drawer-toggle"
+                  checked={drawerOpen}
+                  onChange={defaultSettings.toggleDrawer}
+                />
+                <div className="drawer-content flex h-screen overflow-hidden">
+                  <div className="relative h-screen w-full overflow-y-auto overflow-x-hidden">
+                    <LoadingPage routeState={routeChanging} />
+                    <Header />
+                    {children}
+                  </div>
+                  <ToDoList />
+                </div>
+                <div className="drawer-side">
+                  <div
+                    className="drawer-overlay"
+                    onClick={defaultSettings.toggleDrawer}
+                  ></div>
+                  <Sidebar />
+                </div>
+              </div>
+            </>
+          ) : (
+            <div data-theme={theme}>{children}</div>
+          )}
+        </ThemeProvider>
+      </SettingsContext.Provider>
+    </LocalizationProvider>
   );
 };
 

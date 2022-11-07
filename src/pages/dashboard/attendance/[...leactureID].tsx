@@ -124,6 +124,7 @@ const ChangeAttendece: NextPage = () => {
                   </TableCell>
                   <TableCell>
                     <Avatar
+                      tabIndex={0}
                       sx={{
                         bgcolor: blueGrey[900],
                         outline:
@@ -140,6 +141,7 @@ const ChangeAttendece: NextPage = () => {
                   </TableCell>
                   <TableCell>
                     <Avatar
+                      tabIndex={0}
                       sx={{
                         bgcolor: blueGrey[900],
                         outline:
@@ -156,6 +158,7 @@ const ChangeAttendece: NextPage = () => {
                   </TableCell>
                   <TableCell>
                     <Avatar
+                      tabIndex={0}
                       sx={{
                         bgcolor: blueGrey[900],
                         outline:
@@ -172,6 +175,7 @@ const ChangeAttendece: NextPage = () => {
                   </TableCell>
                   <TableCell>
                     <Avatar
+                      tabIndex={0}
                       sx={{
                         bgcolor: blueGrey[900],
                         outline:

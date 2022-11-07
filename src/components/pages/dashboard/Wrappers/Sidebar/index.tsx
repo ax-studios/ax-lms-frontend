@@ -44,12 +44,11 @@ const Sidebar: FC = () => {
     <>
       <Drawer
         variant="permanent"
-        className=""
         sx={{
           width: drawerCollapsed ? closed : open,
           flexShrink: 0,
           '& .MuiDrawer-paper': {
-            width: drawerCollapsed ? closed : open,
+            width: '100%',
             boxSizing: 'border-box',
           },
         }}
@@ -102,6 +101,7 @@ const Sidebar: FC = () => {
                   <span className={'w-6'}>{sidebarIcons[option.link]}</span>
                 </ListItemIcon>
                 <ListItemText
+                  className="trnasition-opacity delay-150 duration-300"
                   sx={{ opacity: drawerCollapsed ? 0 : 1 }}
                   primaryTypographyProps={{
                     sx: {
