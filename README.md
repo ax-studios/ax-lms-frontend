@@ -1,8 +1,8 @@
 <div  align="center" >
-    <img  src="https://raw.githubusercontent.com/ax-studios/frontend-web/main/public/images/logo.svg"  alt="Ax Logo"  width="100"  height="100"  />     <h1> Ax Studios </h1>
+    <img  src="https://raw.githubusercontent.com/ax-studios/ax-lms-frontend/main/public/images/logo.svg"  alt="Ax Logo"  width="100"  height="100"  />     <h1> Ax Studios </h1>
     <p> College LMS </p>
 
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/mit/) [![Issues](https://img.shields.io/github/issues/ax-studios/frontend-web)](https://github.com/ax-studios/frontend-web/issues) [![Contributors](https://img.shields.io/github/contributors/ax-studios/frontend-web)](https://github.com/ax-studios/frontend-web/graphs/contributors) ![Forks](https://img.shields.io/github/forks/ax-studios/frontend-web) ![Stars](https://img.shields.io/github/stars/ax-studios/frontend-web)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/mit/) [![Issues](https://img.shields.io/github/issues/ax-studios/ax-lms-frontend)](https://github.com/ax-studios/ax-lms-frontend/issues) [![Contributors](https://img.shields.io/github/contributors/ax-studios/ax-lms-frontend)](https://github.com/ax-studios/ax-lms-frontend/graphs/contributors) ![Forks](https://img.shields.io/github/forks/ax-studios/ax-lms-frontend) ![Stars](https://img.shields.io/github/stars/ax-studios/ax-lms-frontend)
 </div>
 
 ## What is Ax Studios
@@ -55,7 +55,7 @@ This project is licensed under the MIT License - see the LICENSE.md file for det
 
 ## Contact
 
-If you have any questions, please contact us at [Discussions](https://github.com/ax-studios/frontend-web/discussions)
+If you have any questions, please contact us at [Discussions](https://github.com/ax-studios/ax-lms-frontend/discussions)
 
 ## Team
 
@@ -66,7 +66,7 @@ If you have any questions, please contact us at [Discussions](https://github.com
 
 Thanks a lot for spending your time helping Ax Studios grow. Thanks a lot! Keep rocking 🍻
 
-[![Contributors](https://contrib.rocks/image?repo=ax-studios/frontend-web)](https://github.com/ax-studios/frontend-web/graphs/contributors)
+[![Contributors](https://contrib.rocks/image?repo=ax-studios/ax-lms-frontend)](https://github.com/ax-studios/ax-lms-frontend/graphs/contributors)
 
 ## 🙏 Support
 

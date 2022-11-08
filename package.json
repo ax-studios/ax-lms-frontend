@@ -1,5 +1,5 @@
 {
-  "name": "frontend-web",
+  "name": "ax-lms-frontend",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -67,5 +67,5 @@
     "typescript": "*"
   },
   "readme": "ERROR: No README data found!",
-  "_id": "frontend-web@0.1.0"
+  "_id": "ax-lms-frontend@0.1.0"
 }
