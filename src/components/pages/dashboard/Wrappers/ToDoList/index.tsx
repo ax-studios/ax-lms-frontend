@@ -1,3 +1,4 @@
+import { Paper } from '@mui/material';
 import { FC, useContext } from 'react';
 // import { width } from '../../../../../lib/config';
 import { SettingsContext } from '../../../../../lib/context/settings';
@@ -9,15 +10,16 @@ const ToDoList: FC = () => {
   return (
     <>
       <div
-        className={`let-0 fixed top-0 h-screen w-screen cursor-pointer select-none backdrop-blur transition-all duration-200 ${
+        className={`fixed left-0 top-0 h-screen w-screen cursor-pointer select-none backdrop-blur transition-all duration-200 ${
           toDoCollapsed
             ? 'invisible opacity-0'
             : 'visible opacity-100 lg:invisible lg:opacity-0'
         }`}
         onClick={toggleToDoCollapsed}
       />
-      <div
-        className={`fixed bottom-0 left-0 w-full shrink-0 rounded-t-[2rem] border border-primary/30 bg-base-200 pb-0 transition-all duration-300 lg:relative lg:h-auto lg:rounded-l-[2rem] lg:rounded-tr-none lg:pb-5 ${
+      <Paper
+        variant="outlined"
+        className={`fixed bottom-0 left-0 w-full shrink-0 rounded-t-[2rem] border border-primary/30 pb-0 !transition-all duration-300 lg:relative lg:h-auto lg:rounded-l-[2rem] lg:rounded-tr-none lg:pb-5 ${
           toDoCollapsed ? 'lg:max-w-[60px]' : 'lg:max-w-[500px]'
         }`}
       >
@@ -35,7 +37,7 @@ const ToDoList: FC = () => {
           }`}
           toggle={toggleToDoCollapsed}
         />
-      </div>
+      </Paper>
     </>
   );
 };

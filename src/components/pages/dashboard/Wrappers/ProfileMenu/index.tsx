@@ -58,7 +58,7 @@ const ProfileMenu: FC<{ settingModalToggle: () => void }> = ({
 
         <Button
           id="basic-button"
-          className="aspect-square h-10 min-w-0 rounded-lg bg-primary p-2"
+          className="aspect-square h-10 !min-w-0 rounded-lg bg-primary !p-2"
           aria-controls={open ? 'basic-menu' : undefined}
           aria-haspopup="true"
           aria-expanded={open ? 'true' : undefined}

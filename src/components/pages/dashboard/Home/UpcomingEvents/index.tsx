@@ -1,3 +1,4 @@
+import { Button, Paper } from '@mui/material';
 import Link from 'next/link';
 import { FC, useContext } from 'react';
 import { UserContext } from '../../../../../data/userData';
@@ -6,26 +7,35 @@ import PlusIcon from '../../../../../icons/PlusIcon';
 const UpcomingEvents: FC = () => {
   const { events } = useContext(UserContext);
   return (
-    <div className="flex w-full max-w-sm shrink-0 flex-col gap-3 font-bold md:max-w-[21rem] ">
+    <div className="w-full max-w-sm shrink-0 space-y-3 font-bold md:max-w-[21rem] ">
       <h2 className="text-xl font-bold text-base-content">Upcoming Events</h2>
 
       {events.map((event) => (
-        <div key={event.id} className="card flex flex-col gap-1 p-3 px-5">
-          <span className="text-sm font-semibold text-base-content/70">
+        <Paper key={event.id} variant="outlined" className="space-y-1 p-3 px-5">
+          <span className="block text-sm font-semibold text-base-content/70">
             {event.date}
           </span>
-          <span className="">{event.name}</span>
-        </div>
+          <span className="block">{event.name}</span>
+        </Paper>
       ))}
-      <Link
+      <Button
+        variant="outlined"
         href="/dashboard/calender"
-        className="btn h-16 gap-1 border-2 border-dashed border-primary bg-transparent text-center text-base-content shadow-lg shadow-primary/10 hover:border-primary hover:bg-transparent hover:shadow-primary/20"
+        LinkComponent={Link}
+        className="w-full space-x-1"
+        sx={{
+          borderStyle: 'dashed',
+          borderWidth: '2px',
+          '&:hover': {
+            borderWidth: '2px ',
+          },
+        }}
       >
         <span className="block aspect-square h-6">
           <PlusIcon />
         </span>
         <span>Add an Event</span>
-      </Link>
+      </Button>
     </div>
   );
 };

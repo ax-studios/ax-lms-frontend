@@ -1,13 +1,15 @@
+import { Paper } from '@mui/material';
 import { FC, useContext } from 'react';
 import { UserContext } from '../../../../../data/userData';
 
 const ClassSchedule: FC = () => {
   const { classSchedule } = useContext(UserContext);
   return (
-    <div className="flex max-w-lg shrink-0 flex-col gap-3 font-bold">
+    <div className="max-w-lg shrink-0 space-y-3 font-bold">
       <h2 className="text-xl font-bold text-base-content">Class Schedule</h2>
       {classSchedule.map((schedule) => (
-        <div
+        <Paper
+          variant="outlined"
           key={schedule.id}
           className="card grid grid-cols-12 items-center gap-5 py-3 px-5"
         >
@@ -26,7 +28,7 @@ const ClassSchedule: FC = () => {
           <span className="col-span-3 flex w-full justify-end">
             {schedule.class}
           </span>
-        </div>
+        </Paper>
       ))}
     </div>
   );

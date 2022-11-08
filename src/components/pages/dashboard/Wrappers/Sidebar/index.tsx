@@ -70,7 +70,7 @@ const Sidebar: FC = () => {
           </Paper>
         </DrawerHeader>
         <Divider />
-        <MenuList className="p-2">
+        <MenuList sx={{ padding: '8px' }}>
           {sidebarOptions.map((option) => (
             <Tooltip
               key={option.name}

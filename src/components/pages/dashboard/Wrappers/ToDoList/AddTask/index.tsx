@@ -79,7 +79,7 @@ const AddTask: FC = () => {
   return (
     <form onSubmit={handleSubmit} onReset={handleReset}>
       <div
-        className="group relative shrink-0 animate-scale select-none overflow-hidden rounded-lg bg-base-200 py-2 text-left text-lg transition-all duration-300"
+        className="group relative shrink-0 animate-scale select-none overflow-hidden rounded-lg py-2 text-left text-lg transition-all duration-300"
         style={{
           ...(toDoCollapsed
             ? { scale: '0', visibility: 'hidden' }

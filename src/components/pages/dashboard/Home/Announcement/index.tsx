@@ -1,3 +1,4 @@
+import { Paper } from '@mui/material';
 import { FC, useContext } from 'react';
 import { UserContext } from '../../../../../data/userData';
 
@@ -7,15 +8,16 @@ const Announcement: FC = () => {
     <div className="flex max-w-lg shrink-0 flex-col gap-3 font-bold">
       <h2 className="text-xl font-bold text-base-content">Announcement</h2>
       {announcements.map((announcement) => (
-        <div
+        <Paper
+          variant="outlined"
           key={announcement.id}
-          className="card flex flex-col gap-1 p-3 px-5"
+          className="space-y-1 p-3 px-5"
         >
-          <span className="text-sm font-semibold text-base-content/70">
+          <div className="text-sm font-semibold text-base-content/70">
             {announcement.date}
-          </span>
-          <span>{announcement.name}</span>
-        </div>
+          </div>
+          <p>{announcement.name}</p>
+        </Paper>
       ))}
     </div>
   );

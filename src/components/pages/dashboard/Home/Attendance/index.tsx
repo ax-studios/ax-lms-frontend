@@ -1,3 +1,4 @@
+import { Paper } from '@mui/material';
 import { FC, useContext } from 'react';
 import { UserContext } from '../../../../../data/userData';
 import TotalIcon from '../../../../../icons/Course Icons/TotalIcon';
@@ -10,7 +11,7 @@ const Attendance: FC = () => {
   return (
     <div className="flex w-full max-w-sm flex-col gap-3 font-bold md:max-w-[21rem]">
       <h2 className="text-xl font-bold text-base-content">Attendance</h2>
-      <div className="card flex flex-col items-center gap-3 px-8 py-5">
+      <Paper variant="outlined" className="space-y-3 px-8 py-5">
         <div className="relative">
           <AttendancePie />
         </div>
@@ -34,7 +35,7 @@ const Attendance: FC = () => {
           <span>Total</span>
           <span className="font-normal">{`${totalDaysAttended}/${totalDaysTotal}`}</span>
         </div>
-      </div>
+      </Paper>
     </div>
   );
 };
