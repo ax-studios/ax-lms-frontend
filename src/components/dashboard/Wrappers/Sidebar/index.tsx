@@ -11,8 +11,6 @@ import {
   Paper,
   styled,
   Tooltip,
-  useMediaQuery,
-  useTheme,
 } from '@mui/material';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -42,9 +40,7 @@ const Sidebar: FC = () => {
   const { open, closed } = width.drawer;
   const [modalState, setModalState] = useState(false);
   const handleModalState = (): void => setModalState((p) => !p);
-  const theme = useTheme();
-  const mobile = useMediaQuery(theme.breakpoints.down('sm'));
-  const tablet = useMediaQuery(theme.breakpoints.down('md'));
+
   console.log(mobile, tablet);
   return (
     <>
@@ -70,16 +66,14 @@ const Sidebar: FC = () => {
               <Logo height={30} />
             </Link>
           </Collapse>
-          {!mobile && !tablet && (
-            <Paper variant="outlined" className="overflow-hidden">
-              <IconButton
-                className="rounded-none"
-                onClick={toggleDrawerCollapsed}
-              >
-                {drawerCollapsed ? <AddIcon /> : <RemoveIcon />}
-              </IconButton>
-            </Paper>
-          )}
+          <Paper variant="outlined" className="overflow-hidden">
+            <IconButton
+              className="rounded-none"
+              onClick={toggleDrawerCollapsed}
+            >
+              {drawerCollapsed ? <AddIcon /> : <RemoveIcon />}
+            </IconButton>
+          </Paper>
         </DrawerHeader>
         <Divider />
         <MenuList sx={{ padding: '8px' }}>
