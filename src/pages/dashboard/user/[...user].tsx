@@ -1,12 +1,12 @@
+import { Tabs } from '@/components/core';
+import { AboutSection, Records } from '@/components/dashboard/Profile';
+import { UserContext } from '@/data/userData';
 import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
 import InsertLinkIcon from '@mui/icons-material/InsertLink';
 import { Button, IconButton } from '@mui/material';
 import { NextPage } from 'next';
 import Image from 'next/image';
 import { useContext, useState } from 'react';
-import { Tabs } from '../../../components/core';
-import { AboutSection, Records } from '../../../components/dashboard/Profile';
-import { UserContext } from '../../../data/userData';
 const tabs = [
   {
     name: 'About',

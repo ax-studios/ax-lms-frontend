@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { FC, ReactElement } from 'react';
-import { Logo } from '../../../core';
+import { Logo } from '@/components/core';
 
 interface AuthWrapperProps {
   children: ReactElement;

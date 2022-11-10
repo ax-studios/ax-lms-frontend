@@ -1,5 +1,5 @@
+import ArrowIcon from '@/icons/ArrowIcon';
 import { FC } from 'react';
-import { ArrowIcon } from '../../../../icons';
 
 interface Props {
   className: string;

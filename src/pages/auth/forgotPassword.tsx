@@ -8,10 +8,9 @@ import {
 import { NextPage } from 'next';
 import Link from 'next/link';
 import { ChangeEvent, useState } from 'react';
-import PasswordInput from '../../components/core/PasswordInput';
-// import { Input } from '../../components/core';
-import AuthWrapper from '../../components/pages/auth/AuthWrapper';
-import { EMAIL_REGEX, OTP_REGEX } from '../../lib/config';
+import PasswordInput from '@/components/core/PasswordInput';
+import AuthWrapper from '@/components/pages/auth/AuthWrapper';
+import { EMAIL_REGEX, OTP_REGEX } from '@/lib/config';
 
 interface InputValue {
   value: null | string;

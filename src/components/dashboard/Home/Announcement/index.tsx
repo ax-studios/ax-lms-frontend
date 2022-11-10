@@ -1,6 +1,6 @@
 import { Paper } from '@mui/material';
 import { FC, useContext } from 'react';
-import { UserContext } from '../../../../data/userData';
+import { UserContext } from '@/data/userData';
 
 const Announcement: FC = () => {
   const { announcements } = useContext(UserContext);

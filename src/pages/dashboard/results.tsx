@@ -1,6 +1,6 @@
+import Heading from '@/components/dashboard/Wrappers/Heading';
+import RelaxingWalk from '@/icons/illustrations/RelaxingWalk';
 import { NextPage } from 'next';
-import Heading from '../../components/dashboard/Wrappers/Heading';
-import RelaxingWalk from '../../icons/illustrations/RelaxingWalk';
 
 const Results: NextPage = () => {
   return (

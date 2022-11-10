@@ -1,8 +1,7 @@
 import { Paper } from '@mui/material';
 import { FC, useContext } from 'react';
-// import { width } from '../../../../../lib/config';
-import { SettingsContext } from '../../../../lib/context/settings';
-import ToggleCollapsed from '../ToggleCollapsed';
+import { SettingsContext } from '@/lib/context/settings';
+import ToggleCollapsed from './ToggleCollapsed';
 import Tasks from './Tasks';
 
 const ToDoList: FC = () => {

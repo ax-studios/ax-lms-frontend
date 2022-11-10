@@ -1,7 +1,7 @@
+import { SettingsContext } from '@/lib/context/settings';
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import { useContext } from 'react';
-import { SettingsContext } from '../../lib/context/settings';
 
 const Dash: NextPage = () => {
   const router = useRouter();
@@ -13,7 +13,7 @@ const Dash: NextPage = () => {
       <button
         onClick={toggleDrawer}
         // eslint-disable-next-line prettier/prettier
-        className="btn btn-primary drawer-button lg:hidden"
+        className="btn-primary drawer-button btn lg:hidden"
       >
         Open drawer
       </button>

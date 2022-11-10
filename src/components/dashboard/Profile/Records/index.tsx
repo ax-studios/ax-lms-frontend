@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import { FC, useContext } from 'react';
-import { UserContext } from '../../../../data/userData';
-import FemaleAvatar from '../../../../icons/illustrations/FemaleAvatar';
-import MaleAvatar from '../../../../icons/illustrations/MaleAvatar';
+import { UserContext } from '@/data/userData';
+import FemaleAvatar from '@/icons/illustrations/FemaleAvatar';
+import MaleAvatar from '@/icons/illustrations/MaleAvatar';
 
 const Records: FC = () => {
   const userData = useContext(UserContext);

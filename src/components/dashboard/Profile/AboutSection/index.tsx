@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import { FC, useContext } from 'react';
-import { UserContext } from '../../../../data/userData';
-import LinkIcon from '../../../../icons/LinkIcon';
-import { useSocialIcons } from '../../../../icons/Social Icons';
+import { UserContext } from '@/data/userData';
+import LinkIcon from '@/icons/LinkIcon';
+import { useSocialIcons } from '@/icons/Social Icons';
 
 const AboutSection: FC = () => {
   const userData = useContext(UserContext);

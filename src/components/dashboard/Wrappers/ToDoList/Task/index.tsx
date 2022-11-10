@@ -1,6 +1,6 @@
 import { FC, useContext } from 'react';
-import { taskInterface } from '../../../../../data/tasks';
-import { SettingsContext } from '../../../../../lib/context/settings';
+import { SettingsContext } from '@/lib/context/settings';
+import { taskInterface } from '@/data/tasks';
 import TaskOptions from './TaskOptions';
 
 interface Props {

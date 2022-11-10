@@ -1,5 +1,5 @@
+import Heading from '@/components/dashboard/Wrappers/Heading';
 import { NextPage } from 'next';
-import Heading from '../../../components/dashboard/Wrappers/Heading';
 
 const Subjects: NextPage = () => {
   return (

@@ -1,16 +1,13 @@
+import { SettingsContext } from '@/lib/context/settings';
 import { Button, ListItemIcon, Menu, MenuItem } from '@mui/material';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FC, MouseEvent, useContext, useState } from 'react';
-import { UserContext } from '../../../../data/userData';
-import ExpandIcon from '../../../../icons/Sidebar Icons/ExpandIcon';
-import LogoutIcon from '../../../../icons/Sidebar Icons/LogoutIcon';
-import SettingsIcon from '../../../../icons/Sidebar Icons/SettingsIcon';
-import { SettingsContext } from '../../../../lib/context/settings';
+import { UserContext } from '@/data/userData';
+import ExpandIcon from '@/icons/Sidebar Icons/ExpandIcon';
+import LogoutIcon from '@/icons/Sidebar Icons/LogoutIcon';
 
-const ProfileMenu: FC<{ settingModalToggle: () => void }> = ({
-  settingModalToggle,
-}) => {
+const ProfileMenu: FC = () => {
   const userData = useContext(UserContext);
   const { drawerCollapsed, toggleDrawer } = useContext(SettingsContext);
 
@@ -76,19 +73,6 @@ const ProfileMenu: FC<{ settingModalToggle: () => void }> = ({
             'aria-labelledby': 'basic-button',
           }}
         >
-          <MenuItem
-            onClick={() => {
-              settingModalToggle();
-              handleClose();
-            }}
-          >
-            <ListItemIcon>
-              <span className="h-5 w-5">
-                <SettingsIcon />
-              </span>
-            </ListItemIcon>
-            Settings
-          </MenuItem>
           <MenuItem onClick={handleClose}>
             <ListItemIcon>
               <span className="h-5 w-5">

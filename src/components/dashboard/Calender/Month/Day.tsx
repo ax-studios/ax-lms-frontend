@@ -1,7 +1,7 @@
+import CalenderContext from '@/lib/context/calender/CalenderContext';
+import { EventInterface } from '@/lib/types/calender';
 import dayjs, { Dayjs } from 'dayjs';
 import { FC, useContext, useEffect, useState } from 'react';
-import CalenderContext from '../../../../lib/context/calender/CalenderContext';
-import { EventInterface } from '../../../../lib/types/calender';
 
 const Day: FC<{ day: Dayjs; rowIdx: number }> = ({ day, rowIdx }) => {
   const [dayEvents, setDayEvents] = useState<EventInterface[]>([]);

@@ -1,5 +1,5 @@
+import CalenderContext from '@/lib/context/calender/CalenderContext';
 import { FC, useContext } from 'react';
-import CalenderContext from '../../../../lib/context/calender/CalenderContext';
 
 const CreateEventButton: FC = () => {
   const { setShowEventModal } = useContext(CalenderContext);

@@ -1,8 +1,8 @@
+import ArrowIcon from '@/icons/ArrowIcon';
+import CalenderContext from '@/lib/context/calender/CalenderContext';
+import { getMonth } from '@/lib/utils/calender';
 import dayjs, { Dayjs } from 'dayjs';
 import React, { FC, useContext, useEffect, useState } from 'react';
-import { ArrowIcon } from '../../../../icons';
-import CalenderContext from '../../../../lib/context/calender/CalenderContext';
-import { getMonth } from '../../../../lib/utils/calender';
 
 const SmallCalendar: FC = () => {
   const [currentMonthIdx, setCurrentMonthIdx] = useState(dayjs().month());

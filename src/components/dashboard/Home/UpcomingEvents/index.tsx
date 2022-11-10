@@ -1,8 +1,8 @@
 import { Button, Paper } from '@mui/material';
 import Link from 'next/link';
 import { FC, useContext } from 'react';
-import { UserContext } from '../../../../data/userData';
-import PlusIcon from '../../../../icons/PlusIcon';
+import { UserContext } from '@/data/userData';
+import PlusIcon from '@/icons/PlusIcon';
 
 const UpcomingEvents: FC = () => {
   const { events } = useContext(UserContext);

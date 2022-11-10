@@ -1,7 +1,7 @@
+import { TodoContext } from '@/lib/context/todo';
 import { FC, useContext } from 'react';
-import EditIcon from '../../../../../icons/EditIcon';
-import TrashIcon from '../../../../../icons/TrashIcon';
-import { TodoContext } from '../../../../../lib/context/todo';
+import EditIcon from '@/icons/EditIcon';
+import TrashIcon from '@/icons/TrashIcon';
 
 interface Props {
   todoId: number;

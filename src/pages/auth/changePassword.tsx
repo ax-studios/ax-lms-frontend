@@ -2,8 +2,8 @@ import { Button, TextField } from '@mui/material';
 import { NextPage } from 'next';
 import Link from 'next/link';
 import { ChangeEvent, useState } from 'react';
-import PasswordInput from '../../components/core/PasswordInput';
-import AuthWrapper from '../../components/pages/auth/AuthWrapper';
+import PasswordInput from '@/components/core/PasswordInput';
+import AuthWrapper from '@/components/pages/auth/AuthWrapper';
 
 interface InputValue {
   value: string;

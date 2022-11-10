@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { FC, useContext, useState } from 'react';
-import { UserContext } from '../../../../data/userData';
-import SearchIcon from '../../../../icons/SearchIcon';
+import { UserContext } from '@/data/userData';
+import SearchIcon from '@/icons/SearchIcon';
 
 const Header: FC = () => {
   const [hasFocus, setHasFocus] = useState(false);
@@ -13,7 +13,7 @@ const Header: FC = () => {
       className="flex h-20 items-center justify-start gap-2 bg-base-300 px-4 text-2xl font-bold sm:hidden"
     >
       <div
-        className={`input input-bordered relative flex w-full items-center overflow-hidden rounded-full px-1 pl-2 ${
+        className={`input-bordered input relative flex w-full items-center overflow-hidden rounded-full px-1 pl-2 ${
           hasFocus ? 'outline outline-primary' : ''
         }`}
       >

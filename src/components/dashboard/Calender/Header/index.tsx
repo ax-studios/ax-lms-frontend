@@ -1,10 +1,8 @@
-// import dayjs from 'dayjs';
+import Heading from '@/components/dashboard/Wrappers/Heading';
+import ArrowIcon from '@/icons/ArrowIcon';
+import CalenderContext from '@/lib/context/calender/CalenderContext';
 import dayjs from 'dayjs';
 import { FC, useContext } from 'react';
-import { ArrowIcon } from '../../../../icons';
-import CalenderContext from '../../../../lib/context/calender/CalenderContext';
-import Heading from '../../Wrappers/Heading';
-// import GlobalContext from '../context/GlobalContext';
 
 const CalHeader: FC = () => {
   const { monthIndex, setMonthIndex } = useContext(CalenderContext);
@@ -28,13 +26,13 @@ const CalHeader: FC = () => {
     <header className="flex items-center gap-2 pr-2 md:pr-5">
       <Heading title="Calender" />
 
-      <button onClick={handleReset} className="btn btn-outline">
+      <button onClick={handleReset} className="btn-outline btn">
         Today
       </button>
-      <button className="btn btn-circle" onClick={handlePrevMonth}>
+      <button className="btn-circle btn" onClick={handlePrevMonth}>
         <ArrowIcon />
       </button>
-      <button className="btn btn-circle" onClick={handleNextMonth}>
+      <button className="btn-circle btn" onClick={handleNextMonth}>
         <span className="rotate-180 ">
           <ArrowIcon />
         </span>

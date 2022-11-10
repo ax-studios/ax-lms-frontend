@@ -1,7 +1,7 @@
+import { SettingsContext } from '@/lib/context/settings';
+import { TodoContext } from '@/lib/context/todo';
+import useTodo from '@/lib/hooks/useTodo';
 import { FC, useContext } from 'react';
-import { SettingsContext } from '../../../../../lib/context/settings';
-import { TodoContext } from '../../../../../lib/context/todo';
-import useTodo from '../../../../../lib/hooks/useTodo';
 import AddTask from '../AddTask';
 import Task from '../Task';
 const Tasks: FC = () => {

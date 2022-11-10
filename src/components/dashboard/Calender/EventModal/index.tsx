@@ -1,6 +1,6 @@
+import CalenderContext from '@/lib/context/calender/CalenderContext';
+import { labelsClasses } from '@/lib/types/calender';
 import { FC, FormEvent, useContext, useState } from 'react';
-import CalenderContext from '../../../../lib/context/calender/CalenderContext';
-import { labelsClasses } from '../../../../lib/types/calender';
 
 const EventModal: FC = () => {
   const { setShowEventModal, daySelected, dispatchCalEvent, selectedEvent } =
@@ -70,7 +70,7 @@ const EventModal: FC = () => {
               placeholder="Add title"
               value={title}
               required
-              className="input input-bordered  w-full text-xl"
+              className="input-bordered input  w-full text-xl"
               onChange={(e) => setTitle(e.target.value)}
             />
             <span>⌚</span>
@@ -82,7 +82,7 @@ const EventModal: FC = () => {
               placeholder="Add a description"
               value={description}
               required
-              className="input input-bordered  w-full text-xl"
+              className="input-bordered input  w-full text-xl"
               onChange={(e) => setDescription(e.target.value)}
             />
             <span>🔖</span>

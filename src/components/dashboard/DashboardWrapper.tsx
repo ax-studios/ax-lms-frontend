@@ -1,13 +1,13 @@
+import { themesInterface, width } from '@/lib/config';
+import { SettingsContext } from '@/lib/context/settings';
+import { createTheme } from '@/lib/theme';
 import { Box, CssBaseline, ThemeProvider, useMediaQuery } from '@mui/material';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { useRouter } from 'next/router';
 import { FC, useEffect, useState } from 'react';
-import { themesInterface, width } from '../../lib/config';
-import { SettingsContext } from '../../lib/context/settings';
-import { createTheme } from '../../lib/theme';
 import LoadingPage from '../core/LoadingPage';
-import LabelBottomNavigation from './BottomnavigationBar';
+import LabelBottomNavigation from './Wrappers/BottomnavigationBar';
 import Header from './Wrappers/Header';
 import Sidebar from './Wrappers/Sidebar';
 

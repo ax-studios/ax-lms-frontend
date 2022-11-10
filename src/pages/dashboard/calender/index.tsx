@@ -1,6 +1,6 @@
 import { NextPage } from 'next';
-import CalApp from '../../../components/dashboard/Calender/App';
-import CalenderContextWrapper from '../../../lib/context/calender/CalenderContextWrapper';
+import CalenderContextWrapper from '@/lib/context/calender/CalenderContextWrapper';
+import CalApp from '@/components/dashboard/Calender/CalApp';
 
 const Calender: NextPage = () => {
   return (

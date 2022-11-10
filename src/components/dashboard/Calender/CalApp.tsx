@@ -1,7 +1,7 @@
+import CalenderContext from '@/lib/context/calender/CalenderContext';
+import { getMonth } from '@/lib/utils/calender';
 import { FC, useContext, useEffect, useState } from 'react';
-import { CalHeader, CalSidebar, EventModal, Month } from '..';
-import CalenderContext from '../../../../lib/context/calender/CalenderContext';
-import { getMonth } from '../../../../lib/utils/calender';
+import { CalHeader, CalSidebar, EventModal, Month } from '.';
 
 const CalApp: FC = () => {
   const [currenMonth, setCurrentMonth] = useState(getMonth());

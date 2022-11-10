@@ -2,10 +2,10 @@ import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import Link from 'next/link';
 import * as React from 'react';
-import CalenderIcon from '../../../icons/Sidebar Icons/CalenderIcon';
-import ExamIcon from '../../../icons/Sidebar Icons/ExamIcon';
-import HomeIcon from '../../../icons/Sidebar Icons/HomeIcon';
-import SchoolIcon from '../../../icons/Sidebar Icons/SchoolIcon';
+import CalenderIcon from '@/icons/Sidebar Icons/CalenderIcon';
+import ExamIcon from '@/icons/Sidebar Icons/ExamIcon';
+import HomeIcon from '@/icons/Sidebar Icons/HomeIcon';
+import SchoolIcon from '@/icons/Sidebar Icons/SchoolIcon';
 
 const LabelBottomNavigation: React.FC = () => {
   const [value, setValue] = React.useState('home');

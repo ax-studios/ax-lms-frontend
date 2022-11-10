@@ -1,4 +1,3 @@
-import { FC } from 'react';
 import {
   Announcement,
   Attendance,
@@ -6,8 +5,9 @@ import {
   ExamSchedule,
   News,
   UpcomingEvents,
-} from '../../components/dashboard/Home';
-import Heading from '../../components/dashboard/Wrappers/Heading';
+} from '@/components/dashboard/Home';
+import Heading from '@/components/dashboard/Wrappers/Heading';
+import { FC } from 'react';
 
 const Home: FC = () => {
   return (

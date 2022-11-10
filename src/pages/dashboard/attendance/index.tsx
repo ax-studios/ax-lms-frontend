@@ -1,8 +1,8 @@
+import Heading from '@/components/dashboard/Wrappers/Heading';
+import AttendeceCard from '@/components/dashboard/Attendance/AttendanceCard';
+import { UserContext } from '@/data/userData';
 import { NextPage } from 'next';
 import { useContext } from 'react';
-import AttendeceCard from '../../../components/dashboard/Attendance/AttendanceCard';
-import Heading from '../../../components/dashboard/Wrappers/Heading';
-import { UserContext } from '../../../data/userData';
 
 const Attendance: NextPage = () => {
   const { classes } = useContext(UserContext);

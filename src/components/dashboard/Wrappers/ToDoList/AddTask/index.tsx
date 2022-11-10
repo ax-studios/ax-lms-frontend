@@ -18,9 +18,10 @@ import {
   useEffect,
   useState,
 } from 'react';
-import { taskInterface, taskPrioritys } from '../../../../../data/tasks';
-import { SettingsContext } from '../../../../../lib/context/settings';
-import { TodoContext } from '../../../../../lib/context/todo';
+import { taskInterface, taskPrioritys } from '@/data/tasks';
+import { TodoContext } from '@/lib/context/todo';
+import { SettingsContext } from '@/lib/context/settings';
+
 interface taskInputInterface {
   priority: 'low' | 'medium' | 'high';
   name: string;

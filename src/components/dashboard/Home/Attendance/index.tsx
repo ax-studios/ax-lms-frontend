@@ -1,8 +1,8 @@
 import { Paper } from '@mui/material';
 import { FC, useContext } from 'react';
-import { UserContext } from '../../../../data/userData';
-import TotalIcon from '../../../../icons/Course Icons/TotalIcon';
-import AttendancePie from '../../Charts/attendancePie';
+import AttendancePie from '@/components/dashboard/attendancePie';
+import { UserContext } from '@/data/userData';
+import TotalIcon from '@/icons/Course Icons/TotalIcon';
 
 const Attendance: FC = () => {
   const { attendance } = useContext(UserContext);

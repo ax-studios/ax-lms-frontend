@@ -1,3 +1,8 @@
+import AttendanceTableHeading from '@/components/dashboard/Attendance/AttendanceTableHeading';
+import Heading from '@/components/dashboard/Wrappers/Heading';
+import students from '@/data/students';
+import FemaleAvatar from '@/icons/illustrations/FemaleAvatar';
+import MaleAvatar from '@/icons/illustrations/MaleAvatar';
 import {
   Avatar,
   Table,
@@ -13,11 +18,6 @@ import { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ChangeEvent, useState } from 'react';
-import AttendanceTableHeading from '../../../components/dashboard/Attendance/AttendanceTableHeading';
-import Heading from '../../../components/dashboard/Wrappers/Heading';
-import students from '../../../data/students';
-import FemaleAvatar from '../../../icons/illustrations/FemaleAvatar';
-import MaleAvatar from '../../../icons/illustrations/MaleAvatar';
 
 const ChangeAttendece: NextPage = () => {
   const [attendance, setAttendance] = useState(students);
@@ -117,7 +117,7 @@ const ChangeAttendece: NextPage = () => {
                   <TableCell>
                     87.5 %
                     <br />
-                    <span className="badge badge-ghost badge-sm">35 / 40</span>
+                    <span className="badge-ghost badge badge-sm">35 / 40</span>
                   </TableCell>
                   <TableCell>
                     {new Date('10/10/2022').toISOString().substring(0, 10)}

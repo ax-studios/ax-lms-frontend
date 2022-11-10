@@ -1,5 +1,5 @@
+import CalenderContext from '@/lib/context/calender/CalenderContext';
 import React, { FC, useContext } from 'react';
-import CalenderContext from '../../../../lib/context/calender/CalenderContext';
 
 const Labels: FC = () => {
   const { labels, updateLabel } = useContext(CalenderContext);
