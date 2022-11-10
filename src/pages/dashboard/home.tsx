@@ -6,14 +6,14 @@ import {
   ExamSchedule,
   News,
   UpcomingEvents,
-} from '../../components/pages/dashboard/Home';
-import Heading from '../../components/pages/dashboard/Wrappers/Heading';
+} from '../../components/dashboard/Home';
+import Heading from '../../components/dashboard/Wrappers/Heading';
 
 const Home: FC = () => {
   return (
     <div>
       <Heading title="Dashboard" />
-      <div className="container mx-auto flex flex-wrap gap-5 px-3 md:px-5 ">
+      <div className="container mx-auto flex flex-wrap gap-5 px-3 md:px-5">
         <div className="flex flex-col flex-wrap gap-5">
           <Attendance />
           <UpcomingEvents />

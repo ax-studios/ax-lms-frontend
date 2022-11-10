@@ -1,5 +1,5 @@
 import { NextPage } from 'next';
-import Heading from '../../components/pages/dashboard/Wrappers/Heading';
+import Heading from '../../components/dashboard/Wrappers/Heading';
 import RelaxingWalk from '../../icons/illustrations/RelaxingWalk';
 
 const Results: NextPage = () => {

@@ -1,5 +1,5 @@
 import { NextPage } from 'next';
-import Heading from '../../components/pages/dashboard/Wrappers/Heading';
+import Heading from '../../components/dashboard/Wrappers/Heading';
 import ComposeMusic from '../../icons/illustrations/ComposeMusic';
 
 const Exam: NextPage = () => {

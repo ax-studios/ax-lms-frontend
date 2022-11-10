@@ -30,10 +30,11 @@ Check out the website: <https://ax-studio.vercel.app/>
 ## 🛠️ Installation
 
 1. Fork the repo
-2. Clone the repository `git clone`
+2. Clone the repository `git clone` 
 3. Run `yarn` to install all dependencies
 4. Run `yarn dev` to start the application
 5. Visit <https://localhost:3000> to view the application
+
 
 ## 🎭 How to contribute
 
@@ -51,7 +52,7 @@ Design is created using [Figma](https://www.figma.com/file/M9R185mY2Es6dqzSW0WHB
 
 ## 🛡️ License
 
-This project is licensed under the MIT License - see the LICENSE.md file for details
+This project is licensed under the MIT License - see the [LICENSE.md](./LICENSE) file for details
 
 ## Contact
 

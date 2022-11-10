@@ -14,7 +14,7 @@ const Logo: FC<Props> = ({ width, height }) => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g clip-path="url(#clip0_0_1)">
+      <g clipPath="url(#clip0_0_1)">
         <path
           d="M19.4725 32.5277L0 87.7333H18.399L94 31.3186L27.5551 61.7918L37.8715 32.5277H19.4725ZM40.1448 26.0792L47.0987 45.7884L62.9403 38.524L49.3482 0H30.9492L40.1448 26.0792ZM54.984 68.1322L61.8905 87.7333H80.2974L69.5469 57.27L54.984 68.1322Z"
           fill="currentColor"

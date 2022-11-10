@@ -1,6 +1,6 @@
 import type { AppProps } from 'next/app';
 import { ReactNode, StrictMode } from 'react';
-import DashboardWrapper from '../components/pages/dashboard/DashboardWrapper';
+import DashboardWrapper from '../components/dashboard/DashboardWrapper';
 import { UserContext, UserData } from '../data/userData';
 import '../styles/globals.css';
 
