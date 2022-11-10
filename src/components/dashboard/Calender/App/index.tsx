@@ -11,7 +11,6 @@ const CalApp: FC = () => {
     setCurrentMonth(getMonth(monthIndex));
   }, [monthIndex]);
 
-  console.log(showEventModal);
   return (
     <div className="flex h-screen flex-col">
       {showEventModal ? <EventModal /> : null}

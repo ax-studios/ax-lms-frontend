@@ -41,7 +41,6 @@ const Sidebar: FC = () => {
   const [modalState, setModalState] = useState(false);
   const handleModalState = (): void => setModalState((p) => !p);
 
-  console.log(mobile, tablet);
   return (
     <>
       <Drawer
