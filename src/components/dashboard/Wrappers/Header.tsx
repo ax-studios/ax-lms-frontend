@@ -1,41 +1,88 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import { FC, useContext, useState } from 'react';
 import { UserContext } from '@/data/userData';
 import SearchIcon from '@/icons/SearchIcon';
+import {
+  Avatar,
+  Divider,
+  FilledInput,
+  FormControl,
+  IconButton,
+  InputAdornment,
+  InputLabel,
+  Toolbar,
+  useMediaQuery,
+  useTheme
+} from '@mui/material';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { FC, useContext } from 'react';
 
 const Header: FC = () => {
-  const [hasFocus, setHasFocus] = useState(false);
   const userData = useContext(UserContext);
-  return (
-    <div
-      id="mob-header"
-      className="flex h-20 items-center justify-start gap-2 bg-base-300 px-4 text-2xl font-bold sm:hidden"
-    >
-      <div
-        className={`input-bordered input relative flex w-full items-center overflow-hidden rounded-full px-1 pl-2 ${
-          hasFocus ? 'outline outline-primary' : ''
-        }`}
-      >
-        <span className="w-8">
-          <SearchIcon />
-        </span>
-        <input
-          type="text"
-          placeholder="Search..."
-          className="input h-full w-full bg-transparent px-0 text-lg focus:outline-none"
-          onFocus={() => setHasFocus(true)}
-          onBlur={() => setHasFocus(false)}
-        />
+  const router = useRouter();
+  const theme = useTheme();
+  const tablet = useMediaQuery(theme.breakpoints.down('lg'));
 
-        <Link
-          href={`/dashboard/user/${userData.enrollmentID}`}
-          className="relative h-8 w-8 shrink-0 rounded-full transition-all duration-500"
+  return (
+    <>
+      <Toolbar
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          padding: theme.spacing(2),
+          height: '4.5rem',
+          flexShrink: '0',
+          position: 'relative',
+        }}
+        disableGutters
+        id="mob-header"
+        className="justify-center lg:justify-between"
+      >
+        <h1
+          className={`text-3xl font-bold capitalize ${
+            tablet
+              ? 'absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2'
+              : ''
+          }`}
         >
-          <Image src={userData.profileURL} alt="Banner" fill />
-        </Link>
-      </div>
-    </div>
+          {router.pathname.split('/')[2]}
+        </h1>
+        <FormControl variant="filled" required className="w-full max-w-md">
+          <InputLabel htmlFor="head-search">Search</InputLabel>
+          <FilledInput
+            id="head-search"
+            name="search"
+            onChange={() => {}}
+            type="text"
+            {...(tablet ? { disabled: true } : {})}
+            sx={{ borderRadius: '999px' }}
+            endAdornment={
+              <InputAdornment position="end">
+                <IconButton
+                  aria-label="toggle password visibility"
+                  edge="end"
+                  LinkComponent={Link}
+                  href={`/dashboard/user/${userData.enrollmentID}`}
+                >
+                  <Avatar
+                    sx={{ bgcolor: 'primary' }}
+                    alt={userData.name}
+                    src={userData.profileURL}
+                  />
+                </IconButton>
+              </InputAdornment>
+            }
+            startAdornment={
+              <InputAdornment position="start">
+                <span className="w-6">
+                  <SearchIcon />
+                </span>
+              </InputAdornment>
+            }
+          />
+        </FormControl>
+      </Toolbar>
+      <Divider />
+    </>
   );
 };
 

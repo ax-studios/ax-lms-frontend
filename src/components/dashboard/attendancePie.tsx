@@ -1,8 +1,8 @@
+import attendance from '@/data/attendance';
 import { Group } from '@visx/group';
 import { Pie } from '@visx/shape';
 import { Text } from '@visx/text';
 import { FC, useEffect, useMemo, useRef, useState } from 'react';
-import attendance from '@/data/attendance';
 
 // types
 interface itemsInterface {

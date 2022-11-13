@@ -48,6 +48,7 @@
     "react/no-unescaped-entities": "off",
     "@typescript-eslint/indent": "off",
     "multiline-ternary": "off",
-    "react-hooks/exhaustive-deps": "off"
+    "react-hooks/exhaustive-deps": "off",
+    "@typescript-eslint/no-non-null-assertion":"off"
   }
 }

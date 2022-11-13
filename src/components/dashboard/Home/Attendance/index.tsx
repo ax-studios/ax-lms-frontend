@@ -1,18 +1,18 @@
-import { Paper } from '@mui/material';
-import { FC, useContext } from 'react';
 import AttendancePie from '@/components/dashboard/attendancePie';
 import { UserContext } from '@/data/userData';
 import TotalIcon from '@/icons/Course Icons/TotalIcon';
+import { Paper } from '@mui/material';
+import { FC, useContext } from 'react';
 
 const Attendance: FC = () => {
   const { attendance } = useContext(UserContext);
   let totalDaysAttended = 0;
   let totalDaysTotal = 0;
   return (
-    <div className="flex w-full max-w-sm flex-col gap-3 font-bold md:max-w-[21rem]">
+    <div className="flex max-w-lg flex-col gap-3 font-bold ">
       <h2 className="text-xl font-bold text-base-content">Attendance</h2>
       <Paper variant="outlined" className="space-y-3 px-8 py-5">
-        <div className="relative">
+        <div className="relative w-max">
           <AttendancePie />
         </div>
         {attendance.map((item) => {

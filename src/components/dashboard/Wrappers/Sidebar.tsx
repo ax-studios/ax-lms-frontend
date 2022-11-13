@@ -1,5 +1,5 @@
 import { width } from '@/lib/config';
-import { SettingsContext } from '@/lib/context/settings';
+import { useSettings } from '@/lib/hooks/useSettings';
 import useSidebarMenu from '@/lib/hooks/useSidebarMenu';
 import { Add as AddIcon, Remove as RemoveIcon } from '@mui/icons-material';
 import {
@@ -12,31 +12,24 @@ import {
   MenuItem,
   MenuList,
   Paper,
-  styled,
+  Toolbar,
   Tooltip,
+  useTheme,
 } from '@mui/material';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { FC, useContext } from 'react';
+import { FC } from 'react';
 import { useSidebarIcons } from '../../../icons/Sidebar Icons';
 import { Logo } from '../../core';
 import ProfileMenu from './ProfileMenu';
-
-const DrawerHeader = styled('div')(({ theme }) => ({
-  display: 'flex',
-  alignItems: 'center',
-  padding: theme.spacing(2),
-  ...theme.mixins.toolbar,
-  justifyContent: 'space-between',
-}));
 
 const Sidebar: FC = () => {
   const router = useRouter();
   const sidebarOptions = useSidebarMenu();
   const sidebarIcons = useSidebarIcons();
-  const { toggleDrawer, drawerCollapsed, toggleDrawerCollapsed } =
-    useContext(SettingsContext);
+  const { drawerCollapsed, toggleDrawerCollapsed } = useSettings();
   const { open, closed } = width.drawer;
+  const theme = useTheme();
 
   return (
     <Drawer
@@ -55,7 +48,16 @@ const Sidebar: FC = () => {
       }}
     >
       {/* Header Component */}
-      <DrawerHeader>
+      <Toolbar
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          padding: theme.spacing(2),
+          justifyContent: 'space-between',
+          height: '4.5rem',
+        }}
+        disableGutters
+      >
         <Collapse orientation="horizontal" in={!drawerCollapsed}>
           <Link href="/dashboard/home">
             <Logo height={30} />
@@ -66,7 +68,7 @@ const Sidebar: FC = () => {
             {drawerCollapsed ? <AddIcon /> : <RemoveIcon />}
           </IconButton>
         </Paper>
-      </DrawerHeader>
+      </Toolbar>
       <Divider />
       <MenuList sx={{ padding: '8px' }}>
         {sidebarOptions.map((option) => (
@@ -79,7 +81,6 @@ const Sidebar: FC = () => {
             <MenuItem
               onClick={() => {
                 void router.push(`/dashboard/${option.link}`);
-                toggleDrawer();
               }}
               sx={{
                 ...(router.pathname === `/dashboard/${option.link}`

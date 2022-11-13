@@ -21,7 +21,8 @@
       "@/lib/*": ["lib/*"],
       "@/icons/*": ["icons/*"],
       "@/pages/*": ["pages/*"],
-      "@/data/*": ["data/*"]
+      "@/data/*": ["data/*"],
+      "@/layouts/*": ["layouts/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

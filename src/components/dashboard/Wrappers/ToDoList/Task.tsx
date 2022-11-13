@@ -1,6 +1,6 @@
-import { FC, useContext } from 'react';
-import { SettingsContext } from '@/lib/context/settings';
 import { taskInterface } from '@/data/tasks';
+import { useSettings } from '@/lib/hooks/useSettings';
+import { FC } from 'react';
 import TaskOptions from './TaskOptions';
 
 interface Props {
@@ -9,7 +9,7 @@ interface Props {
 }
 
 const Task: FC<Props> = ({ delay, task }) => {
-  const { toDoCollapsed } = useContext(SettingsContext);
+  const { toDoCollapsed } = useSettings();
   return (
     <div
       className="group min-h-16 relative grid shrink-0 animate-scale items-center overflow-hidden rounded-lg border border-base-content/70 bg-base-200 pt-2 pl-5 text-left text-lg transition-all duration-300 lg:pb-2 lg:pr-4"

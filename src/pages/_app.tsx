@@ -1,17 +1,14 @@
+import MainLayout from '@/layouts/Mainlayout';
 import type { AppProps } from 'next/app';
 import { ReactNode, StrictMode } from 'react';
-import DashboardWrapper from '@/components/dashboard/DashboardWrapper';
-import { UserContext, UserData } from '../data/userData';
 import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }: AppProps): ReactNode {
   return (
     <StrictMode>
-      <UserContext.Provider value={UserData}>
-        <DashboardWrapper>
-          <Component {...pageProps} />
-        </DashboardWrapper>
-      </UserContext.Provider>
+      <MainLayout>
+        <Component {...pageProps} />
+      </MainLayout>
     </StrictMode>
   );
 }

@@ -1,4 +1,3 @@
-import Heading from '@/components/dashboard/Wrappers/Heading';
 import ArrowIcon from '@/icons/ArrowIcon';
 import CalenderContext from '@/lib/context/calender/CalenderContext';
 import dayjs from 'dayjs';
@@ -24,8 +23,6 @@ const CalHeader: FC = () => {
   }
   return (
     <header className="flex items-center gap-2 pr-2 md:pr-5">
-      <Heading title="Calender" />
-
       <button onClick={handleReset} className="btn-outline btn">
         Today
       </button>

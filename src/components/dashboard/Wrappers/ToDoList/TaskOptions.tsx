@@ -1,14 +1,14 @@
-import { TodoContext } from '@/lib/context/todo';
-import { FC, useContext } from 'react';
 import EditIcon from '@/icons/EditIcon';
 import TrashIcon from '@/icons/TrashIcon';
+import { useTodo } from '@/lib/hooks/useTodo';
+import { FC } from 'react';
 
 interface Props {
   todoId: number;
 }
 
 const TaskOptions: FC<Props> = ({ todoId }) => {
-  const { removeTask, setEditKey } = useContext(TodoContext);
+  const { removeTask, setEditKey } = useTodo();
   return (
     <ul
       className={

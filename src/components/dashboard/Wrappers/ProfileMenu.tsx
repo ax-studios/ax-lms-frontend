@@ -1,15 +1,15 @@
-import { SettingsContext } from '@/lib/context/settings';
+import { UserContext } from '@/data/userData';
+import ExpandIcon from '@/icons/Sidebar Icons/ExpandIcon';
+import LogoutIcon from '@/icons/Sidebar Icons/LogoutIcon';
+import { useSettings } from '@/lib/hooks/useSettings';
 import { Button, ListItemIcon, Menu, MenuItem } from '@mui/material';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FC, MouseEvent, useContext, useState } from 'react';
-import { UserContext } from '@/data/userData';
-import ExpandIcon from '@/icons/Sidebar Icons/ExpandIcon';
-import LogoutIcon from '@/icons/Sidebar Icons/LogoutIcon';
 
 const ProfileMenu: FC = () => {
   const userData = useContext(UserContext);
-  const { drawerCollapsed, toggleDrawer } = useContext(SettingsContext);
+  const { drawerCollapsed } = useSettings();
 
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
@@ -30,7 +30,6 @@ const ProfileMenu: FC = () => {
         <Link
           href={`/dashboard/user/${userData.enrollmentID}`}
           className="relative h-12 w-12 shrink-0 rounded-full transition-all duration-500"
-          onClick={toggleDrawer}
         >
           <Image src={userData.profileURL} alt="Banner" fill />
         </Link>
@@ -43,7 +42,6 @@ const ProfileMenu: FC = () => {
         >
           <Link
             className="w-full max-w-[11rem] overflow-hidden text-ellipsis whitespace-nowrap font-bold transition-all duration-200 hover:text-primary"
-            onClick={toggleDrawer}
             href={`/dashboard/user/${userData.enrollmentID}`}
           >
             {userData.name}

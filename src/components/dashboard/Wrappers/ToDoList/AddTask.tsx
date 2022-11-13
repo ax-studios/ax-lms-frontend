@@ -1,3 +1,6 @@
+import { taskInterface, taskPrioritys } from '@/data/tasks';
+import { useSettings } from '@/lib/hooks/useSettings';
+import { useTodo } from '@/lib/hooks/useTodo';
 import {
   Button,
   capitalize,
@@ -10,17 +13,7 @@ import {
 } from '@mui/material';
 import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
 import dayjs, { Dayjs } from 'dayjs';
-import {
-  ChangeEvent,
-  FC,
-  FormEvent,
-  useContext,
-  useEffect,
-  useState,
-} from 'react';
-import { taskInterface, taskPrioritys } from '@/data/tasks';
-import { TodoContext } from '@/lib/context/todo';
-import { SettingsContext } from '@/lib/context/settings';
+import { ChangeEvent, FC, FormEvent, useEffect, useState } from 'react';
 
 interface taskInputInterface {
   priority: 'low' | 'medium' | 'high';
@@ -37,9 +30,9 @@ const intialState: taskInputInterface = {
 };
 
 const AddTask: FC = () => {
-  const { toDoCollapsed } = useContext(SettingsContext);
+  const { toDoCollapsed } = useSettings();
   const { addTask, tasks, editElement, editKey, setEditKey, editTask } =
-    useContext(TodoContext);
+    useTodo();
 
   const [task, setTask] = useState<taskInputInterface | taskInterface>(
     intialState
@@ -56,7 +49,7 @@ const AddTask: FC = () => {
   const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
     if (task.name !== '' && task.dueDate !== null) {
-      if (editKey !== undefined) {
+      if (editKey !== null) {
         editTask(task as taskInterface);
       } else {
         addTask(task);
@@ -66,16 +59,18 @@ const AddTask: FC = () => {
   };
 
   const handleReset = (): void => {
-    setEditKey(undefined);
+    setEditKey(null);
   };
 
   useEffect(() => {
-    if (editKey === undefined) {
+    if (editKey === null) {
       setTask(intialState);
     } else {
       setTask(tasks.filter((t) => t.id === editKey)[0]);
     }
   }, [editKey, tasks]);
+
+  console.log(task.priority);
 
   return (
     <form onSubmit={handleSubmit} onReset={handleReset}>
@@ -112,7 +107,6 @@ const AddTask: FC = () => {
               multiline
               className="w-full"
               rows={4}
-              defaultValue="Default Value"
               variant="filled"
               value={task?.description}
               onChange={handleTaskChange}
@@ -154,7 +148,7 @@ const AddTask: FC = () => {
                 variant="contained"
                 size="small"
               >
-                {editKey !== undefined ? 'Edit' : 'Create'}
+                {editKey !== null ? 'Edit' : 'Create'}
               </Button>
               <Button
                 className="flex-1"

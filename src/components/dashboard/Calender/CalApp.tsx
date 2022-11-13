@@ -12,7 +12,7 @@ const CalApp: FC = () => {
   }, [monthIndex]);
 
   return (
-    <div className="flex h-screen flex-col">
+    <div className="flex h-full flex-col">
       {showEventModal ? <EventModal /> : null}
       <CalHeader />
       <div className="flex flex-1">
