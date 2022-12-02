@@ -1,0 +1,39 @@
+{
+  "theme_color": "#3abff6",
+  "background_color": "#0f172a",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "/dashboard",
+  "name": "Ax Learning Mangment System",
+  "short_name": "Ax LMS",
+  "description": "Open Source University LMS for Curriculum, Timetable, Examination, Fee (Cashless Campus), Infrastructure Management, and many more.",
+  "icons": [
+    {
+      "src": "maskable.png",
+      "sizes": "48x48",
+      "type": "image/x-icon",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-256x256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

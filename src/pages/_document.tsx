@@ -6,17 +6,25 @@ export class MyDocment extends Document {
     return (
       <Html lang="en">
         <Head>
-          <link rel="icon" href="/images/logo.svg" />
-
+          <link
+            rel="shortcut icon"
+            href="/meta/favicon-dark.svg"
+            media="(prefers-color-scheme: dark)"
+          />
+          <link
+            rel="shortcut icon"
+            href="/meta/favicon-light.svg"
+            media="(prefers-color-scheme: light)"
+          />
+          <link rel="apple-touch-icon" href="/icons/apple-icon.png" />
           <meta
             name="description"
-            content="Open Source University LMS for Curriculum, Timetable, Examination, Fee (Cashless Campus), Infrastructure Management, and many more. Student can pay their Fees and Teacher can upload their notes"
+            content="Open Source University LMS for Curriculum, Timetable, Examination, Fee (Cashless Campus), Infrastructure Management, and many more."
           />
-
+          <meta name="theme-color" content="#3abff6" />
+          <link rel="manifest" href="/manifest.json" />
           <meta name="author" content="Ax Studios" />
-
           <meta name="robots" content="index, follow" />
-
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link
