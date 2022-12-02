@@ -1,5 +1,4 @@
 import AttendanceTableHeading from '@/components/dashboard/Attendance/AttendanceTableHeading';
-import Heading from '@/components/dashboard/Wrappers/Heading';
 import students from '@/data/students';
 import FemaleAvatar from '@/icons/illustrations/FemaleAvatar';
 import MaleAvatar from '@/icons/illustrations/MaleAvatar';
@@ -45,15 +44,12 @@ const ChangeAttendece: NextPage = () => {
   };
 
   return (
-    <div className="min-h-screen">
-      <Heading title="Update Attendece" />
-      <div className="overflow-y-auto px-3 md:px-5">
-        <TableContainer
-          sx={{
-            maxWidth: '80rem',
-            maxHeight: 'calc(100vh - 88px)',
-          }}
-        >
+    <div className="flex h-[calc(100vh-4.6rem)] w-full flex-col overflow-hidden">
+      <h1 className="flex h-20 items-center px-2 text-3xl font-bold capitalize">
+        Update Attendece
+      </h1>
+      <div className="h-full max-w-7xl flex-grow overflow-y-auto px-3 md:px-5">
+        <TableContainer sx={{ height: '100%' }}>
           <Table stickyHeader aria-label="sticky table" size="small">
             <TableHead>
               <TableRow>
