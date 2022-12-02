@@ -1,4 +1,4 @@
-import { Button } from '@mui/material';
+import { Button, Paper } from '@mui/material';
 import Link from 'next/link';
 import { FC } from 'react';
 
@@ -24,9 +24,9 @@ const AttendanceCard: FC<Props> = ({ classes, title }) => {
           <h2 className="mb-2 text-xl font-bold">{title}'s Classes</h2>
           <div className="flex flex-col gap-4">
             {classes.map((classObj) => (
-              <div
+              <Paper
                 key={classObj.id}
-                className="card grid grid-cols-12 items-center gap-5 py-3 px-5"
+                className="grid grid-cols-12 items-center gap-5 py-3 px-5"
               >
                 <span className="col-span-2 flex flex-col items-start justify-start">
                   <span className="text-lg">{classObj.start_time}</span>
@@ -53,7 +53,7 @@ const AttendanceCard: FC<Props> = ({ classes, title }) => {
                 >
                   {classObj.attendanceSubmited ? 'Update' : 'Fill'}
                 </Button>
-              </div>
+              </Paper>
             ))}
           </div>
         </>
