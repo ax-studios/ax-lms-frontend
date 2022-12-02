@@ -23,7 +23,7 @@ const Tabs: FC<Props> = ({ tabs, value, setValue }) => {
         {tabs.map((tab) => (
           <button
             key={tab.value}
-            className={`z-10 rounded-none border-0 border-b-2 bg-transparent py-3 px-5 outline-none duration-300 hover:text-base-100 focus:text-base-100 ${
+            className={`z-10 rounded-none border-0 border-b-2 bg-transparent py-3 px-5 outline-none duration-300 hover:text-base-100 focus-visible:text-base-100 ${
               tab.value === value
                 ? 'border-primary text-base-content'
                 : 'border-transparent text-base-content/70 '
