@@ -60,6 +60,7 @@ const AddTask: FC = () => {
 
   const handleReset = (): void => {
     setEditKey(null);
+    setTask(intialState);
   };
 
   useEffect(() => {
@@ -69,8 +70,6 @@ const AddTask: FC = () => {
       setTask(tasks.filter((t) => t.id === editKey)[0]);
     }
   }, [editKey, tasks]);
-
-  console.log(task.priority);
 
   return (
     <form onSubmit={handleSubmit} onReset={handleReset}>
@@ -134,7 +133,7 @@ const AddTask: FC = () => {
           <div className="relative inline-flex flex-col justify-between gap-4 text-xl font-medium md:flex-row md:items-center">
             <div className="inline-flex items-center gap-4">
               <DateTimePicker
-                label="Due Date&Time"
+                label="Due Date"
                 value={task?.dueDate}
                 onChange={handleChange}
                 renderInput={(params) => <TextField {...params} />}
