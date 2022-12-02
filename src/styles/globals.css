@@ -2,28 +2,46 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  /* Themes */
+  :root {
+    --base-content: 236, 239, 241;
+    --primary: 56, 189, 248;
+    --primary-focus: 182, 77, 36;
+    --primary-accent: 232, 133, 94;
+    --base-100: 15, 23, 42;
+    --base-200: 15, 23, 42;
+    --base-300: 15, 23, 42;
+  }
+  .theme-dark {
+    --base-content: 252, 250, 250;
+    --primary: 235, 106, 80;
+    --primary-focus: 193, 121, 93;
+    --primary-accent: 247, 189, 167;
+    --base-100: 0, 0, 0;
+    --base-200: 72, 72, 69;
+    --base-300: 93, 93, 93;
+  }
+}
+
 ::-webkit-scrollbar {
-  @apply h-[6px] w-[6px] rounded-full bg-base-content/20;
+  @apply h-[6px] w-[6px] rounded-full bg-[#ffffff30];
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply rounded-full bg-base-content/50;
-}
-
-.card {
-  @apply border border-base-content/20 bg-base-content/5 transition-all duration-200;
+  @apply rounded-full bg-[#ffffff80];
 }
 
 .todo-high {
-  @apply btn-error;
+  @apply bg-[#ff5151];
 }
 
 .todo-medium {
-  @apply btn-info;
+  @apply bg-[#fff151];
 }
 
 .todo-low {
-  @apply btn-success;
+  @apply bg-[#51ff51];
 }
 
 [data-theme='wireframe'] {
