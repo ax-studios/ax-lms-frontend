@@ -35,9 +35,3 @@ build-storybook.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-
-
-# Service Worker file
-/public/sw.js
-/public/sw.js.map
-/public/workbox-*
